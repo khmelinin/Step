@@ -1,5 +1,6 @@
 #pragma once
 #include "Unit.h"
+#include <time.h>
 using namespace std;
 
 class Wizzard:public Unit

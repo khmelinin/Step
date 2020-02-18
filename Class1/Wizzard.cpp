@@ -11,6 +11,7 @@ void Wizzard::Attack(Unit* u)
 
 void Wizzard::getDamage(int d)
 {
+	srand(time(0));
 	if ((rand() % 10 + 0) % 2 == 0)
 	{
 		dodge--;

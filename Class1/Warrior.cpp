@@ -15,6 +15,8 @@ void Warrior::getDamage(int d)
 	if (armor > d)
 		armor -= d;
 	else
-		setHp(getHp()-d - armor);
+	{
+		setHp(getHp() - (d - armor));
 		armor = 0;
+	}
 }

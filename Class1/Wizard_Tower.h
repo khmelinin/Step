@@ -3,6 +3,6 @@
 class Wizard_Tower:public Building
 {
 public:
-	virtual void CreateUnit();
+	virtual void CreateWizard();
 };
 
