@@ -1,9 +1,14 @@
 #pragma once
 #include "Unit.h"
+#include "Warrior.h"
+#include "Wizzard.h"
+#include "Worker.h"
+
 class Building
 {
-	int id;
 public:
-	Unit* CreateUnit();
+	Warrior* CreateWarrior();
+	Wizzard* CreateWizzard();
+	Worker* CreateWorker();
 };
 

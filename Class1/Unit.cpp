@@ -41,3 +41,7 @@ int Unit::getAttack()
 {
 	return attack;
 }
+
+Unit::~Unit()
+{
+}

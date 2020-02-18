@@ -18,6 +18,7 @@ public:
 	string getName()const;
 	void setName(string n);
 	int getAttack();
+	virtual ~Unit();
 
 };
 
