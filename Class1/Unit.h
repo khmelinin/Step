@@ -5,16 +5,19 @@ using namespace std;
 
 class Unit
 {
-	int hp;
-	int attack;
-	string name;
+	int hp=0;
+	int attack=0;
+	string name="n0l'";
 public:
-	virtual void Attack(Unit u);
+	Unit() = default;
+	Unit(int h, int a, string n);
+	virtual void Attack(Unit* u);
 	virtual void getDamage(int damage);
 	int getHp()const;
 	void setHp(int h);
 	string getName()const;
 	void setName(string n);
+	int getAttack();
 
 };
 

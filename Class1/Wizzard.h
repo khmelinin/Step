@@ -4,9 +4,10 @@ using namespace std;
 
 class Wizzard:public Unit
 {
-	int dodge;
+	int dodge=9;
 public:
-	void Attack(int a);
-	virtual void getDamage(int d);
+	Wizzard(string n);
+	void Attack(Unit *u);
+	void getDamage(int d) override;
 };
 

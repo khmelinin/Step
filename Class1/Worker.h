@@ -6,7 +6,8 @@ class Worker:public Unit
 {
 	int passivs;
 public:
-	void Attack(int a);
-	virtual void getDamage(int d);
+	Worker(string n);
+	void Attack(Unit *u);
+	void getDamage(int d) override;
 };
 

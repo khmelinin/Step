@@ -4,9 +4,10 @@ using namespace std;
 
 class Warrior:public Unit
 {
-	int armor;
+	int armor=40;
 public:
-	void Attack(int a);
-	virtual void getDamage(int d);
+	Warrior(string n);
+	void Attack(Unit *u);
+	void getDamage(int d) override;
 };
 
