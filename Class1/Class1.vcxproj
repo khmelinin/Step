@@ -138,7 +138,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Barrack.cpp" />
+    <ClCompile Include="Building.cpp" />
+    <ClCompile Include="PTU.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="Warrior.cpp" />
+    <ClCompile Include="Wizard_Tower.cpp" />
+    <ClCompile Include="Wizzard.cpp" />
+    <ClCompile Include="Worker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Barrack.h" />
+    <ClInclude Include="Building.h" />
+    <ClInclude Include="PTU.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="Warrior.h" />
+    <ClInclude Include="Wizard_Tower.h" />
+    <ClInclude Include="Wizzard.h" />
+    <ClInclude Include="Worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
