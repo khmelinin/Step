@@ -1,5 +1,7 @@
 #include "Group.h"
 
+Group::Group() = default;
+
 Group::Group(const string& _title, const string& _type)
 {
 	title = _title;
@@ -24,4 +26,9 @@ void Group::setTitle(const string& _title)
 void Group::setType(const string& _type)
 {
 	type = _type;
+}
+
+void Group::addUnit(shared_ptr<Unit>& unit)
+{
+	group.push_back(unit);
 }
