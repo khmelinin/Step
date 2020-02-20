@@ -7,6 +7,7 @@
 class Building
 {
 public:
+	string Name();
 	Warrior* CreateWarrior();
 	Wizzard* CreateWizzard();
 	Worker* CreateWorker();

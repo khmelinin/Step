@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{77137591-594C-461B-A3D0-16CE62BC6F22}</ProjectGuid>
-    <RootNamespace>Class1</RootNamespace>
+    <ProjectGuid>{6170C644-5715-4247-B81B-FB5B3A471A97}</ProjectGuid>
+    <RootNamespace>Class11</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,29 +138,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Barrack.cpp" />
-    <ClCompile Include="Building.cpp" />
-    <ClCompile Include="HumanWorker.cpp" />
-    <ClCompile Include="OrcWorker.cpp" />
-    <ClCompile Include="PTU.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Unit.cpp" />
-    <ClCompile Include="Warrior.cpp" />
-    <ClCompile Include="Wizard_Tower.cpp" />
-    <ClCompile Include="Wizzard.cpp" />
-    <ClCompile Include="Worker.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Barrack.h" />
     <ClInclude Include="Building.h" />
+    <ClInclude Include="Director.h" />
+    <ClInclude Include="Group.h" />
+    <ClInclude Include="GroupCreator.h" />
+    <ClInclude Include="HumanFactory.h" />
+    <ClInclude Include="HumanWarrior.h" />
+    <ClInclude Include="HumanWizard.h" />
     <ClInclude Include="HumanWorker.h" />
-    <ClInclude Include="OrcWorker.h" />
-    <ClInclude Include="PTU.h" />
+    <ClInclude Include="OrgFactory.h" />
+    <ClInclude Include="OrgWarrior.h" />
+    <ClInclude Include="OrgWizard.h" />
+    <ClInclude Include="OrgWorker.h" />
+    <ClInclude Include="PvEGroupCreator.h" />
+    <ClInclude Include="PvPGroupCreator.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="Warrior.h" />
-    <ClInclude Include="Wizard_Tower.h" />
-    <ClInclude Include="Wizzard.h" />
+    <ClInclude Include="Wizard.h" />
     <ClInclude Include="Worker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Building.cpp" />
+    <ClCompile Include="Director.cpp" />
+    <ClCompile Include="Group.cpp" />
+    <ClCompile Include="GroupCreator.cpp" />
+    <ClCompile Include="HumanFactory.cpp" />
+    <ClCompile Include="HumanWarrior.cpp" />
+    <ClCompile Include="HumanWizard.cpp" />
+    <ClCompile Include="HumanWorker.cpp" />
+    <ClCompile Include="OrgFactory.cpp" />
+    <ClCompile Include="OrgWarrior.cpp" />
+    <ClCompile Include="OrgWizard.cpp" />
+    <ClCompile Include="OrgWorker.cpp" />
+    <ClCompile Include="PvEGroupCreator.cpp" />
+    <ClCompile Include="PvPGroupCreator.cpp" />
+    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Warrior.cpp" />
+    <ClCompile Include="Wizard.cpp" />
+    <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

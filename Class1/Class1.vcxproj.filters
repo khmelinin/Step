@@ -42,6 +42,12 @@
     <ClCompile Include="PTU.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HumanWorker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OrcWorker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Unit.h">
@@ -66,6 +72,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PTU.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OrcWorker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanWorker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

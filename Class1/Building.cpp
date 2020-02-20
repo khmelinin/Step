@@ -1,6 +1,6 @@
 #include "Building.h"
 #include <time.h>
-Warrior* Building::CreateWarrior()
+string Building::Name()
 {
 	string n;
 	srand(time(0));
@@ -11,5 +11,19 @@ Warrior* Building::CreateWarrior()
 		a = rand() % 60 + 30;
 		n += a;
 	}
-	return new Warrior(n);
+	return n;
+}
+Warrior* Building::CreateWarrior()
+{
+	return new Warrior(Name());
+}
+
+Wizzard* Building::CreateWizzard()
+{
+	return new Wizzard(Name());
+}
+
+Worker* Building::CreateWorker()
+{
+	return new Worker(Name());
 }
