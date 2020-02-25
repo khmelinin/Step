@@ -1,5 +1,7 @@
 #include "PvPGroupCreator.h"
 
+PvPGroupCreator::PvPGroupCreator(vector<shared_ptr<Unit>>& u) :GroupCreator(u){}
+
 void PvPGroupCreator::createGroup()
 {
 	group = make_shared<Group>();
@@ -33,6 +35,51 @@ bool PvPGroupCreator::addWarrior()
 		return war_count != 0;
 }
 
-PvPGroupCreator::PvPGroupCreator(vector<shared_ptr<Unit>>& u):GroupCreator(u)
+bool PvPGroupCreator::addWizard()
 {
+	if (war_count == 0)
+		return 0;
+	do {
+		auto it = find_if(units.begin(), units.end(), [](const shared_ptr<Unit>& u)->bool {
+			Wizard* pt = dynamic_cast<Wizard*>(u.get());
+			return pt;
+			});
+		if (it != units.end())
+		{
+			group->addUnit(*it);
+			units.erase(it);
+			war_count--;
+		}
+
+		else
+		{
+			break;
+		}
+	} while (war_count != 0);
+	return war_count != 0;
 }
+
+bool PvPGroupCreator::addWorker()
+{
+	if (war_count == 0)
+		return 0;
+	do {
+		auto it = find_if(units.begin(), units.end(), [](const shared_ptr<Unit>& u)->bool {
+			Worker* pt = dynamic_cast<Worker*>(u.get());
+			return pt;
+			});
+		if (it != units.end())
+		{
+			group->addUnit(*it);
+			units.erase(it);
+			war_count--;
+		}
+
+		else
+		{
+			break;
+		}
+	} while (war_count != 0);
+	return war_count != 0;
+}
+

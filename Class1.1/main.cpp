@@ -2,30 +2,49 @@
 #include "HumanFactory.h"
 #include "OrgFactory.h"
 #include "PvPGroupCreator.h"
+#include "Director.h"
+#include <thread>
+#include <chrono>
 
-int main()
+void registerToBattle(vector<shared_ptr<Unit>>&units)
 {
-	srand(time(0));
-	
-	shared_ptr<Building> factory(new HumanFactory());
-	vector<shared_ptr<Unit>> units;
-
+	this_thread::sleep_for(chrono::seconds(rand() % 3 + 1));
+	cout << "Fresh Blood has come" << endl;
+	shared_ptr<Building> factory;
+	if (rand() % 2 == 0)
+	{
+		factory = make_shared<HumanFactory>();
+	}
+	else
+	{
+		factory = make_shared<OrgFactory>();
+	}
 	for (int i = 0; i < 5; i++)
 	{
 		switch (rand() % 3)
 		{
 		case 0:
-			units.push_back(make_shared<Unit>(factory->createWarrior()));
+			units.push_back(shared_ptr<Unit>(factory->createWarrior()));
 			break;
 		case 1:
-			/*units.push_back(make_shared<Unit>(factory->createWizard()));*/
+			units.push_back(shared_ptr<Unit>(factory->createWizard()));
 			break;
 		case 2:
-			/*units.push_back(make_shared<Unit>(factory->createWorker()));*/
+			units.push_back(shared_ptr<Unit>(factory->createWorker()));
 			break;
 		}
 	}
-	PvPGroupCreator pvp_builder(units);
-	pvp_builder.createGroup();
-	cout << pvp_builder.addWarrior() << endl;
+}
+
+int main()
+{
+
+	srand(time(0));
+	shared_ptr<Building> factory(new HumanFactory());
+	vector<shared_ptr<Unit>> units;
+	Director director(units);
+	director.setCreator(shared_ptr<PvPGroupCreator>(new PvPGroupCreator(units)));
+	shared_ptr<Group> group1 = director.make();
+	cout << "+++" << endl;
+	shared_ptr<Group>group2 = director.make();
 }
