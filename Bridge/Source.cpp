@@ -56,7 +56,7 @@ public:
 
 class IBuldingCompany
 {
-    IWallCreator* WallCreator;
+    IWallCreator* WallCreator=nullptr;
 public:
 
     virtual void BuildFoundation() = 0;
@@ -74,7 +74,7 @@ public:
 
     void setWallCreator(IWallCreator* WallCreator)
     {
-        IBuldingCompany::WallCreator = WallCreator;
+        this->WallCreator = WallCreator;
     }
 };
 
