@@ -17,10 +17,10 @@ public:
 
 
 
-class Pizza :public Food
+class PizzaS :public Food
 {
 public:
-	Pizza():Food(5){}
+	PizzaS():Food(5){}
 	void info()override
 	{
 		cout << "Coffee" << endl;
@@ -92,7 +92,7 @@ public:
 
 int main()
 {
-	Pizza* c = new Pizza();
+	PizzaS* c = new PizzaS();
 	c->info();
 	WithMeat* cwm = new WithMeat(c);
 	WithMeat* cwmm = new WithMeat(cwm);

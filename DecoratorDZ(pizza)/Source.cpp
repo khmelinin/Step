@@ -17,13 +17,41 @@ public:
 
 
 
-class Pizza :public Food
+class PizzaS :public Food
 {
 public:
-	Pizza() :Food(5) {}
+	PizzaS() :Food(5) {}
 	void info()override
 	{
-		cout << "Pizza" << endl;
+		cout << "PizzaS" << endl;
+	}
+	double cost()override
+	{
+		return price;
+	}
+};
+
+class PizzaM :public Food
+{
+public:
+	PizzaM() :Food(7) {}
+	void info()override
+	{
+		cout << "PizzaM" << endl;
+	}
+	double cost()override
+	{
+		return price;
+	}
+};
+
+class PizzaL :public Food
+{
+public:
+	PizzaL() :Food(9) {}
+	void info()override
+	{
+		cout << "PizzaL" << endl;
 	}
 	double cost()override
 	{
@@ -122,7 +150,7 @@ public:
 
 int main()
 {
-	Pizza* c = new Pizza();
+	PizzaL* c = new PizzaL();
 	c->info();
 	WithMeat* cwm = new WithMeat(c);
 	WithMeat* cwmm = new WithMeat(cwm);
