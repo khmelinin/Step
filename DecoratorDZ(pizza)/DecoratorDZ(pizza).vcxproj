@@ -138,7 +138,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Decorator_.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="With_Meat.cpp" />
+    <ClCompile Include="With_More_Cheese.cpp" />
+    <ClCompile Include="With_Mushrooms.cpp" />
+    <ClCompile Include="With_Pineapple.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Decorator_.h" />
+    <ClInclude Include="Food_.h" />
+    <ClInclude Include="Pizza_L.h" />
+    <ClInclude Include="Pizza_M.h" />
+    <ClInclude Include="Pizza_S.h" />
+    <ClInclude Include="With_Meat.h" />
+    <ClInclude Include="With_More_Cheese.h" />
+    <ClInclude Include="With_Mushrooms.h" />
+    <ClInclude Include="With_Pineapple.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

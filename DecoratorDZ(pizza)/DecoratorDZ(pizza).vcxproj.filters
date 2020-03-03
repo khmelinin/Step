@@ -18,5 +18,52 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Decorator_.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="With_Meat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="With_Mushrooms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="With_More_Cheese.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="With_Pineapple.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Pizza_S.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Food_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pizza_M.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pizza_L.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Decorator_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="With_Meat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="With_Mushrooms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="With_More_Cheese.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="With_Pineapple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
