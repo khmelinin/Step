@@ -11,16 +11,16 @@ using namespace std;
 
 int main()
 {
-	PizzaL* c = new PizzaL();
-	c->info();
-	WithMeat* cwm = new WithMeat(c);
-	WithMeat* cwmm = new WithMeat(cwm);
-	cwmm->info();
-	WithMushrooms* cwmms = new WithMushrooms(cwmm);
+	PizzaL* p = new PizzaL();
+	p->info();
+	WithMeat* cm = new WithMeat(p);
+	WithMeat* cmm = new WithMeat(cm);
+	cmm->info();
+	WithMushrooms* cwmms = new WithMushrooms(cmm);
 	cwmms->info();
-	WithMoreCheese* cwmmsc = new WithMoreCheese(cwmm);
+	WithMoreCheese* cwmmsc = new WithMoreCheese(cwmms);
 	cwmmsc->info();
-	WithPineapple* cwmmsca = new WithPineapple(cwmm);
+	WithPineapple* cwmmsca = new WithPineapple(cwmmsc);
 	cwmmsca->info();
 	cout << cwmmsca->cost() << endl;
 
