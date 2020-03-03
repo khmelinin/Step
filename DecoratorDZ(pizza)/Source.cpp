@@ -20,10 +20,10 @@ public:
 class Pizza :public Food
 {
 public:
-	Pizza():Food(5){}
+	Pizza() :Food(5) {}
 	void info()override
 	{
-		cout << "Coffee" << endl;
+		cout << "Pizza" << endl;
 	}
 	double cost()override
 	{
@@ -38,8 +38,8 @@ class Decorator :public Food
 protected:
 	Food* component = nullptr;
 public:
-	
-	Decorator(Beverage* pt,double p):Food(p)
+
+	Decorator(Food* pt, double p) :Food(p)
 	{
 		component = pt;
 	}
@@ -53,7 +53,7 @@ public:
 	{
 		delete[]component;
 	}
-	
+
 };
 
 
@@ -61,15 +61,15 @@ public:
 class WithMeat :public Decorator
 {
 public:
-	WithMeat(Food* c) :Decorator(c,2) {}
+	WithMeat(Food* c) :Decorator(c, 3) {}
 	void info()override
 	{
 		Decorator::info();
-		cout << "with milk" << endl;
+		cout << "with meat" << endl;
 	}
 	double cost()override
 	{
-		return price+component->cost();
+		return price + component->cost();
 	}
 };
 
@@ -78,15 +78,45 @@ public:
 class WithMushrooms :public Decorator
 {
 public:
-	WithMushrooms(Food* c):Decorator(c,1){}
+	WithMushrooms(Food* c) :Decorator(c, 1) {}
 	void info()override
 	{
 		Decorator::info();
-		cout << "with sugar" << endl;
+		cout << "with mushrooms" << endl;
 	}
 	double cost()override
 	{
-		return price+component->cost();
+		return price + component->cost();
+	}
+};
+
+class WithMoreCheese :public Decorator
+{
+public:
+	WithMoreCheese(Food* c) :Decorator(c, 2) {}
+	void info()override
+	{
+		Decorator::info();
+		cout << "with more cheese" << endl;
+	}
+	double cost()override
+	{
+		return price + component->cost();
+	}
+};
+
+class WithPineapple :public Decorator
+{
+public:
+	WithPineapple(Food* c) :Decorator(c, 1) {}
+	void info()override
+	{
+		Decorator::info();
+		cout << "with pineapple" << endl;
+	}
+	double cost()override
+	{
+		return price + component->cost();
 	}
 };
 
@@ -99,6 +129,10 @@ int main()
 	cwmm->info();
 	WithMushrooms* cwmms = new WithMushrooms(cwmm);
 	cwmms->info();
-	cout << cwmms->cost() << endl;
+	WithMoreCheese* cwmmsc = new WithMoreCheese(cwmm);
+	cwmmsc->info();
+	WithPineapple* cwmmsca = new WithPineapple(cwmm);
+	cwmmsca->info();
+	cout << cwmmsca->cost() << endl;
 
 }
