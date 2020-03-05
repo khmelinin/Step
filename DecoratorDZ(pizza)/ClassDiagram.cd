@@ -1,2 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Decorator">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAgAAAAAAAAAAAAAAAAAQAAAAAAAQAA=</HashCode>
+      <FileName>Decorator_.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Food">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAQAIAAQAAAAgAAAAA=</HashCode>
+      <FileName>Food_.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PizzaL">
+    <Position X="23.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAEAQAAAAAAAAAA=</HashCode>
+      <FileName>Pizza_L.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PizzaM">
+    <Position X="18.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAEAQAAAAAAAAAA=</HashCode>
+      <FileName>Pizza_M.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PizzaS">
+    <Position X="21" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAEAQAAAAAAAAAA=</HashCode>
+      <FileName>Pizza_S.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WithMeat">
+    <Position X="14.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>With_Meat.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WithMoreCheese">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACQAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>With_More_Cheese.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WithMushrooms">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAQAAAAAAAAAA=</HashCode>
+      <FileName>With_Mushrooms.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WithPineapple">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>With_Pineapple.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

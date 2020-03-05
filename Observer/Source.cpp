@@ -54,28 +54,50 @@ public:
 
 class Publisher
 {
-	vector<SubscriberMobile> m;
-	vector<SubscriberDesktop> d;
-	vector<SubscriberWeb> w;
+	int size = 0;
+	Subscriber* s = nullptr;
 public:
 	Publisher() = default;
+	Publisher(SubscriberMobile pt)
+	{
+		size++;
+		s = new SubscriberMobile[size];
+		s[0] = pt;
+	}
+
+	Publisher(SubscriberDesktop pt)
+	{
+		size++;
+		s = new SubscriberDesktop[size];
+		s[0] = pt;
+	}
+
+	Publisher(SubscriberWeb pt)
+	{
+		size++;
+		s = new SubscriberWeb[size];
+		s[0] = pt;
+	}
+
 	void addSubscriber(SubscriberMobile pt)
 	{
-		m.push_back(pt);
+		size++;
+		s[size] = pt;
 	}
+	
 	void Notify()
 	{
-		for (int i = 0; i < m.size; i++)
+		for (int i = 0; i < size; i++)
 		{
-			m[i].Update();
+			s[i].Update();
 		}
-		for (int i = 0; i < d.size; i++)
+		for (int i = 0; i < size; i++)
 		{
-			d[i].Update();
+			s[i].Update();
 		}
-		for (int i = 0; i < w.size; i++)
+		for (int i = 0; i < size; i++)
 		{
-			w[i].Update();
+			s[i].Update();
 		}
 	}
 };
