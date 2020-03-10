@@ -58,28 +58,3 @@ bool PvPGroupCreator::addWizard()
 	} while (war_count != 0);
 	return war_count != 0;
 }
-
-bool PvPGroupCreator::addWorker()
-{
-	if (war_count == 0)
-		return 0;
-	do {
-		auto it = find_if(units.begin(), units.end(), [](const shared_ptr<Unit>& u)->bool {
-			Worker* pt = dynamic_cast<Worker*>(u.get());
-			return pt;
-			});
-		if (it != units.end())
-		{
-			group->addUnit(*it);
-			units.erase(it);
-			war_count--;
-		}
-
-		else
-		{
-			break;
-		}
-	} while (war_count != 0);
-	return war_count != 0;
-}
-

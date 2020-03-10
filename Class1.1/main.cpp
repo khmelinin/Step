@@ -2,6 +2,7 @@
 #include "HumanFactory.h"
 #include "OrgFactory.h"
 #include "PvPGroupCreator.h"
+#include "PvEGroupCreator.h"
 #include "Director.h"
 #include <thread>
 #include <chrono>
@@ -43,7 +44,7 @@ int main()
 	shared_ptr<Building> factory(new HumanFactory());
 	vector<shared_ptr<Unit>> units;
 	Director director(units);
-	director.setCreator(shared_ptr<PvPGroupCreator>(new PvPGroupCreator(units)));
+	director.setCreator(shared_ptr<PvEGroupCreator>(new PvEGroupCreator(units)));
 	shared_ptr<Group> group1 = director.make();
 	cout << "+++" << endl;
 	shared_ptr<Group>group2 = director.make();

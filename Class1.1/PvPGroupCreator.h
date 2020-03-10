@@ -7,7 +7,7 @@ public:
 	void createGroup()override;
 	bool addWarrior()override;
 	bool addWizard()override;
-	bool addWorker()override;
+	
 	
 };
 

@@ -18,7 +18,7 @@ public:
 class SubjectLection : public Subject
 {
 public:
-    void BuildSubjectect() override
+    void BuildWall() override
     {
         cout << "Creating brick wall" << endl;
     }
@@ -37,7 +37,7 @@ public:
 class SubjectPractise : public Subject
 {
 public:
-    void BuildSubject() override
+    void BuildWall() override
     {
         cout << "Creating concrete wall" << endl;
     }
@@ -56,7 +56,7 @@ public:
 
 class Table
 {
-    Subject* WallCreator=nullptr;
+    Subject* WallCreator = nullptr;
 public:
 
     virtual void BuildFoundation() = 0;

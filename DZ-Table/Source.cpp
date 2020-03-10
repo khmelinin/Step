@@ -6,11 +6,9 @@ using namespace std;
 class Subject
 {
 public:
-    virtual void BuildWall() = 0;
+    virtual void BuildSubject() = 0;
 
-    virtual void BuildWallWithDoor() = 0;
-
-    virtual void BuildWallWithWindow() = 0;
+    
 
     virtual ~Subject() = default;
 };
@@ -18,20 +16,12 @@ public:
 class SubjectLection : public Subject
 {
 public:
-    void BuildSubjectect() override
+    void BuildSubject() override
     {
         cout << "Creating brick wall" << endl;
     }
 
-    void BuildWallWithDoor() override
-    {
-        cout << "Creating brick wall with door" << endl;
-    }
-
-    void BuildWallWithWindow() override
-    {
-        cout << "Creating brick wall with window" << endl;
-    }
+   
 };
 
 class SubjectPractise : public Subject
@@ -42,21 +32,13 @@ public:
         cout << "Creating concrete wall" << endl;
     }
 
-    void BuildWallWithDoor() override
-    {
-        cout << "Creating concrete wall with door" << endl;
-    }
-
-    void BuildWallWithWindow() override
-    {
-        cout << "Creating concrete wall with window" << endl;
-    }
+    
 };
 
 
 class Table
 {
-    Subject* WallCreator=nullptr;
+    Subject* WallCreator = nullptr;
 public:
 
     virtual void BuildFoundation() = 0;
@@ -72,7 +54,7 @@ public:
         return WallCreator;
     }
 
-    void setWallCreator(IWallCreator* WallCreator)
+    void setWallCreator(Subject* WallCreator)
     {
         this->WallCreator = WallCreator;
     }
@@ -89,10 +71,8 @@ public:
 
     void BuildRoom() override
     {
-        getWallCreator()->BuildWallWithDoor();
-        getWallCreator()->BuildWall();
-        getWallCreator()->BuildWallWithWindow();
-        getWallCreator()->BuildWall();
+       
+        getWallCreator()->BuildSubject();
         cout << "Room finished." << endl;
     }
 
@@ -113,10 +93,7 @@ public:
 
     void BuildRoom() override
     {
-        getWallCreator()->BuildWallWithDoor();
-        getWallCreator()->BuildWall();
-        getWallCreator()->BuildWallWithWindow();
-        getWallCreator()->BuildWall();
+        getWallCreator()->BuildSubject();
         cout << "Room near sea finished." << endl;
     }
 
