@@ -5,84 +5,84 @@ using namespace std;
 
 
 
-class Subscriber
+class User
 {
 	string name;
 public:
-	Subscriber() = default;
-	Subscriber(const string& n)
+	User() = default;
+	User(const string& n)
 	{
 		name = n;
 	}
 	virtual void Update() = 0;
-	~Subscriber() = default;
+	~User() = default;
 
 };
 
-class SubscriberMobile:public Subscriber
+class UserMobile:public User
 {
 public:
-	SubscriberMobile() = default;
-	SubscriberMobile(const string& n) :Subscriber(n) {};
+	UserMobile() = default;
+	UserMobile(const string& n) :User(n) {};
 	void Update()override
 	{
 		cout << "Mobile" << endl;
 	}
 };
 
-class SubscriberDesktop:public Subscriber
+class UserDesktop:public User
 {
 public:
-	SubscriberDesktop() = default;
-	SubscriberDesktop(const string& n) :Subscriber(n) {};
+	UserDesktop() = default;
+	UserDesktop(const string& n) :User(n) {};
 	void Update()override
 	{
 		cout << "Desktop" << endl;
 	}
 };
 
-class SubscriberWeb:public Subscriber
+class UserWeb:public User
 {
 public:
-	SubscriberWeb() = default;
-	SubscriberWeb(const string& n) :Subscriber(n) {};
+	UserWeb() = default;
+	UserWeb(const string& n) :User(n) {};
 	void Update()override
 	{
 		cout << "Mobile" << endl;
 	}
 };
 
-class Publisher
+class Chat
 {
 	int size = 0;
-	Subscriber* s = nullptr;
+	User* s = nullptr;
 public:
-	Publisher() = default;
-	Publisher(SubscriberMobile pt)
+	Chat() = default;
+	Chat(UserMobile *pt)
 	{
 		size++;
-		s = new SubscriberMobile[size];
-		s[0] = pt;
+		s = new UserMobile[size];
+		s = pt;
 	}
 
-	Publisher(SubscriberDesktop pt)
+	Chat(UserDesktop *pt)
 	{
 		size++;
-		s = new SubscriberDesktop[size];
-		s[0] = pt;
+		s = new UserDesktop[size];
+		s = pt;
 	}
 
-	Publisher(SubscriberWeb pt)
+	Chat(UserWeb *pt)
 	{
 		size++;
-		s = new SubscriberWeb[size];
-		s[0] = pt;
+		s = new UserWeb[size];
+		s= pt;
 	}
 
-	void addSubscriber(SubscriberMobile pt)
+	void addUser(UserMobile *pt)
 	{
 		size++;
-		s[size] = pt;
+		s = pt;
 	}
 	
 	void Notify()
@@ -104,8 +104,8 @@ public:
 
 int main()
 {
-	SubscriberMobile user;
-	Publisher publisher;
-	publisher.addSubscriber(user);
+	UserMobile user;
+	Chat publisher;
+	publisher.addUser(&user);
 	publisher.Notify();
 }
