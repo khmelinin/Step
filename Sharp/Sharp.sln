@@ -19,15 +19,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5(hero)not work yet", "5(he
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5(state)", "5(state)\5(state).csproj", "{68B9BAF3-A74B-4A60-A85A-7D5303C5683E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6", "6\6.csproj", "{27408E7D-E04A-4406-A94B-04BB2DF6A03A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6", "6\6.csproj", "{27408E7D-E04A-4406-A94B-04BB2DF6A03A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6(mediator)", "6(mediator)\6(mediator).csproj", "{6E99EE52-E9A1-4E85-BA09-2FCA3A4D3555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6(mediator)", "6(mediator)\6(mediator).csproj", "{6E99EE52-E9A1-4E85-BA09-2FCA3A4D3555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6(hero_gun)", "6(hero_gun)\6(hero_gun).csproj", "{35220372-32A7-480C-B294-55B2B792E720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6(hero_gun)", "6(hero_gun)\6(hero_gun).csproj", "{35220372-32A7-480C-B294-55B2B792E720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6(indexator)", "6(indexator)\6(indexator).csproj", "{97B21BBD-3A41-4B80-877B-BC4920A93B76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6(indexator)", "6(indexator)\6(indexator).csproj", "{97B21BBD-3A41-4B80-877B-BC4920A93B76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6(dictionary)", "6(dictionary)\6(dictionary).csproj", "{B8079210-B4AB-4FF0-8DF0-23D911E47FDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6(dictionary)", "6(dictionary)\6(dictionary).csproj", "{B8079210-B4AB-4FF0-8DF0-23D911E47FDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7(exception)", "7(exception)\7(exception).csproj", "{4CFDE490-05D9-4CD2-BE64-F01FB6A30D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7(my-exception-own-class)", "7(my-exception-own-class)\7(my-exception-own-class).csproj", "{694B592F-D1D9-4E6D-AAD0-578AB52C9364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7(exception(finally))", "7(exception(finally))\7(exception(finally)).csproj", "{D0850D06-AB62-43A5-8A72-00C8B36FC303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7(car)", "7(car)\7(car).csproj", "{EAE04A4A-A4AE-4C3F-8FA4-1545BC1CB3EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +95,22 @@ Global
 		{B8079210-B4AB-4FF0-8DF0-23D911E47FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8079210-B4AB-4FF0-8DF0-23D911E47FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8079210-B4AB-4FF0-8DF0-23D911E47FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CFDE490-05D9-4CD2-BE64-F01FB6A30D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFDE490-05D9-4CD2-BE64-F01FB6A30D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFDE490-05D9-4CD2-BE64-F01FB6A30D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFDE490-05D9-4CD2-BE64-F01FB6A30D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694B592F-D1D9-4E6D-AAD0-578AB52C9364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694B592F-D1D9-4E6D-AAD0-578AB52C9364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694B592F-D1D9-4E6D-AAD0-578AB52C9364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694B592F-D1D9-4E6D-AAD0-578AB52C9364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0850D06-AB62-43A5-8A72-00C8B36FC303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0850D06-AB62-43A5-8A72-00C8B36FC303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0850D06-AB62-43A5-8A72-00C8B36FC303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0850D06-AB62-43A5-8A72-00C8B36FC303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE04A4A-A4AE-4C3F-8FA4-1545BC1CB3EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE04A4A-A4AE-4C3F-8FA4-1545BC1CB3EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE04A4A-A4AE-4C3F-8FA4-1545BC1CB3EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE04A4A-A4AE-4C3F-8FA4-1545BC1CB3EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
