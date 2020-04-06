@@ -39,15 +39,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7(car)", "7(car)\7(car).csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8(static-class)", "8(static-class)\8(static-class).csproj", "{6F83EADB-1C7A-48F4-8679-CC47548D3D6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8(extention_class)", "8(extention_class)\8(extention_class).csproj", "{E3F052EF-E0A7-4CC9-BCC5-5B254791D66F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8(extention_class)", "8(extention_class)\8(extention_class).csproj", "{E3F052EF-E0A7-4CC9-BCC5-5B254791D66F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8(class-in-class)...not completed", "8(class-in-class)\8(class-in-class)...not completed.csproj", "{6CE7B6E2-7F2A-4EBF-ACD6-0C4AEEA6DAA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8(class-in-class)...not completed", "8(class-in-class)\8(class-in-class)...not completed.csproj", "{6CE7B6E2-7F2A-4EBF-ACD6-0C4AEEA6DAA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8(namespaces)", "8(namespaces)\8(namespaces).csproj", "{AA448522-3115-4334-B6D7-BDADE43B09DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8(namespaces)", "8(namespaces)\8(namespaces).csproj", "{AA448522-3115-4334-B6D7-BDADE43B09DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8(dll)", "8(dll)\8(dll).csproj", "{A28C970E-5C9B-4B2B-BEA3-BB2AF39CABA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8(dll)", "8(dll)\8(dll).csproj", "{A28C970E-5C9B-4B2B-BEA3-BB2AF39CABA0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8dll", "8dll\8dll.csproj", "{42216C04-AA43-448D-B3C3-DF130A8E92FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9(operators_overload)", "9(operators_overload)\9(operators_overload).csproj", "{EA271316-A8BC-41E4-8C2A-2955A8C1CBDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9", "9\9.csproj", "{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +151,14 @@ Global
 		{42216C04-AA43-448D-B3C3-DF130A8E92FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42216C04-AA43-448D-B3C3-DF130A8E92FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42216C04-AA43-448D-B3C3-DF130A8E92FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA271316-A8BC-41E4-8C2A-2955A8C1CBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA271316-A8BC-41E4-8C2A-2955A8C1CBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA271316-A8BC-41E4-8C2A-2955A8C1CBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA271316-A8BC-41E4-8C2A-2955A8C1CBDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
