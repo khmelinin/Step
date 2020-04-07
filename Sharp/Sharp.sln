@@ -49,9 +49,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8(dll)", "8(dll)\8(dll).csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8dll", "8dll\8dll.csproj", "{42216C04-AA43-448D-B3C3-DF130A8E92FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9(operators_overload)", "9(operators_overload)\9(operators_overload).csproj", "{EA271316-A8BC-41E4-8C2A-2955A8C1CBDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9(operators_overload)", "9(operators_overload)\9(operators_overload).csproj", "{EA271316-A8BC-41E4-8C2A-2955A8C1CBDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9", "9\9.csproj", "{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9", "9\9.csproj", "{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DZ", "3DZ\3DZ.csproj", "{AC3053B6-A971-451D-A81D-EC86172C9A46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3053B6-A971-451D-A81D-EC86172C9A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3053B6-A971-451D-A81D-EC86172C9A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3053B6-A971-451D-A81D-EC86172C9A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3053B6-A971-451D-A81D-EC86172C9A46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
