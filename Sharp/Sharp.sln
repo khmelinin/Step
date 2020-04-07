@@ -53,7 +53,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9(operators_overload)", "9(
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9", "9\9.csproj", "{55776BCD-8A5A-4CC6-BE39-EA6FEC148126}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DZ", "3DZ\3DZ.csproj", "{AC3053B6-A971-451D-A81D-EC86172C9A46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3DZ", "3DZ\3DZ.csproj", "{AC3053B6-A971-451D-A81D-EC86172C9A46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10", "10\10.csproj", "{DB01F2BE-9EC5-4953-808F-03C1CD67982F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10(interfaces)", "10(interfaces)\10(interfaces).csproj", "{31CBFDF6-337F-480D-9048-159951B6F586}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +169,14 @@ Global
 		{AC3053B6-A971-451D-A81D-EC86172C9A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC3053B6-A971-451D-A81D-EC86172C9A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC3053B6-A971-451D-A81D-EC86172C9A46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB01F2BE-9EC5-4953-808F-03C1CD67982F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB01F2BE-9EC5-4953-808F-03C1CD67982F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB01F2BE-9EC5-4953-808F-03C1CD67982F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB01F2BE-9EC5-4953-808F-03C1CD67982F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31CBFDF6-337F-480D-9048-159951B6F586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31CBFDF6-337F-480D-9048-159951B6F586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31CBFDF6-337F-480D-9048-159951B6F586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31CBFDF6-337F-480D-9048-159951B6F586}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
