@@ -137,25 +137,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "18(group_partition)", "18(g
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "18(Auto)", "18(Auto)\18(Auto).csproj", "{B5348C2C-ABB9-49DA-805B-16BB8B90A8B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(file_system)", "19(file_system)\19(file_system).csproj", "{7F90E476-8ADC-47E2-8E13-EE49B73A9DAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(file_system)", "19(file_system)\19(file_system).csproj", "{7F90E476-8ADC-47E2-8E13-EE49B73A9DAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(file_system1)", "19(file_system1)\19(file_system1).csproj", "{8F66C068-62A4-4A4F-86D5-B291FC43E9AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(file_system1)", "19(file_system1)\19(file_system1).csproj", "{8F66C068-62A4-4A4F-86D5-B291FC43E9AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(directory_creation)", "19(directory_creation)\19(directory_creation).csproj", "{64120BDB-B695-49C1-89C0-CAF1D108DDFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(directory_creation)", "19(directory_creation)\19(directory_creation).csproj", "{64120BDB-B695-49C1-89C0-CAF1D108DDFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(file_byte_write)", "19(directory)\19(file_byte_write).csproj", "{A93A44D7-FF7D-4F41-8720-862ACB1227AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(file_byte_write)", "19(directory)\19(file_byte_write).csproj", "{A93A44D7-FF7D-4F41-8720-862ACB1227AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(byte_write)", "19(byte_write)\19(byte_write).csproj", "{EC5E3FC6-DB4E-456A-A2B4-1EEA6F776A5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(byte_write)", "19(byte_write)\19(byte_write).csproj", "{EC5E3FC6-DB4E-456A-A2B4-1EEA6F776A5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(stream_writer)", "19(stream_writer)\19(stream_writer).csproj", "{FE31AD0E-81E4-4BBB-B6FE-C2AEE9DD6D22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(stream_writer)", "19(stream_writer)\19(stream_writer).csproj", "{FE31AD0E-81E4-4BBB-B6FE-C2AEE9DD6D22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(file_collection)", "19(file_collection)\19(file_collection).csproj", "{0A81F0D7-106D-4575-A65E-74A09A44EF5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(file_collection)", "19(file_collection)\19(file_collection).csproj", "{0A81F0D7-106D-4575-A65E-74A09A44EF5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(string_writer)", "19(string_writer)\19(string_writer).csproj", "{5544930B-C7FD-4213-99E4-C3EC3E7AED4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(string_writer)", "19(string_writer)\19(string_writer).csproj", "{5544930B-C7FD-4213-99E4-C3EC3E7AED4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(binary_writer)", "19(binary_writer)\19(binary_writer).csproj", "{1CC2DE58-7E1B-4EAC-956F-BD16AE1DD9F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(binary_writer)", "19(binary_writer)\19(binary_writer).csproj", "{1CC2DE58-7E1B-4EAC-956F-BD16AE1DD9F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19(buffer)", "19(buffer)\19(buffer).csproj", "{CEE2E97C-5002-44F3-BBDA-BE959A88A50C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(buffer)", "19(buffer)\19(buffer).csproj", "{CEE2E97C-5002-44F3-BBDA-BE959A88A50C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20(regular_expressions)", "20(regular_expressions)\20(regular_expressions).csproj", "{40D227D2-A75B-4196-87DD-168EAF9B2DFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20(replace)", "20(replace)\20(replace).csproj", "{02D56CA0-2D03-4210-BD91-1C4FBC986BBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -471,6 +475,14 @@ Global
 		{CEE2E97C-5002-44F3-BBDA-BE959A88A50C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEE2E97C-5002-44F3-BBDA-BE959A88A50C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEE2E97C-5002-44F3-BBDA-BE959A88A50C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40D227D2-A75B-4196-87DD-168EAF9B2DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D227D2-A75B-4196-87DD-168EAF9B2DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D227D2-A75B-4196-87DD-168EAF9B2DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D227D2-A75B-4196-87DD-168EAF9B2DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D56CA0-2D03-4210-BD91-1C4FBC986BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D56CA0-2D03-4210-BD91-1C4FBC986BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D56CA0-2D03-4210-BD91-1C4FBC986BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D56CA0-2D03-4210-BD91-1C4FBC986BBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
