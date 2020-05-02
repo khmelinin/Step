@@ -157,13 +157,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(binary_writer)", "19(bin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19(buffer)", "19(buffer)\19(buffer).csproj", "{CEE2E97C-5002-44F3-BBDA-BE959A88A50C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20(regular_expressions)", "20(regular_expressions)\20(regular_expressions).csproj", "{40D227D2-A75B-4196-87DD-168EAF9B2DFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "20(regular_expressions)", "20(regular_expressions)\20(regular_expressions).csproj", "{40D227D2-A75B-4196-87DD-168EAF9B2DFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20(regular_expressions1)", "20(regular_expressions1)\20(regular_expressions1).csproj", "{34BBB600-740B-4F76-8CFB-784A46B3F4CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "20(regular_expressions1)", "20(regular_expressions1)\20(regular_expressions1).csproj", "{34BBB600-740B-4F76-8CFB-784A46B3F4CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20(garbage_collection)", "20(garbage_collection)\20(garbage_collection).csproj", "{4CAE722B-772A-4A0E-836E-6601F488A5A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "20(garbage_collection)", "20(garbage_collection)\20(garbage_collection).csproj", "{4CAE722B-772A-4A0E-836E-6601F488A5A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20(garbage_collection1)", "20(garbage_collection1)\20(garbage_collection1).csproj", "{7793ABA5-72C7-4761-8F89-70C72A92E37E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "20(garbage_collection1)", "20(garbage_collection1)\20(garbage_collection1).csproj", "{7793ABA5-72C7-4761-8F89-70C72A92E37E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ(inheritance)", "DZ(inheritance)\DZ(inheritance).csproj", "{1FC3F66F-245E-491D-B468-F44138476CD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -495,6 +497,10 @@ Global
 		{7793ABA5-72C7-4761-8F89-70C72A92E37E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7793ABA5-72C7-4761-8F89-70C72A92E37E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7793ABA5-72C7-4761-8F89-70C72A92E37E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FC3F66F-245E-491D-B468-F44138476CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC3F66F-245E-491D-B468-F44138476CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC3F66F-245E-491D-B468-F44138476CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC3F66F-245E-491D-B468-F44138476CD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
