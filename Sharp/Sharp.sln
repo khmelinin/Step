@@ -179,6 +179,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21(XMl_writer)", "21(XMl_wr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21(xpath)", "21(xpath)\21(xpath).csproj", "{49465DEE-8B4C-46D2-93EE-0E949FEC3711}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21(xpath1)", "21(xpath1)\21(xpath1).csproj", "{9C699663-E3B7-40A7-AECE-50A4D4A1E026}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -537,6 +539,10 @@ Global
 		{49465DEE-8B4C-46D2-93EE-0E949FEC3711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49465DEE-8B4C-46D2-93EE-0E949FEC3711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49465DEE-8B4C-46D2-93EE-0E949FEC3711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C699663-E3B7-40A7-AECE-50A4D4A1E026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C699663-E3B7-40A7-AECE-50A4D4A1E026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C699663-E3B7-40A7-AECE-50A4D4A1E026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C699663-E3B7-40A7-AECE-50A4D4A1E026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
