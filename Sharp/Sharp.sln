@@ -171,15 +171,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DZ(delegates(tank))", "DZ(d
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DZ(tank_lib)", "DZ(tank_lib)\DZ(tank_lib).csproj", "{2F594852-084C-4790-B63E-A107E9157621}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21(XML)", "21(XML)\21(XML).csproj", "{FE3C18C1-9FE4-42DD-AD42-44FA617A4126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "21(XML)", "21(XML)\21(XML).csproj", "{FE3C18C1-9FE4-42DD-AD42-44FA617A4126}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21(XML1)", "21(XML1)\21(XML1).csproj", "{882AAB30-808F-410A-B389-0290A0FC9359}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "21(XML1)", "21(XML1)\21(XML1).csproj", "{882AAB30-808F-410A-B389-0290A0FC9359}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21(XMl_writer)", "21(XMl_writer)\21(XMl_writer).csproj", "{2BD8D49B-F837-4150-967B-FD174A39A233}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "21(XMl_writer)", "21(XMl_writer)\21(XMl_writer).csproj", "{2BD8D49B-F837-4150-967B-FD174A39A233}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21(xpath)", "21(xpath)\21(xpath).csproj", "{49465DEE-8B4C-46D2-93EE-0E949FEC3711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "21(xpath)", "21(xpath)\21(xpath).csproj", "{49465DEE-8B4C-46D2-93EE-0E949FEC3711}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21(xpath1)", "21(xpath1)\21(xpath1).csproj", "{9C699663-E3B7-40A7-AECE-50A4D4A1E026}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "21(xpath1)", "21(xpath1)\21(xpath1).csproj", "{9C699663-E3B7-40A7-AECE-50A4D4A1E026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22(xml)", "22(xml)\22(xml).csproj", "{072548B2-DD1D-4056-B230-8979C3E2FA71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22(seriealization)", "22(seriealization)\22(seriealization).csproj", "{CD64DDF7-206B-437F-B274-27E55E758C7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22(serial_work)", "22(serial_work)\22(serial_work).csproj", "{47689906-78DD-46E7-880D-F191FD2E8939}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22(xml_serialization)", "22(xml_serialization)\22(xml_serialization).csproj", "{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -543,6 +551,22 @@ Global
 		{9C699663-E3B7-40A7-AECE-50A4D4A1E026}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C699663-E3B7-40A7-AECE-50A4D4A1E026}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C699663-E3B7-40A7-AECE-50A4D4A1E026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072548B2-DD1D-4056-B230-8979C3E2FA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072548B2-DD1D-4056-B230-8979C3E2FA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072548B2-DD1D-4056-B230-8979C3E2FA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072548B2-DD1D-4056-B230-8979C3E2FA71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD64DDF7-206B-437F-B274-27E55E758C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD64DDF7-206B-437F-B274-27E55E758C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD64DDF7-206B-437F-B274-27E55E758C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD64DDF7-206B-437F-B274-27E55E758C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47689906-78DD-46E7-880D-F191FD2E8939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47689906-78DD-46E7-880D-F191FD2E8939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47689906-78DD-46E7-880D-F191FD2E8939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47689906-78DD-46E7-880D-F191FD2E8939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
