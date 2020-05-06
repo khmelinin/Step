@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_23_1_</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="23%281dll%29">
+      <HintPath>..\23(1dll)\bin\Debug\netstandard2.0\23(1dll).dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

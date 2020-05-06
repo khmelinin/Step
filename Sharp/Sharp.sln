@@ -181,13 +181,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "21(xpath)", "21(xpath)\21(x
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "21(xpath1)", "21(xpath1)\21(xpath1).csproj", "{9C699663-E3B7-40A7-AECE-50A4D4A1E026}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22(xml)", "22(xml)\22(xml).csproj", "{072548B2-DD1D-4056-B230-8979C3E2FA71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "22(xml)", "22(xml)\22(xml).csproj", "{072548B2-DD1D-4056-B230-8979C3E2FA71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22(seriealization)", "22(seriealization)\22(seriealization).csproj", "{CD64DDF7-206B-437F-B274-27E55E758C7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "22(seriealization)", "22(seriealization)\22(seriealization).csproj", "{CD64DDF7-206B-437F-B274-27E55E758C7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22(serial_work)", "22(serial_work)\22(serial_work).csproj", "{47689906-78DD-46E7-880D-F191FD2E8939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "22(serial_work)", "22(serial_work)\22(serial_work).csproj", "{47689906-78DD-46E7-880D-F191FD2E8939}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22(xml_serialization)", "22(xml_serialization)\22(xml_serialization).csproj", "{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "22(xml_serialization)", "22(xml_serialization)\22(xml_serialization).csproj", "{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23(Reflection)", "23\23(Reflection).csproj", "{CB5DCDBA-45F5-4D5E-A9A6-4B6CC007DFCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23(1)", "23(1)\23(1).csproj", "{BF0CE4D8-B58E-4CDA-B52A-4B22CF5669E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23(1dll)", "23(1dll)\23(1dll).csproj", "{4F270598-6969-4F7F-B028-5A0B0848157E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23(1.1)", "23(1.1)\23(1.1).csproj", "{3DC7E551-1C19-475B-8BD8-4926DC59DB97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -567,6 +575,22 @@ Global
 		{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D67A6AF0-D1CC-44B7-BC5F-CD3F5A84AE95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB5DCDBA-45F5-4D5E-A9A6-4B6CC007DFCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB5DCDBA-45F5-4D5E-A9A6-4B6CC007DFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB5DCDBA-45F5-4D5E-A9A6-4B6CC007DFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB5DCDBA-45F5-4D5E-A9A6-4B6CC007DFCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0CE4D8-B58E-4CDA-B52A-4B22CF5669E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0CE4D8-B58E-4CDA-B52A-4B22CF5669E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0CE4D8-B58E-4CDA-B52A-4B22CF5669E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0CE4D8-B58E-4CDA-B52A-4B22CF5669E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F270598-6969-4F7F-B028-5A0B0848157E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F270598-6969-4F7F-B028-5A0B0848157E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F270598-6969-4F7F-B028-5A0B0848157E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F270598-6969-4F7F-B028-5A0B0848157E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC7E551-1C19-475B-8BD8-4926DC59DB97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC7E551-1C19-475B-8BD8-4926DC59DB97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC7E551-1C19-475B-8BD8-4926DC59DB97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC7E551-1C19-475B-8BD8-4926DC59DB97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
