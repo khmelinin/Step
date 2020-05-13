@@ -101,10 +101,10 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMEssage, WPARAM wParam, LPARAM lPar
 		//MessageBox(hWnd, L"Hello", L"OK", MB_ICONINFORMATION);
 		hButton = CreateWindow(
 			L"BUTTON",
-			L"Game",
+			L"AAO",
 			WS_TABSTOP | WS_VISIBLE | WS_CHILD,
 			300, 300,
-			100, 100,
+			10, 10,
 			hWnd,
 			reinterpret_cast<HMENU>(1084), nullptr, nullptr,
 			);
@@ -125,7 +125,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMEssage, WPARAM wParam, LPARAM lPar
 		{
 		case 1084:
 			//MessageBox(hWnd, L"OK?", L"CLICK", MB_ICONINFORMATION);
-			SetTimer(hWnd, 0, 700, NULL);
+			SetTimer(hWnd, 0, 800, NULL);
 			score++;
 			break;
 		case 1085:
@@ -143,7 +143,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMEssage, WPARAM wParam, LPARAM lPar
 	{
 		x = rand() % 800;
 		y = rand() % 600;
-		MoveWindow(hButton, x, y, 100, 100, true);
+		MoveWindow(hButton, x, y, 30, 30, true);
 		break;
 	}
 	case WM_SIZE:
