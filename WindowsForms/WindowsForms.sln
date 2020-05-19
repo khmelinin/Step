@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5(Control elements)", "5(Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5(excersise)", "5(excersise)\5(excersise).csproj", "{AC9D3567-EC16-400A-8CF3-FBE2BAC8F928}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6", "6\6.csproj", "{77711812-BDF0-4852-9116-7F4992C97BA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,18 @@ Global
 		{AC9D3567-EC16-400A-8CF3-FBE2BAC8F928}.Release|x64.Build.0 = Release|Any CPU
 		{AC9D3567-EC16-400A-8CF3-FBE2BAC8F928}.Release|x86.ActiveCfg = Release|Any CPU
 		{AC9D3567-EC16-400A-8CF3-FBE2BAC8F928}.Release|x86.Build.0 = Release|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Debug|x64.Build.0 = Debug|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Debug|x86.Build.0 = Debug|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Release|x64.ActiveCfg = Release|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Release|x64.Build.0 = Release|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Release|x86.ActiveCfg = Release|Any CPU
+		{77711812-BDF0-4852-9116-7F4992C97BA8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
