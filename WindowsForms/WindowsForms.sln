@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8(CheckedListBox)", "8(Chec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8(ComboBox)", "8(ComboBox)\8(ComboBox).csproj", "{5C3E1FB7-DF49-4A81-8AC9-C6D48E353BE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9(Proggres bar)", "9(Proggres bar)\9(Proggres bar).csproj", "{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -209,6 +211,18 @@ Global
 		{5C3E1FB7-DF49-4A81-8AC9-C6D48E353BE1}.Release|x64.Build.0 = Release|Any CPU
 		{5C3E1FB7-DF49-4A81-8AC9-C6D48E353BE1}.Release|x86.ActiveCfg = Release|Any CPU
 		{5C3E1FB7-DF49-4A81-8AC9-C6D48E353BE1}.Release|x86.Build.0 = Release|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Debug|x64.Build.0 = Debug|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Debug|x86.Build.0 = Debug|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Release|x64.ActiveCfg = Release|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Release|x64.Build.0 = Release|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Release|x86.ActiveCfg = Release|Any CPU
+		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
