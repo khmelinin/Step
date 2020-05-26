@@ -72,7 +72,7 @@ namespace _9_Proggres_bar_
             for (int i = progressBar2.Minimum; i <= progressBar2.Maximum; i += progressBar2.Step)
             {
                 textBox2.Text += tmp[i];
-                textBox2.Text += "\n"; ////////////////////////////////////////////////////////////////////// <- все равно не ставит Enter
+                textBox2.Text += Environment.NewLine;
                 progressBar2.PerformStep();
                 this.Update();
                 Thread.Sleep(100);

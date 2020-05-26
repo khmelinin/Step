@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8(ComboBox)", "8(ComboBox)\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9(Proggres bar)", "9(Proggres bar)\9(Proggres bar).csproj", "{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10(tool_tip)", "10(tool_tip)\10(tool_tip).csproj", "{0BA677EA-0BA4-410F-840D-666F4516DCBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,6 +225,18 @@ Global
 		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Release|x64.Build.0 = Release|Any CPU
 		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Release|x86.ActiveCfg = Release|Any CPU
 		{6CFA457A-8B90-47C0-AB7C-8D7D02BE7184}.Release|x86.Build.0 = Release|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Debug|x64.Build.0 = Debug|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Debug|x86.Build.0 = Debug|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Release|x64.ActiveCfg = Release|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Release|x64.Build.0 = Release|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Release|x86.ActiveCfg = Release|Any CPU
+		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
