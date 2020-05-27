@@ -34,6 +34,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.dayOfWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.trackBarRED = new System.Windows.Forms.TrackBar();
@@ -45,8 +47,6 @@
             this.labelRGB = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.dayOfWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trackBarImageX = new System.Windows.Forms.TrackBar();
             this.trackBarImageY = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
@@ -108,6 +108,23 @@
             this.toolStripStatusLabel2.AutoSize = false;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(40, 17);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dayOfWeekToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = global::_10_tool_tip_.Properties.Resources.pyramids;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 20);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // dayOfWeekToolStripMenuItem
+            // 
+            this.dayOfWeekToolStripMenuItem.Name = "dayOfWeekToolStripMenuItem";
+            this.dayOfWeekToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.dayOfWeekToolStripMenuItem.Text = "DayOfWeek";
             // 
             // toolStripStatusLabel1
             // 
@@ -191,23 +208,6 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dayOfWeekToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = global::_10_tool_tip_.Properties.Resources.pyramids;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 20);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // dayOfWeekToolStripMenuItem
-            // 
-            this.dayOfWeekToolStripMenuItem.Name = "dayOfWeekToolStripMenuItem";
-            this.dayOfWeekToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.dayOfWeekToolStripMenuItem.Text = "DayOfWeek";
-            // 
             // trackBarImageX
             // 
             this.trackBarImageX.Location = new System.Drawing.Point(40, 312);
@@ -236,6 +236,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(296, 12);
             this.panel1.Name = "panel1";

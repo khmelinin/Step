@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9(Proggres bar)", "9(Proggr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10(tool_tip)", "10(tool_tip)\10(tool_tip).csproj", "{0BA677EA-0BA4-410F-840D-666F4516DCBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11(modal_windows)", "11(modal_windows)\11(modal_windows).csproj", "{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -237,6 +239,18 @@ Global
 		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Release|x64.Build.0 = Release|Any CPU
 		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Release|x86.ActiveCfg = Release|Any CPU
 		{0BA677EA-0BA4-410F-840D-666F4516DCBA}.Release|x86.Build.0 = Release|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Debug|x64.Build.0 = Debug|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Debug|x86.Build.0 = Debug|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Release|x64.ActiveCfg = Release|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Release|x64.Build.0 = Release|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Release|x86.ActiveCfg = Release|Any CPU
+		{EAFB7681-7F67-4CDC-9F24-FBBE4CF2D117}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
