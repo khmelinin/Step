@@ -32,6 +32,7 @@ namespace _13_menu_
 
             красныйToolStripMenuItem.Click += redToolStripMenuItem_Click;
             цветШрифтаToolStripMenuItem1.Click += textColorToolStripMenuItem_Click;
+            цветСзадиШрифтаToolStripMenuItem.Click += textBackgroundColorToolStripMenuItem_Click;
 
             копироватьToolStripMenuItem.Click += copyToolStripMenuItem_Click;
             отменитьДействиеToolStripMenuItem.Click += undoToolStripMenuItem_Click;
@@ -218,7 +219,7 @@ namespace _13_menu_
         {
             _cdb = new ColorDialog();
             _cdb.ShowDialog();
-            textBox1.BackColor = _cdf.Color;
+            textBox1.BackColor = _cdb.Color;
         }
 
         private void TextSizetoolStripComboBoxEng_SelectedIndexChanged(object sender, EventArgs e)
@@ -243,6 +244,16 @@ namespace _13_menu_
             {
                 MessageBox.Show(ee.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonTextSizeUp_Click(object sender, EventArgs e)
+        {
+            textBox1.Font = new Font("Arial", textBox1.Font.Size+2, FontStyle.Regular);
+        }
+
+        private void buttonTextSizeDown_Click(object sender, EventArgs e)
+        {
+            textBox1.Font = new Font("Arial", textBox1.Font.Size - 2, FontStyle.Regular);
         }
     }
 }

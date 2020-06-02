@@ -63,9 +63,39 @@ namespace _13_menu_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _134_1345099_clip_art_letter_t_clip_art_letters_t {
+            get {
+                object obj = ResourceManager.GetObject("134-1345099_clip-art-letter-t-clip-art-letters-t", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fire1 {
             get {
                 object obj = ResourceManager.GetObject("fire1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kissclipart_yellow_brush_stroke_png_clipart_paint_brushes_cb54d3a5aaadf651 {
+            get {
+                object obj = ResourceManager.GetObject("kissclipart-yellow-brush-stroke-png-clipart-paint-brushes-cb54d3a5aaadf651", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scale_1200 {
+            get {
+                object obj = ResourceManager.GetObject("scale_1200", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

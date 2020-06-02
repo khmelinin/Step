@@ -83,5 +83,14 @@
   <ItemGroup>
     <None Include="Resources\fire1.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\134-1345099_clip-art-letter-t-clip-art-letters-t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kissclipart-yellow-brush-stroke-png-clipart-paint-brushes-cb54d3a5aaadf651.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scale_1200.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

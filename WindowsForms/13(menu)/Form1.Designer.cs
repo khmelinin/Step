@@ -70,6 +70,16 @@
             this.TextSizetoolStripComboBoxRu = new System.Windows.Forms.ToolStripComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonOpen = new System.Windows.Forms.Button();
+            this.buttonNew = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonCopy = new System.Windows.Forms.Button();
+            this.buttonCut = new System.Windows.Forms.Button();
+            this.buttonUndo = new System.Windows.Forms.Button();
+            this.buttonTextSizeUp = new System.Windows.Forms.Button();
+            this.buttonBGColor = new System.Windows.Forms.Button();
+            this.buttonTextColor = new System.Windows.Forms.Button();
+            this.buttonTextSizeDown = new System.Windows.Forms.Button();
             this.menuStripEng.SuspendLayout();
             this.menuStripRu.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +92,7 @@
             this.optionsToolStripMenuItem});
             this.menuStripEng.Location = new System.Drawing.Point(0, 24);
             this.menuStripEng.Name = "menuStripEng";
-            this.menuStripEng.Size = new System.Drawing.Size(436, 24);
+            this.menuStripEng.Size = new System.Drawing.Size(548, 24);
             this.menuStripEng.TabIndex = 0;
             this.menuStripEng.Text = "menuStrip1";
             // 
@@ -254,7 +264,7 @@
             this.настройкиToolStripMenuItem});
             this.menuStripRu.Location = new System.Drawing.Point(0, 0);
             this.menuStripRu.Name = "menuStripRu";
-            this.menuStripRu.Size = new System.Drawing.Size(436, 24);
+            this.menuStripRu.Size = new System.Drawing.Size(548, 24);
             this.menuStripRu.TabIndex = 1;
             this.menuStripRu.Text = "menuStrip2";
             // 
@@ -407,7 +417,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(216, 0);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(468, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 24);
             this.button1.TabIndex = 2;
@@ -423,14 +434,140 @@
             this.textBox1.Location = new System.Drawing.Point(12, 51);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(412, 271);
+            this.textBox1.Size = new System.Drawing.Size(524, 271);
             this.textBox1.TabIndex = 3;
+            // 
+            // buttonOpen
+            // 
+            this.buttonOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonOpen.Location = new System.Drawing.Point(199, 0);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(33, 24);
+            this.buttonOpen.TabIndex = 4;
+            this.buttonOpen.Text = "Op";
+            this.buttonOpen.UseVisualStyleBackColor = false;
+            this.buttonOpen.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // buttonNew
+            // 
+            this.buttonNew.BackColor = System.Drawing.Color.White;
+            this.buttonNew.Location = new System.Drawing.Point(238, 0);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(25, 24);
+            this.buttonNew.TabIndex = 5;
+            this.buttonNew.Text = "N";
+            this.buttonNew.UseVisualStyleBackColor = false;
+            this.buttonNew.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonSave.Location = new System.Drawing.Point(269, 0);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(25, 24);
+            this.buttonSave.TabIndex = 6;
+            this.buttonSave.Text = "S";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // buttonCopy
+            // 
+            this.buttonCopy.BackColor = System.Drawing.Color.Silver;
+            this.buttonCopy.Location = new System.Drawing.Point(199, 24);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(33, 24);
+            this.buttonCopy.TabIndex = 7;
+            this.buttonCopy.Text = "Cp";
+            this.buttonCopy.UseVisualStyleBackColor = false;
+            this.buttonCopy.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // buttonCut
+            // 
+            this.buttonCut.BackColor = System.Drawing.Color.Gray;
+            this.buttonCut.Location = new System.Drawing.Point(238, 24);
+            this.buttonCut.Name = "buttonCut";
+            this.buttonCut.Size = new System.Drawing.Size(25, 24);
+            this.buttonCut.TabIndex = 8;
+            this.buttonCut.Text = "Ct";
+            this.buttonCut.UseVisualStyleBackColor = false;
+            this.buttonCut.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+            // 
+            // buttonUndo
+            // 
+            this.buttonUndo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonUndo.Location = new System.Drawing.Point(269, 24);
+            this.buttonUndo.Name = "buttonUndo";
+            this.buttonUndo.Size = new System.Drawing.Size(25, 24);
+            this.buttonUndo.TabIndex = 9;
+            this.buttonUndo.Text = "U";
+            this.buttonUndo.UseVisualStyleBackColor = false;
+            this.buttonUndo.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            // 
+            // buttonTextSizeUp
+            // 
+            this.buttonTextSizeUp.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTextSizeUp.BackgroundImage = global::_13_menu_.Properties.Resources._134_1345099_clip_art_letter_t_clip_art_letters_t;
+            this.buttonTextSizeUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonTextSizeUp.Location = new System.Drawing.Point(324, 0);
+            this.buttonTextSizeUp.Name = "buttonTextSizeUp";
+            this.buttonTextSizeUp.Size = new System.Drawing.Size(25, 24);
+            this.buttonTextSizeUp.TabIndex = 12;
+            this.buttonTextSizeUp.Text = "/\\";
+            this.buttonTextSizeUp.UseVisualStyleBackColor = false;
+            this.buttonTextSizeUp.Click += new System.EventHandler(this.buttonTextSizeUp_Click);
+            // 
+            // buttonBGColor
+            // 
+            this.buttonBGColor.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBGColor.BackgroundImage = global::_13_menu_.Properties.Resources.kissclipart_yellow_brush_stroke_png_clipart_paint_brushes_cb54d3a5aaadf651;
+            this.buttonBGColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonBGColor.Location = new System.Drawing.Point(386, 12);
+            this.buttonBGColor.Name = "buttonBGColor";
+            this.buttonBGColor.Size = new System.Drawing.Size(25, 24);
+            this.buttonBGColor.TabIndex = 11;
+            this.buttonBGColor.UseVisualStyleBackColor = false;
+            this.buttonBGColor.Click += new System.EventHandler(this.textBackgroundColorToolStripMenuItem_Click);
+            // 
+            // buttonTextColor
+            // 
+            this.buttonTextColor.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTextColor.BackgroundImage = global::_13_menu_.Properties.Resources.scale_1200;
+            this.buttonTextColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonTextColor.Location = new System.Drawing.Point(355, 12);
+            this.buttonTextColor.Name = "buttonTextColor";
+            this.buttonTextColor.Size = new System.Drawing.Size(25, 24);
+            this.buttonTextColor.TabIndex = 10;
+            this.buttonTextColor.UseVisualStyleBackColor = false;
+            this.buttonTextColor.Click += new System.EventHandler(this.textColorToolStripMenuItem_Click);
+            // 
+            // buttonTextSizeDown
+            // 
+            this.buttonTextSizeDown.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTextSizeDown.BackgroundImage = global::_13_menu_.Properties.Resources._134_1345099_clip_art_letter_t_clip_art_letters_t;
+            this.buttonTextSizeDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonTextSizeDown.Location = new System.Drawing.Point(324, 24);
+            this.buttonTextSizeDown.Name = "buttonTextSizeDown";
+            this.buttonTextSizeDown.Size = new System.Drawing.Size(25, 24);
+            this.buttonTextSizeDown.TabIndex = 13;
+            this.buttonTextSizeDown.Text = "\\/";
+            this.buttonTextSizeDown.UseVisualStyleBackColor = false;
+            this.buttonTextSizeDown.Click += new System.EventHandler(this.buttonTextSizeDown_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 334);
+            this.ClientSize = new System.Drawing.Size(548, 334);
+            this.Controls.Add(this.buttonTextSizeDown);
+            this.Controls.Add(this.buttonTextSizeUp);
+            this.Controls.Add(this.buttonBGColor);
+            this.Controls.Add(this.buttonTextColor);
+            this.Controls.Add(this.buttonUndo);
+            this.Controls.Add(this.buttonCut);
+            this.Controls.Add(this.buttonCopy);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.buttonNew);
+            this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStripEng);
@@ -491,6 +628,16 @@
         private System.Windows.Forms.ToolStripComboBox TextSizetoolStripComboBoxRu;
         private System.Windows.Forms.ToolStripMenuItem textSizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox TextSizetoolStripComboBoxEng;
+        private System.Windows.Forms.Button buttonOpen;
+        private System.Windows.Forms.Button buttonNew;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonCopy;
+        private System.Windows.Forms.Button buttonCut;
+        private System.Windows.Forms.Button buttonUndo;
+        private System.Windows.Forms.Button buttonTextColor;
+        private System.Windows.Forms.Button buttonBGColor;
+        private System.Windows.Forms.Button buttonTextSizeUp;
+        private System.Windows.Forms.Button buttonTextSizeDown;
     }
 }
 
