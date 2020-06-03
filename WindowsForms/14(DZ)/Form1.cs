@@ -15,7 +15,7 @@ namespace _14_DZ_
         public Form1()
         {
             InitializeComponent();
-            listBox1.Items.Add();
+            //listBox1.Items.Add();
         }
     }
 }
