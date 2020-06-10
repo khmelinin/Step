@@ -28,7 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Ankete = new System.Windows.Forms.GroupBox();
+            this.checkBoxDay = new System.Windows.Forms.CheckBox();
+            this.checkBoxMonth = new System.Windows.Forms.CheckBox();
+            this.checkBoxYear = new System.Windows.Forms.CheckBox();
+            this.textBoxDateResult = new System.Windows.Forms.TextBox();
+            this.DateReult = new System.Windows.Forms.Label();
+            this.maskedTextBoxDate2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxDate1 = new System.Windows.Forms.MaskedTextBox();
+            this.DateQuestion1 = new System.Windows.Forms.Label();
+            this.DateQuestion = new System.Windows.Forms.Label();
+            this.maskedTextBoxWeekDay = new System.Windows.Forms.MaskedTextBox();
+            this.FindWeekDayLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ShowResultsButton = new System.Windows.Forms.Button();
@@ -49,17 +61,8 @@
             this.Fname = new System.Windows.Forms.Label();
             this.Name1 = new System.Windows.Forms.Label();
             this.Sname = new System.Windows.Forms.Label();
-            this.FindWeekDayLabel = new System.Windows.Forms.Label();
-            this.maskedTextBoxWeekDay = new System.Windows.Forms.MaskedTextBox();
-            this.DateQuestion = new System.Windows.Forms.Label();
-            this.DateQuestion1 = new System.Windows.Forms.Label();
-            this.maskedTextBoxDate1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxDate2 = new System.Windows.Forms.MaskedTextBox();
-            this.DateReult = new System.Windows.Forms.Label();
-            this.textBoxDateResult = new System.Windows.Forms.TextBox();
-            this.checkBoxYear = new System.Windows.Forms.CheckBox();
-            this.checkBoxMonth = new System.Windows.Forms.CheckBox();
-            this.checkBoxDay = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Ankete.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +105,107 @@
             this.Ankete.TabIndex = 0;
             this.Ankete.TabStop = false;
             this.Ankete.Text = "n";
+            // 
+            // checkBoxDay
+            // 
+            this.checkBoxDay.AutoSize = true;
+            this.checkBoxDay.Location = new System.Drawing.Point(320, 146);
+            this.checkBoxDay.Name = "checkBoxDay";
+            this.checkBoxDay.Size = new System.Drawing.Size(45, 17);
+            this.checkBoxDay.TabIndex = 30;
+            this.checkBoxDay.Text = "Day";
+            this.checkBoxDay.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMonth
+            // 
+            this.checkBoxMonth.AutoSize = true;
+            this.checkBoxMonth.Location = new System.Drawing.Point(266, 146);
+            this.checkBoxMonth.Name = "checkBoxMonth";
+            this.checkBoxMonth.Size = new System.Drawing.Size(56, 17);
+            this.checkBoxMonth.TabIndex = 29;
+            this.checkBoxMonth.Text = "Month";
+            this.checkBoxMonth.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxYear
+            // 
+            this.checkBoxYear.AutoSize = true;
+            this.checkBoxYear.Location = new System.Drawing.Point(221, 146);
+            this.checkBoxYear.Name = "checkBoxYear";
+            this.checkBoxYear.Size = new System.Drawing.Size(48, 17);
+            this.checkBoxYear.TabIndex = 28;
+            this.checkBoxYear.Text = "Year";
+            this.checkBoxYear.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDateResult
+            // 
+            this.textBoxDateResult.Location = new System.Drawing.Point(224, 182);
+            this.textBoxDateResult.Name = "textBoxDateResult";
+            this.textBoxDateResult.Size = new System.Drawing.Size(152, 20);
+            this.textBoxDateResult.TabIndex = 27;
+            this.textBoxDateResult.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.textBoxDateResult_PreviewKeyDown);
+            // 
+            // DateReult
+            // 
+            this.DateReult.AutoSize = true;
+            this.DateReult.Location = new System.Drawing.Point(221, 166);
+            this.DateReult.Name = "DateReult";
+            this.DateReult.Size = new System.Drawing.Size(166, 13);
+            this.DateReult.TabIndex = 26;
+            this.DateReult.Text = "Result Date (press F to see result)";
+            // 
+            // maskedTextBoxDate2
+            // 
+            this.maskedTextBoxDate2.Location = new System.Drawing.Point(207, 120);
+            this.maskedTextBoxDate2.Mask = "00/00/0000";
+            this.maskedTextBoxDate2.Name = "maskedTextBoxDate2";
+            this.maskedTextBoxDate2.Size = new System.Drawing.Size(136, 20);
+            this.maskedTextBoxDate2.TabIndex = 25;
+            this.maskedTextBoxDate2.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBoxDate1
+            // 
+            this.maskedTextBoxDate1.Location = new System.Drawing.Point(207, 81);
+            this.maskedTextBoxDate1.Mask = "00/00/0000";
+            this.maskedTextBoxDate1.Name = "maskedTextBoxDate1";
+            this.maskedTextBoxDate1.Size = new System.Drawing.Size(136, 20);
+            this.maskedTextBoxDate1.TabIndex = 24;
+            this.maskedTextBoxDate1.ValidatingType = typeof(System.DateTime);
+            // 
+            // DateQuestion1
+            // 
+            this.DateQuestion1.AutoSize = true;
+            this.DateQuestion1.Location = new System.Drawing.Point(204, 104);
+            this.DateQuestion1.Name = "DateQuestion1";
+            this.DateQuestion1.Size = new System.Drawing.Size(51, 13);
+            this.DateQuestion1.TabIndex = 23;
+            this.DateQuestion1.Text = "2nd Date";
+            // 
+            // DateQuestion
+            // 
+            this.DateQuestion.AutoSize = true;
+            this.DateQuestion.Location = new System.Drawing.Point(204, 65);
+            this.DateQuestion.Name = "DateQuestion";
+            this.DateQuestion.Size = new System.Drawing.Size(47, 13);
+            this.DateQuestion.TabIndex = 22;
+            this.DateQuestion.Text = "1st Date";
+            // 
+            // maskedTextBoxWeekDay
+            // 
+            this.maskedTextBoxWeekDay.Location = new System.Drawing.Point(207, 42);
+            this.maskedTextBoxWeekDay.Mask = "00/00/0000";
+            this.maskedTextBoxWeekDay.Name = "maskedTextBoxWeekDay";
+            this.maskedTextBoxWeekDay.Size = new System.Drawing.Size(136, 20);
+            this.maskedTextBoxWeekDay.TabIndex = 21;
+            this.maskedTextBoxWeekDay.ValidatingType = typeof(System.DateTime);
+            // 
+            // FindWeekDayLabel
+            // 
+            this.FindWeekDayLabel.AutoSize = true;
+            this.FindWeekDayLabel.Location = new System.Drawing.Point(204, 29);
+            this.FindWeekDayLabel.Name = "FindWeekDayLabel";
+            this.FindWeekDayLabel.Size = new System.Drawing.Size(75, 13);
+            this.FindWeekDayLabel.TabIndex = 20;
+            this.FindWeekDayLabel.Text = "FindWeekDay";
             // 
             // label2
             // 
@@ -280,112 +384,28 @@
             this.Sname.TabIndex = 0;
             this.Sname.Text = "Surename";
             // 
-            // FindWeekDayLabel
+            // button1
             // 
-            this.FindWeekDayLabel.AutoSize = true;
-            this.FindWeekDayLabel.Location = new System.Drawing.Point(204, 29);
-            this.FindWeekDayLabel.Name = "FindWeekDayLabel";
-            this.FindWeekDayLabel.Size = new System.Drawing.Size(75, 13);
-            this.FindWeekDayLabel.TabIndex = 20;
-            this.FindWeekDayLabel.Text = "FindWeekDay";
+            this.button1.Location = new System.Drawing.Point(13, 322);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 39);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Random number 0-2000";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // maskedTextBoxWeekDay
+            // imageList1
             // 
-            this.maskedTextBoxWeekDay.Location = new System.Drawing.Point(207, 42);
-            this.maskedTextBoxWeekDay.Mask = "00/00/0000";
-            this.maskedTextBoxWeekDay.Name = "maskedTextBoxWeekDay";
-            this.maskedTextBoxWeekDay.Size = new System.Drawing.Size(136, 20);
-            this.maskedTextBoxWeekDay.TabIndex = 21;
-            this.maskedTextBoxWeekDay.ValidatingType = typeof(System.DateTime);
-            // 
-            // DateQuestion
-            // 
-            this.DateQuestion.AutoSize = true;
-            this.DateQuestion.Location = new System.Drawing.Point(204, 65);
-            this.DateQuestion.Name = "DateQuestion";
-            this.DateQuestion.Size = new System.Drawing.Size(47, 13);
-            this.DateQuestion.TabIndex = 22;
-            this.DateQuestion.Text = "1st Date";
-            // 
-            // DateQuestion1
-            // 
-            this.DateQuestion1.AutoSize = true;
-            this.DateQuestion1.Location = new System.Drawing.Point(204, 104);
-            this.DateQuestion1.Name = "DateQuestion1";
-            this.DateQuestion1.Size = new System.Drawing.Size(51, 13);
-            this.DateQuestion1.TabIndex = 23;
-            this.DateQuestion1.Text = "2nd Date";
-            // 
-            // maskedTextBoxDate1
-            // 
-            this.maskedTextBoxDate1.Location = new System.Drawing.Point(207, 81);
-            this.maskedTextBoxDate1.Mask = "00/00/0000";
-            this.maskedTextBoxDate1.Name = "maskedTextBoxDate1";
-            this.maskedTextBoxDate1.Size = new System.Drawing.Size(136, 20);
-            this.maskedTextBoxDate1.TabIndex = 24;
-            this.maskedTextBoxDate1.ValidatingType = typeof(System.DateTime);
-            // 
-            // maskedTextBoxDate2
-            // 
-            this.maskedTextBoxDate2.Location = new System.Drawing.Point(207, 120);
-            this.maskedTextBoxDate2.Mask = "00/00/0000";
-            this.maskedTextBoxDate2.Name = "maskedTextBoxDate2";
-            this.maskedTextBoxDate2.Size = new System.Drawing.Size(136, 20);
-            this.maskedTextBoxDate2.TabIndex = 25;
-            this.maskedTextBoxDate2.ValidatingType = typeof(System.DateTime);
-            // 
-            // DateReult
-            // 
-            this.DateReult.AutoSize = true;
-            this.DateReult.Location = new System.Drawing.Point(221, 166);
-            this.DateReult.Name = "DateReult";
-            this.DateReult.Size = new System.Drawing.Size(166, 13);
-            this.DateReult.TabIndex = 26;
-            this.DateReult.Text = "Result Date (press F to see result)";
-            // 
-            // textBoxDateResult
-            // 
-            this.textBoxDateResult.Location = new System.Drawing.Point(224, 182);
-            this.textBoxDateResult.Name = "textBoxDateResult";
-            this.textBoxDateResult.Size = new System.Drawing.Size(152, 20);
-            this.textBoxDateResult.TabIndex = 27;
-            this.textBoxDateResult.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.textBoxDateResult_PreviewKeyDown);
-            // 
-            // checkBoxYear
-            // 
-            this.checkBoxYear.AutoSize = true;
-            this.checkBoxYear.Location = new System.Drawing.Point(221, 146);
-            this.checkBoxYear.Name = "checkBoxYear";
-            this.checkBoxYear.Size = new System.Drawing.Size(48, 17);
-            this.checkBoxYear.TabIndex = 28;
-            this.checkBoxYear.Text = "Year";
-            this.checkBoxYear.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxMonth
-            // 
-            this.checkBoxMonth.AutoSize = true;
-            this.checkBoxMonth.Location = new System.Drawing.Point(266, 146);
-            this.checkBoxMonth.Name = "checkBoxMonth";
-            this.checkBoxMonth.Size = new System.Drawing.Size(56, 17);
-            this.checkBoxMonth.TabIndex = 29;
-            this.checkBoxMonth.Text = "Month";
-            this.checkBoxMonth.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxDay
-            // 
-            this.checkBoxDay.AutoSize = true;
-            this.checkBoxDay.Location = new System.Drawing.Point(320, 146);
-            this.checkBoxDay.Name = "checkBoxDay";
-            this.checkBoxDay.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxDay.TabIndex = 30;
-            this.checkBoxDay.Text = "Day";
-            this.checkBoxDay.UseVisualStyleBackColor = true;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Ankete);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -429,6 +449,8 @@
         private System.Windows.Forms.CheckBox checkBoxDay;
         private System.Windows.Forms.CheckBox checkBoxMonth;
         private System.Windows.Forms.CheckBox checkBoxYear;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

@@ -14,9 +14,49 @@ namespace _6
     {
         private bool _isValidName = false;
         private bool _isValidePhone = false;
+        int count = 0;
+        string pos = "";
         public Form1()
         {
             InitializeComponent();
+            MouseClick += Form1_MouseClick;
+            MouseMove += Form1_MouseMove;
+            
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.Text = pos + $" X: {e.X}, Y: {e.Y}";
+        }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.X < 10 || e.Y < 10 || e.Y > this.Height - 10 || e.X > this.Width - 10)
+            {
+                pos = "out";
+                this.Text = pos + $" X: {e.X}, Y: {e.Y}";
+            }
+            else
+            if(e.X == 10 || e.Y == 10 || e.Y == this.Height - 10 || e.X == this.Width - 10)
+            {
+                pos = "on border";
+                this.Text = pos + $" X: {e.X}, Y: {e.Y}";
+            }
+            else
+            {
+                pos = "in";
+                this.Text = pos + $" X: {e.X}, Y: {e.Y}";
+            }
+
+            if(ModifierKeys.HasFlag(Keys.Control) && e.Button == MouseButtons.Left)
+            {
+                this.Close();
+            }
+
+            if(e.Button == MouseButtons.Right)
+            {
+                MessageBox.Show($"Width: {this.Width}\r\nHeight: {this.Height}");
+            }
         }
 
         private void ShowResultsButton_Click(object sender, EventArgs e)
@@ -142,6 +182,19 @@ namespace _6
                     MessageBox.Show("Incorrect dates", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult a;
+            do
+            {
+                count++;
+                a = MessageBox.Show($"Is this {new Random().Next(2001)} ?", $"Count: {count}", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            }
+            while (a == DialogResult.No);
+            MessageBox.Show($"Count: {count}");
+            count = 0;
         }
     }
 }
