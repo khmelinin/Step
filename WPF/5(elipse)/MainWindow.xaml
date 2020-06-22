@@ -1,0 +1,16 @@
+﻿<Window x:Class="_5_elipse_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_5_elipse_"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Ellipse Name="Sun" Margin="110,20,652,369" Stroke="Red" StrokeThickness="3" Fill="Orange" RenderTransformOrigin="0.481,0.521" StrokeDashArray="1"/>
+        <Polygon Name="Body" Points="50,50,50,100,100,100,100,50" Fill="Brown"></Polygon>
+        <Polygon Name="Roof" Points="50,50,100,50,75,30" Fill="Red"></Polygon>
+        
+    </Grid>
+</Window>

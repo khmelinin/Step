@@ -1,0 +1,22 @@
+﻿<Window x:Class="_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Name="TextBlock1" Height="70" Text="{Binding ElementName=TextBlock2, Path=Text}" Background="Gray">
+            </TextBlock>
+            <TextBlock Name="TextBlock2" Height="70" Background="Red">Hello</TextBlock>
+            <TextBox Name="TextBox1" Height="40" Background="Yellow" Text="{Binding ElementName=TextBox2, Path=Text, Mode=OneWay, IsAsync=True}"></TextBox>
+            <TextBox Name="TextBox2" Height="40" Background="Green"></TextBox>
+
+        </StackPanel>
+        <StackPanel>
+            <Ellipse Name="Ellipse1" Height="10" Width="10"></Ellipse>
+        </StackPanel>
+    </Grid>
+</Window>
