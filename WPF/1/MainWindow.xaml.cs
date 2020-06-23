@@ -111,6 +111,9 @@ namespace _1
                 case "/":
                     rightop = (num1 / num2).ToString();
                     break;
+                case "^":
+                    rightop = (num1 * num2).ToString();
+                    break;
             }
 
         }

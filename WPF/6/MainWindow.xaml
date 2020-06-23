@@ -1,0 +1,52 @@
+﻿<Window x:Class="_6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Path Stroke="Black" Fill="Red">
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure IsClosed="True" StartPoint="60, 60">
+                        <ArcSegment Point="249, 349" Size="149,290"></ArcSegment>
+                        <BezierSegment Point1="100,199" Point2="149, 249" Point3="260,140"></BezierSegment>
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+        <Rectangle Width="149" Height="199" Fill="Yellow">
+            <Rectangle.RenderTransform>
+                <RotateTransform Angle="-30"></RotateTransform>
+                
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Viewport3D>
+            <Viewport3D.Camera>
+                <PerspectiveCamera Position="0,0,4" LookDirection="0,0,-4"></PerspectiveCamera>
+            </Viewport3D.Camera>
+            <Viewport3D.Children>
+                <ModelVisual3D>
+                    <ModelVisual3D.Content>
+                        <DirectionalLight Color="Red" Direction="-2,-2,-4"/>
+                    </ModelVisual3D.Content>
+                </ModelVisual3D>
+                <ModelVisual3D>
+                    <ModelVisual3D.Content>
+                        <GeometryModel3D>
+                            <GeometryModel3D.Geometry>
+                                <MeshGeometry3D Positions="-1,0,0,0,-1,0,0,0,-1" TriangleIndices="0,2,1"/>
+                            </GeometryModel3D.Geometry>
+                            <GeometryModel3D.Material>
+                                <DiffuseMaterial Brush="Orange"></DiffuseMaterial>
+                            </GeometryModel3D.Material>
+                        </GeometryModel3D>
+                        
+                    </ModelVisual3D.Content>
+                </ModelVisual3D>
+            </Viewport3D.Children>
+        </Viewport3D>
+    </Grid>
+</Window>
