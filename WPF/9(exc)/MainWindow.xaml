@@ -1,0 +1,136 @@
+﻿<Window x:Class="_9_exc_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_9_exc_"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800">
+    <Grid>
+        <FlowDocumentScrollViewer>
+            <FlowDocument>
+                <Paragraph>
+                    <Bold>
+                        В подмосковной
+                        <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B1%D0%BD%D1%8F">Лобне</Hyperlink>
+                        вместе с матерью живёт двадцатилетний Илья Горюнов. Илья — студент
+                        <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%BB%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%B0%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D0%B5%D1%82_%D0%9C%D0%93%D0%A3">
+                            филологического факультета МГУ</Hyperlink>
+                        ; мать Ильи, воспитавшая сына одна, учительница русского языка и литературы.
+                    </Bold>
+                </Paragraph>
+                
+                <Paragraph>
+                    <Italic>
+                        Отмечая окончание сессии, действуя наперекор матери, Илья отправляется со своей девушкой Верой в московский клуб «Рай». Неожиданно в клуб врывается наркополиция
+                        <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/%D0%A4%D0%A1%D0%9A%D0%9D">ФСКН</Hyperlink>
+                        с рейдом: у Ильи и Веры наркотиков не было, но Веру всё равно задерживает сотрудник в штатском Пётр Хазин.
+                    </Italic>
+                </Paragraph>
+                <Paragraph>
+                    <Underline>
+                        Илья пытается воспрепятствовать задержанию Веры и оскорбляет задержавшего её Хазина: в отместку молодой офицер подбрасывает ему
+                        <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BA%D0%B0%D0%B8%D0%BD">кокаин</Hyperlink>
+                        . В итоге Илью сажают в колонию на семь лет по ложному обвинению в сбыте наркотиков. В 2019 году, отбыв весь срок, Илья возвращается в Лобню к матери, однако узнаёт, что она умерла от
+                        <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B4%D0%B5%D1%87%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%B8%D1%81%D1%82%D1%83%D0%BF">сердечного приступа</Hyperlink>
+                        за день до его возвращения.
+                    </Underline>
+                </Paragraph>
+                
+                <Paragraph>
+                    Он приезжает к бывшей девушке Вере, за которую когда-то заступился, но она отказывается с ним общаться; также Илья встречается со старым другом Серёгой, но понимает, что они стали друг другу чужими.
+                </Paragraph>
+                
+                <Paragraph Background="Red">
+                    Во время заключения Илья следил за жизнью Хазина по его страницам в социальных сетях: полицейский за это время добился повышения по службе и живёт обеспеченной и насыщенной жизнью. Илья тяжело переживает смерть матери и тот факт, что он был несправедливо посажен на семь лет, и, напившись, решает встретиться с обидчиком, чтобы спросить, за что тот так поступил с ним.
+                </Paragraph>
+
+                <Paragraph Foreground="Green">
+                    По «
+                    <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/Instagram">
+                        <Underline> Инстаграму»</Underline></Hyperlink>
+                    Хазина Илья узнаёт, в какой он отправляется клуб, они встречаются, и у них происходит драка, в ходе которой Горюнов случайно убивает Хазина. Илья мечется по близлежащей территории в поисках места, куда можно спрятать труп, и в итоге сбрасывает тело Хазина в
+                    <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BB%D1%8E%D0%BA">
+                        <Underline>канализационный люк
+                        </Underline>
+                    </Hyperlink>
+                    , а его пистолет и телефон забирает с собой.
+                </Paragraph>
+
+                <Paragraph>
+                    <Underline>
+                        <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_(%D0%B0%D0%BA%D1%82%D1%91%D1%80)">
+                            •	Александр Петров
+                        </Hyperlink>
+                    </Underline>
+                </Paragraph>
+
+                <Paragraph>
+                    <Underline>
+                        <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/%D0%AF%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A4%D0%B8%D0%BB%D0%B8%D0%BF%D0%BF%D0%BE%D0%B2%D0%B8%D1%87">
+                            •	Иван Янковский
+                        </Hyperlink>
+                    </Underline>
+                </Paragraph>
+
+                <Paragraph>
+                    <Underline>
+                        <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/%D0%90%D1%81%D0%BC%D1%83%D1%81,_%D0%9A%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BD%D0%B0_%D0%98%D0%B3%D0%BE%D1%80%D0%B5%D0%B2%D0%BD%D0%B0">
+                            •	Кристина Асмус
+                        </Hyperlink>
+                    </Underline>
+                </Paragraph>
+                <Table BorderBrush="Black" BorderThickness="3">
+                    <Table.Columns>
+                        <TableColumn Width="200"/>
+                        <TableColumn Width="200"/>
+                        <TableColumn Width="200"/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph>
+                                    Максим Виноградов
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>
+                                    Серёга,
+                                    <Span FontSize="12"> друг Горюнова</Span>
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph>
+                                    Софья Озерова
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>
+                                    Вера,
+                                    <Span FontSize="12">бывшая девушка Горюнова</Span>
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph>
+                                    Соня Карпунина
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>
+                                    <Span FontSize="12">сотрудница турагентства</Span>
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                    
+                </Table>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>

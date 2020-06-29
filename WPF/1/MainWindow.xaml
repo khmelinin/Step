@@ -22,22 +22,22 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="textBlock" Grid.Column="0" Grid.ColumnSpan="4" />
-        <Button Grid.Column="0" Grid.Row="1">1</Button>
-        <Button Grid.Column="1" Grid.Row="1">2</Button>
-        <Button Grid.Column="2" Grid.Row="1">3</Button>
-        <Button Grid.Column="3" Grid.Row="1">4</Button>
-        <Button Grid.Column="0" Grid.Row="2">5</Button>
-        <Button Grid.Column="1" Grid.Row="2">6</Button>
-        <Button Grid.Column="2" Grid.Row="2">7</Button>
-        <Button Grid.Column="3" Grid.Row="2">8</Button>
-        <Button Grid.Column="0" Grid.Row="3">9</Button>
-        <Button Grid.Column="1" Grid.Row="3">0</Button>
-        <Button Grid.Column="2" Grid.Row="3">+</Button>
-        <Button Grid.Column="3" Grid.Row="3">-</Button>
-        <Button Grid.Column="0" Grid.Row="4">*</Button>
-        <Button Grid.Column="1" Grid.Row="4">/</Button>
-        <Button Grid.Column="2" Grid.Row="4">=</Button>
-        <Button Grid.Column="3" Grid.Row="4">CLEAR</Button>
-        <Button Grid.Column="0" Grid.Row="5">^</Button>
+        <Button Grid.Column="0" Grid.Row="1" ToolTip="1">1</Button>
+        <Button Grid.Column="1" Grid.Row="1" ToolTip="2">2</Button>
+        <Button Grid.Column="2" Grid.Row="1" ToolTip="3">3</Button>
+        <Button Grid.Column="3" Grid.Row="1" ToolTip="4">4</Button>
+        <Button Grid.Column="0" Grid.Row="2" ToolTip="5">5</Button>
+        <Button Grid.Column="1" Grid.Row="2" ToolTip="6">6</Button>
+        <Button Grid.Column="2" Grid.Row="2" ToolTip="7">7</Button>
+        <Button Grid.Column="3" Grid.Row="2" ToolTip="8">8</Button>
+        <Button Grid.Column="0" Grid.Row="3" ToolTip="9">9</Button>
+        <Button Grid.Column="1" Grid.Row="3" ToolTip="0">0</Button>
+        <Button Grid.Column="2" Grid.Row="3" ToolTip="plus">+</Button>
+        <Button Grid.Column="3" Grid.Row="3" ToolTip="minus">-</Button>
+        <Button Grid.Column="0" Grid.Row="4" ToolTip="multiply">*</Button>
+        <Button Grid.Column="1" Grid.Row="4" ToolTip="divide">/</Button>
+        <Button Grid.Column="2" Grid.Row="4" ToolTip="=">=</Button>
+        <Button Grid.Column="3" Grid.Row="4" ToolTip="backspace">CLEAR</Button>
+            <Button Grid.Column="0" Grid.Row="5" ToolTip="1">^</Button>
     </Grid>
 </Window>

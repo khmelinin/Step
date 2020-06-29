@@ -1,0 +1,98 @@
+﻿<Window x:Class="DZ4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZ4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="textBlock" Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="13" />
+        <Label Name="label1" Grid.Column="0" Grid.Row="0" Content="Speed: "/>
+
+        <Button Grid.Column="0" Grid.Row="1" Name="button1">1</Button>
+        <Button Grid.Column="1" Grid.Row="1" Name="button2">2</Button>
+        <Button Grid.Column="2" Grid.Row="1" Name="button3">3</Button>
+        <Button Grid.Column="3" Grid.Row="1" Name="button4">4</Button>
+        <Button Grid.Column="4" Grid.Row="1" Name="button5">5</Button>
+        <Button Grid.Column="5" Grid.Row="1" Name="button6">6</Button>
+        <Button Grid.Column="6" Grid.Row="1" Name="button7">7</Button>
+        <Button Grid.Column="7" Grid.Row="1" Name="button8">8</Button>
+        <Button Grid.Column="8" Grid.Row="1" Name="button9">9</Button>
+        <Button Grid.Column="9" Grid.Row="1" Name="button0">0</Button>
+        <Button Grid.Column="10" Grid.Row="1" Name="buttonMinus">-</Button>
+        <Button Grid.Column="11" Grid.Row="1" Name="buttonRav">=</Button>
+        <Button Grid.Column="12" Grid.Row="1" Name="buttonBackspace">Backspace</Button>
+
+        <Button Grid.Column="0" Grid.Row="2" Name="buttonq">q</Button>
+        <Button Grid.Column="1" Grid.Row="2" Name="buttonw">w</Button>
+        <Button Grid.Column="2" Grid.Row="2" Name="buttone">e</Button>
+        <Button Grid.Column="3" Grid.Row="2" Name="buttonr">r</Button>
+        <Button Grid.Column="4" Grid.Row="2" Name="buttont">t</Button>
+        <Button Grid.Column="5" Grid.Row="2" Name="buttony">y</Button>
+        <Button Grid.Column="6" Grid.Row="2" Name="buttonu">u</Button>
+        <Button Grid.Column="7" Grid.Row="2" Name="buttoni">i</Button>
+        <Button Grid.Column="8" Grid.Row="2" Name="buttono">o</Button>
+        <Button Grid.Column="9" Grid.Row="2" Name="buttonp">p</Button>
+        <Button Grid.Column="10" Grid.Row="2" Name="buttonSC1">[</Button>
+        <Button Grid.Column="11" Grid.Row="2" Name="buttonSC2">]</Button>
+        <Button Grid.Column="12" Grid.Row="2" Name="buttonBackslash">\</Button>
+
+        <Button Grid.Column="0" Grid.Row="3" Name="buttona">a</Button>
+        <Button Grid.Column="1" Grid.Row="3" Name="buttons">s</Button>
+        <Button Grid.Column="2" Grid.Row="3" Name="buttond">d</Button>
+        <Button Grid.Column="3" Grid.Row="3" Name="buttonf">f</Button>
+        <Button Grid.Column="4" Grid.Row="3" Name="buttong">g</Button>
+        <Button Grid.Column="5" Grid.Row="3" Name="buttonh">h</Button>
+        <Button Grid.Column="6" Grid.Row="3" Name="buttonj">j</Button>
+        <Button Grid.Column="7" Grid.Row="3" Name="buttonk">k</Button>
+        <Button Grid.Column="8" Grid.Row="3" Name="buttonl">l</Button>
+        <Button Grid.Column="9" Grid.Row="3" Name="buttonDotZap">;</Button>
+        <Button Grid.Column="10" Grid.Row="3" Name="buttonUpZap">'</Button>
+        <Button Grid.Column="11" Grid.Row="3" Grid.ColumnSpan="2" Name="buttonEnter">Enter</Button>
+
+        <Button Grid.Column="0" Grid.Row="4" Name="buttonShiftL">Shift</Button>
+        <Button Grid.Column="1" Grid.Row="4" Name="buttonz">z</Button>
+        <Button Grid.Column="2" Grid.Row="4" Name="buttonx">x</Button>
+        <Button Grid.Column="3" Grid.Row="4" Name="buttonc">c</Button>
+        <Button Grid.Column="4" Grid.Row="4" Name="buttonv">v</Button>
+        <Button Grid.Column="5" Grid.Row="4" Name="buttonb">b</Button>
+        <Button Grid.Column="6" Grid.Row="4" Name="buttonn">n</Button>
+        <Button Grid.Column="7" Grid.Row="4" Name="buttonm">m</Button>
+        <Button Grid.Column="8" Grid.Row="4" Name="buttonZap">,</Button>
+        <Button Grid.Column="9" Grid.Row="4" Name="buttonDot">.</Button>
+        <Button Grid.Column="10" Grid.Row="4" Name="buttonSlash">/</Button>
+        <Button Grid.Column="11" Grid.Row="4" Grid.ColumnSpan="2" Name="buttonShiftR">Shift</Button>
+
+        <Button Grid.Column="0" Grid.Row="5" Name="buttonCtrlL">Ctrl</Button>
+        <Button Grid.Column="1" Grid.Row="5" Name="buttonWnd">Wnd</Button>
+        <Button Grid.Column="2" Grid.Row="5" Name="buttonAltL">Alt</Button>
+        <Button Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="10" Name="buttonSpace">Spasce</Button>
+        <Button Grid.Column="11" Grid.Row="5" Name="buttonAltR">Alt</Button>
+        <Button Grid.Column="12" Grid.Row="5" Name="buttonCtrlR">Ctrl</Button>
+
+    </Grid>
+</Window>
