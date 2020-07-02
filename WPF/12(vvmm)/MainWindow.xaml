@@ -6,23 +6,23 @@
         xmlns:local="clr-namespace:_12_vvmm_"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-
-    <ListBox  ItemsSource="{Binding House}"
+    <Grid>
+        <ListBox  ItemsSource="{Binding House}"
                  SelectedItem="{Binding SelectedHouse}">
 
-        <StackPanel>
-            <TextBlock FontSize="18" Text="{Binding Path=Type}" />
-            <TextBlock Text="{Binding Path=Country}" />
-            <TextBlock Text="{Binding Path=Area}" />
-        </StackPanel>
+            <StackPanel>
+                <TextBlock FontSize="18" Text="{Binding Path=Type}" />
+                <TextBlock Text="{Binding Path=Country}" />
+                <TextBlock Text="{Binding Path=Area}" />
+            </StackPanel>
 
-    </ListBox>
-    
-    <StackPanel>
-        <Button Command="{Binding AddCommand}">Add</Button>
-        <Button Command="{Binding RemoveCommand}"
+        </ListBox>
+
+        <StackPanel>
+            <Button Command="{Binding AddCommand}">Add</Button>
+            <Button Command="{Binding RemoveCommand}"
                     CommandParameter="{Binding SelectedHouse}">Delete</Button>
-    </StackPanel>
+        </StackPanel>
 
         <StackPanel DataContext="{Binding SelectedHouse}">
             <TextBlock Text="House "  />
@@ -33,5 +33,5 @@
             <TextBlock Text="Area" />
             <TextBox Text="{Binding Area, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
-
+    </Grid>
 </Window>
