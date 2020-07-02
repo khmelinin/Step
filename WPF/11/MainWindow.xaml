@@ -13,6 +13,8 @@
             <Setter Property="Height" Value="100"/>
             <Setter Property="BorderThickness" Value="4"/>
             <Setter Property="HorizontalAlignment"  Value="Left"/>
+            <EventSetter Event="Click" Handler="Button_Click_pink"/>
+            <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
         </Style>
 
         <Style x:Key="yellowStyle" TargetType="Button">
@@ -33,7 +35,7 @@
     </Window.Resources>
 
     <Grid>
-        <Button Style="{StaticResource pinkStyle}"/>
+        <Button Style="{StaticResource pinkStyle}" Name="pinkButton"/>
         <Button Style="{StaticResource blueStyle}"/>
         <Button Style="{StaticResource yellowStyle}"/>
     </Grid>

@@ -20,8 +20,10 @@ namespace _11
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool ok = false;
         public class Text_text_button:FrameworkElement
         {
+            
             public static readonly DependencyObject Text_text_button1;
             static Text_text_button()
             {
@@ -31,6 +33,26 @@ namespace _11
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click_pink(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("ok?");
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (ok == false)
+            {
+                pinkButton.HorizontalAlignment = HorizontalAlignment.Left;
+                ok = true;
+            }
+
+            else
+            {
+                pinkButton.HorizontalAlignment = HorizontalAlignment.Right;
+                ok = false;
+            }
         }
     }
 }
