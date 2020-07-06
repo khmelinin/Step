@@ -1,0 +1,26 @@
+﻿<Window x:Class="DamageCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DamageCalc"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="hpTextBox" BorderThickness="1" Margin="60,10,597,379"/>
+        <TextBox x:Name="damageTextBox" BorderThickness="1" Margin="60,50,597,339"/>
+        <TextBox x:Name="rpmTextBox" BorderThickness="1" Margin="60,90,597,299"/>
+        <TextBox x:Name="rpsTextBox" BorderThickness="1" Margin="260,90,397,299"/>
+        <TextBox x:Name="ttkTextBblox" BorderThickness="1" Margin="60,200,597,189"/>
+        <TextBox x:Name="dpsTextBblox" BorderThickness="1" Margin="60,165,597,224"/>
+        
+        <Label Margin="10,10,-10,-10" FontSize="16">HP</Label>
+        <Label Margin="10,50,-10,-50" FontSize="16">DMG</Label>
+        <Label Margin="10,90,-10,-90" FontSize="16">RPM</Label>
+        <Label Margin="220,90,-220,-90" FontSize="16">RPS</Label>
+        <Label Margin="10,165,-10,-90" FontSize="16">TTK</Label>
+        <Label Margin="10,200,-10,-115" FontSize="16">DPS</Label>
+
+        <Button Margin="230,132,447,232" Click="Button_Click">Calculate</Button>
+    </Grid>
+</Window>
