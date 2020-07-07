@@ -31,6 +31,7 @@ namespace DamageCalc
         double rpm = -1;
 
         double ttk = -1;
+        double rtk = -1;
         double dps = -1;
 
         SaveFileDialog sfd;
@@ -53,10 +54,10 @@ namespace DamageCalc
             math_roundingButton.Visibility = Visibility.Hidden;
 
             sfd = new SaveFileDialog();
-            sfd.Filter = "App files(*.mazafaka)|*.mazafaka|Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            sfd.Filter = "App files(*.dmgc)|*.dmgc|Text files(*.txt)|*.txt|All files(*.*)|*.*";
 
             ofd = new OpenFileDialog();
-            ofd.Filter = "App files(*.mazafaka)|*.mazafaka|Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            ofd.Filter = "App files(*.dmgc)|*.dmgc|Text files(*.txt)|*.txt|All files(*.*)|*.*";
 
             //###########################//
             rpsCheckBox.IsEnabled = false;
@@ -74,6 +75,7 @@ namespace DamageCalc
             damageTextBox.Text = "";
             rpmTextBox.Text = "";
             ttkTextBox.Text = "";
+            rtkTextBox.Text = "";
             dpsTextBox.Text = "";
             nameTextBox.Text = "";
 
@@ -82,6 +84,7 @@ namespace DamageCalc
             rpm = -1;
 
             ttk = -1;
+            rtk = -1;
             dps = -1;
         }
 
@@ -96,11 +99,12 @@ namespace DamageCalc
                 Double.TryParse(rpmTextBox.Text, out rpm);
                 Double.TryParse(multiplayerTextBox.Text, out multiplayer);
 
-
-                ttk = Math.Round((1 / (rpm / 60)) * Math.Round(hp*multiplayer / dmg), math_rounding);
+                rtk = Math.Ceiling(hp * multiplayer / dmg);
+                ttk = Math.Round((1 / (rpm / 60)) * rtk, math_rounding);
                 dps = Math.Round(((rpm / 60) * dmg), math_rounding);
 
                 ttkTextBox.Text = ttk.ToString();
+                rtkTextBox.Text = rtk.ToString();
                 dpsTextBox.Text = dps.ToString();
             }
             else
@@ -111,10 +115,12 @@ namespace DamageCalc
                 Double.TryParse(rpmTextBox.Text, out rpm);
                 Double.TryParse(multiplayerTextBox.Text, out multiplayer);
 
-                ttk = (1 / rpm) * Math.Round(hp*multiplayer / dmg);
+                rtk = Math.Ceiling(hp * multiplayer / dmg);
+                ttk = Math.Round((1 / (rpm / 60)) * rtk, math_rounding);
                 dps = (rpm * dmg);
 
                 ttkTextBox.Text = (Math.Round(ttk, math_rounding)).ToString();
+                rtkTextBox.Text = rtk.ToString();
                 dpsTextBox.Text = dps.ToString();
             }
         }
@@ -153,7 +159,7 @@ namespace DamageCalc
             Calc_Button_Click(sender, e);
             if (nameTextBox.Text != "" && hpTextBox.Text!="" && multiplayerTextBox.Text!="" && damageTextBox.Text!="" && rpmTextBox.Text!="" && ttkTextBox.Text!="" && dpsTextBox.Text!="")
             {
-                Weapon tmp = new Weapon(nameTextBox.Text, hp, multiplayer, dmg, rpm, ttk, dps);
+                Weapon tmp = new Weapon(nameTextBox.Text, hp, multiplayer, dmg, rpm, ttk, rtk, dps);
                 weapons.Add(tmp);
                 listBox1.Items.Add(tmp.ToStringShort());
                 Clear();
@@ -178,7 +184,7 @@ namespace DamageCalc
             Calc_Button_Click(sender, e);
             if (selected!=-1 && nameTextBox.Text != "" && hpTextBox.Text != "" && multiplayerTextBox.Text!="" && damageTextBox.Text != "" && rpmTextBox.Text != "" && ttkTextBox.Text != "" && dpsTextBox.Text != "")
             {
-                Weapon tmp = new Weapon(nameTextBox.Text, hp, multiplayer, dmg, rpm, ttk, dps);
+                Weapon tmp = new Weapon(nameTextBox.Text, hp, multiplayer, dmg, rpm, ttk, rtk, dps);
                 weapons[selected] = tmp;
                 listBox1.Items[selected] = tmp.ToStringShort();
                 Clear();
@@ -205,6 +211,7 @@ namespace DamageCalc
                 dmg = weapons[listBox1.SelectedIndex].Dmg;
                 rpm = weapons[listBox1.SelectedIndex].Rpm;
                 ttk = weapons[listBox1.SelectedIndex].Ttk;
+                rtk = weapons[listBox1.SelectedIndex].Rtk;
                 dps = weapons[listBox1.SelectedIndex].Dps;
 
                 nameTextBox.Text = weapons[listBox1.SelectedIndex].Name;
@@ -213,6 +220,7 @@ namespace DamageCalc
                 damageTextBox.Text = dmg.ToString();
                 rpmTextBox.Text = rpm.ToString();
                 ttkTextBox.Text = ttk.ToString();
+                rtkTextBox.Text = rtk.ToString();
                 dpsTextBox.Text = dps.ToString();
             }
             

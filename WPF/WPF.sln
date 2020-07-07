@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DE", "DocumentEditor\DE.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tmp1", "tmp1\tmp1.csproj", "{DDD5125D-7EAC-4174-840B-7B4C2870A4D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DamageCalc", "DamageCalc\DamageCalc.csproj", "{8E45418E-3865-4511-9713-5CC7B4DE3B9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DmgCalc", "DamageCalc\DmgCalc.csproj", "{8E45418E-3865-4511-9713-5CC7B4DE3B9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

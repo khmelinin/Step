@@ -46,6 +46,11 @@
             </Grid>
 
             <Grid>
+                <Label FontSize="16" HorizontalAlignment="Left">RTK</Label>
+                <TextBox x:Name="rtkTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16"/>
+            </Grid>
+
+            <Grid>
                 <Label FontSize="16" HorizontalAlignment="Left">DPS</Label>
                 <TextBox x:Name="dpsTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16"/>
             </Grid>

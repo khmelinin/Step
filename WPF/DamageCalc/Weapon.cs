@@ -16,9 +16,10 @@ namespace DamageCalc
         double rpm = -1;
 
         double ttk = -1;
+        double rtk = -1;
         double dps = -1;
 
-        public Weapon(string name, double hp, double multiplayer, double dmg, double rpm, double ttk, double dps)
+        public Weapon(string name, double hp, double multiplayer, double dmg, double rpm, double ttk, double rtk, double dps)
         {
             this.name = name;
             this.hp = hp;
@@ -26,6 +27,7 @@ namespace DamageCalc
             this.dmg = dmg;
             this.rpm = rpm;
             this.ttk = ttk;
+            this.rtk = rtk;
             this.dps = dps;
         }
 
@@ -36,6 +38,7 @@ namespace DamageCalc
         public double Dps { get => dps; set => dps = value; }
         public string Name { get => name; set => name = value; }
         public double Multiplayer { get => multiplayer; set => multiplayer = value; }
+        public double Rtk { get => rtk; set => rtk = value; }
 
         public string ToStringShort()
         {
@@ -44,7 +47,7 @@ namespace DamageCalc
 
         public override string ToString()
         {
-            return name + ":\r\n\r\ndmg=" + dmg.ToString() + "\r\nrpm=" + rpm.ToString() + "\r\n_____________\r\nwith hp=" + hp.ToString() + "\r\nmuliplayer=" + multiplayer.ToString() + "\r\nttk=" + ttk.ToString() + "\r\ndps=" + dps.ToString();
+            return name + ":\r\n\r\ndmg=" + dmg.ToString() + "\r\nrpm=" + rpm.ToString() + "\r\n_____________\r\nwith hp=" + hp.ToString() + "\r\nmuliplayer=" + multiplayer.ToString() + "\r\nttk=" + ttk.ToString() + "\r\nrtk=" + rtk.ToString() + "\r\ndps=" + dps.ToString();
         }
     }
 }
