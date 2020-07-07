@@ -5,55 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DamageCalc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600">
+        Title="MainWindow" Height="430" Width="600">
     <Grid>
 
-        <ListBox Name="listBox1" Width="190" HorizontalAlignment="Right" BorderThickness="3">
-            
-        </ListBox>
-        
+        <ListBox Name="listBox1" Width="210" HorizontalAlignment="Left" VerticalAlignment="Stretch" BorderThickness="3" SelectionChanged="listBox1_SelectionChanged" Margin="373,30,0,0"></ListBox>
+        <Label HorizontalAlignment="Left" Margin="403,0,0,0" FontSize="16">LIST:</Label>
+        <ListBox Name="listBox2" Width="160" Height="190" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="3" Margin="190,90,0,0"  FontSize="14"></ListBox>
+        <Label HorizontalAlignment="Left" Margin="220,60,0,0" FontSize="16">SELECTED:</Label>
+
         <StackPanel>
             
             <Label/>
             <Grid>
                 <Label FontSize="16" HorizontalAlignment="Left">HP</Label>
-                <TextBox x:Name="hpTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0">100</TextBox>
-                <Button Name="hp100button" Width="60" HorizontalAlignment="Left" Margin="170,0,0,0" Click="hp100button_Click">100 hp</Button>
-                <Button Name="hp200button" Width="60" HorizontalAlignment="Left" Margin="240,0,0,0" Click="hp200button_Click">200 hp</Button>
-                <Button Name="hp300button" Width="60" HorizontalAlignment="Left" Margin="310,0,0,0" Click="hp300button_Click">300 hp</Button>
+                <TextBox x:Name="hpTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16">100</TextBox>
+
+                <Label FontSize="16" HorizontalAlignment="Left" Margin="160,0,0,0">MULTIPLAYER</Label>
+                <TextBox x:Name="multiplayerTextBox" BorderThickness="1" Width="70" HorizontalAlignment="Left" Margin="270,0,0,0" FontSize="16">1,0</TextBox>
             </Grid>
 
             <Grid>
                 <Label FontSize="16" HorizontalAlignment="Left">DMG</Label>
-                <TextBox x:Name="damageTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+                <TextBox x:Name="damageTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16"/>
             </Grid>
 
             <Grid>
                 <Label Name="RPM_label" FontSize="16" HorizontalAlignment="Left">RPM</Label>
-                <TextBox x:Name="rpmTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
-                <CheckBox Name="rpsCheckBox" Height="19" Width="60" HorizontalAlignment="Left" Checked="rpsCheckBox_Checked" Unchecked="rpsCheckBox_Unchecked" Margin="170,0,0,0">RPS</CheckBox>
+                <TextBox x:Name="rpmTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16"/>
+                <CheckBox Name="rpsCheckBox" Height="19" Width="60" HorizontalAlignment="Left" Checked="rpsCheckBox_Checked" Unchecked="rpsCheckBox_Unchecked" Margin="170,0,0,10">RPS</CheckBox>
             </Grid>
             <StatusBar/>
 
             <Label/>
-            <Button Height="40" Width="154" HorizontalAlignment="Left" Click="Button_Click" Margin="6,0,0,0">Calculate</Button>
+            <Button Height="40" Width="154" HorizontalAlignment="Left" Click="Calc_Button_Click" Margin="6,0,0,0" FontSize="16">Calculate</Button>
             <Label/>
 
             <Grid>
                 <Label FontSize="16" HorizontalAlignment="Left">TTK</Label>
-                <TextBox x:Name="ttkTextBbox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+                <TextBox x:Name="ttkTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16"/>
             </Grid>
 
             <Grid>
                 <Label FontSize="16" HorizontalAlignment="Left">DPS</Label>
-                <TextBox x:Name="dpsTextBbox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+                <TextBox x:Name="dpsTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16"/>
             </Grid>
 
             <Label/>
 
             <Grid>
                 <Label FontSize="16" HorizontalAlignment="Left">Name</Label>
-                <TextBox x:Name="nameTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+                <TextBox x:Name="nameTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16"/>
             </Grid>
 
             <Label/>
@@ -61,6 +62,20 @@
                 <Button Height="40" Width="44" HorizontalAlignment="Left" Click="Add_Button_Click" Margin="6,0,0,0">Add</Button>
                 <Button Height="40" Width="44" HorizontalAlignment="Left" Click="Del_Button_Click" Margin="60,0,0,0">Del</Button>
                 <Button Height="40" Width="44" HorizontalAlignment="Left" Click="Edit_Button_Click" Margin="116,0,0,0">Edit</Button>
+            </Grid>
+            <Label/>
+
+            <Grid>
+                <CheckBox Name="devOptionsCheckBox" HorizontalAlignment="Left" Checked="devOptionsCheckBox_Checked" Unchecked="devOptionsCheckBox_Unchecked">Dev Options</CheckBox>
+                <Button x:Name="saveButton" HorizontalAlignment="Left" Width="60" Height="30" Margin="100,0,0,0" Click="saveButton_Click">Save</Button>
+                <Button x:Name="loadButton" HorizontalAlignment="Left" Width="60" Height="30" Margin="170,0,0,0" Click="loadButton_Click">Load</Button>
+            </Grid>
+            <Label/>
+
+            <Grid>
+                <Label Name="math_roundingLabel" HorizontalAlignment="Left">math-rounding</Label>
+                <TextBox x:Name="math_roundingTextBox" HorizontalAlignment="Left" Width="71" Margin="90,0,0,0" FontSize="16"></TextBox>
+                <Button x:Name="math_roundingButton" HorizontalAlignment="Left" Width="60" Margin="170,0,0,0" Click="math_roundingButton_Click">Change</Button>
             </Grid>
 
         </StackPanel>

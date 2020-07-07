@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,75 +14,94 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace DamageCalc
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public class Weapon
-    {
-        string name;
-        double hp = -1;
-        double dmg = -1;
-        double rpm = -1;
-
-        double ttk = -1;
-        double dps = -1;
-
-        public Weapon(string name, double hp, double dmg, double rpm, double ttk, double dps)
-        {
-            this.name = name;
-            this.hp = hp;
-            this.dmg = dmg;
-            this.rpm = rpm;
-            this.ttk = ttk;
-            this.dps = dps;
-        }
-
-        public double Hp { get => hp; set => hp = value; }
-        public double Dmg { get => dmg; set => dmg = value; }
-        public double Rpm { get => rpm; set => rpm = value; }
-        public double Ttk { get => ttk; set => ttk = value; }
-        public double Dps { get => dps; set => dps = value; }
-        public string Name { get => name; set => name = value; }
-
-        public string ToStringShort()
-        {
-            return "|"+name + "| dmg=" + dmg.ToString() + " rpm=" + rpm.ToString();
-        }
-
-        public override string ToString()
-        {
-            return name + "\r\ndmg=" + dmg.ToString() + " rpm=" + rpm.ToString() + " (with hp=" + hp.ToString() + " ttk=" + ttk.ToString() + " dps=" + dps.ToString() + ")";
-        }
-    }
     public partial class MainWindow : Window
     {
+        int math_rounding = 4;
+        int selected = -1;
         double hp = -1;
+        double multiplayer = 1;
         double dmg = -1;
         double rpm = -1;
 
         double ttk = -1;
         double dps = -1;
+
+        SaveFileDialog sfd;
+        OpenFileDialog ofd;
+
+        bool ok = true;
+
+        List<Weapon> weapons;
         public MainWindow()
         {
             InitializeComponent();
+
+            weapons = new List<Weapon>();
+
+            math_roundingLabel.IsEnabled = false;
+            math_roundingLabel.Visibility = Visibility.Hidden;
+            math_roundingTextBox.IsEnabled = false;
+            math_roundingTextBox.Visibility = Visibility.Hidden;
+            math_roundingButton.IsEnabled = false;
+            math_roundingButton.Visibility = Visibility.Hidden;
+
+            sfd = new SaveFileDialog();
+            sfd.Filter = "App files(*.mazafaka)|*.mazafaka|Text files(*.txt)|*.txt|All files(*.*)|*.*";
+
+            ofd = new OpenFileDialog();
+            ofd.Filter = "App files(*.mazafaka)|*.mazafaka|Text files(*.txt)|*.txt|All files(*.*)|*.*";
+
+            //###########################//
+            rpsCheckBox.IsEnabled = false;
+            rpsCheckBox.Visibility = Visibility.Hidden;
+            //###########################//
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        // Clear
+
+        private void Clear()
+        {
+            //hpTextBox.Text = "";
+            multiplayerTextBox.Text = "1.0";
+            damageTextBox.Text = "";
+            rpmTextBox.Text = "";
+            ttkTextBox.Text = "";
+            dpsTextBox.Text = "";
+            nameTextBox.Text = "";
+
+            multiplayer = 1;
+            dmg = -1;
+            rpm = -1;
+
+            ttk = -1;
+            dps = -1;
+        }
+
+        // Calculating
+
+        private void Calc_Button_Click(object sender, RoutedEventArgs e)
         {
             if(damageTextBox.Text!="" && hpTextBox.Text !="" && rpmTextBox.Text!="" && rpsCheckBox.IsChecked==false)
             {
                 Double.TryParse(hpTextBox.Text, out hp);
                 Double.TryParse(damageTextBox.Text, out dmg);
                 Double.TryParse(rpmTextBox.Text, out rpm);
+                Double.TryParse(multiplayerTextBox.Text, out multiplayer);
 
-                ttk = (1 / (rpm / 60)) * Math.Round(hp/dmg);
-                dps = ((rpm / 60) * dmg);
 
-                ttkTextBbox.Text = (Math.Round(ttk,13)).ToString();
-                dpsTextBbox.Text = (Math.Round(dps, 13)).ToString();
+                ttk = Math.Round((1 / (rpm / 60)) * Math.Round(hp*multiplayer / dmg), math_rounding);
+                dps = Math.Round(((rpm / 60) * dmg), math_rounding);
+
+                ttkTextBox.Text = ttk.ToString();
+                dpsTextBox.Text = dps.ToString();
             }
             else
             if (damageTextBox.Text != "" && hpTextBox.Text != "" && rpmTextBox.Text != "" && rpsCheckBox.IsChecked == true)
@@ -88,12 +109,13 @@ namespace DamageCalc
                 Double.TryParse(hpTextBox.Text, out hp);
                 Double.TryParse(damageTextBox.Text, out dmg);
                 Double.TryParse(rpmTextBox.Text, out rpm);
+                Double.TryParse(multiplayerTextBox.Text, out multiplayer);
 
-                ttk = (1 / rpm) * Math.Round(hp / dmg);
+                ttk = (1 / rpm) * Math.Round(hp*multiplayer / dmg);
                 dps = (rpm * dmg);
 
-                ttkTextBbox.Text = (Math.Round(ttk, 13)).ToString();
-                dpsTextBbox.Text = dps.ToString();
+                ttkTextBox.Text = (Math.Round(ttk, math_rounding)).ToString();
+                dpsTextBox.Text = dps.ToString();
             }
         }
 
@@ -107,6 +129,7 @@ namespace DamageCalc
             RPM_label.Content = "RPM";
         }
 
+        /*
         private void hp100button_Click(object sender, RoutedEventArgs e)
         {
             hpTextBox.Text = "100";
@@ -121,21 +144,138 @@ namespace DamageCalc
         {
             hpTextBox.Text = "300";
         }
+        */
+
+        // List Buttons
 
         private void Add_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (nameTextBox.Text != "")
+            Calc_Button_Click(sender, e);
+            if (nameTextBox.Text != "" && hpTextBox.Text!="" && multiplayerTextBox.Text!="" && damageTextBox.Text!="" && rpmTextBox.Text!="" && ttkTextBox.Text!="" && dpsTextBox.Text!="")
             {
-                listBox1.Items.Add(new Weapon(nameTextBox.Text, hp, dmg, rpm, ttk, dps).ToStringShort());
+                Weapon tmp = new Weapon(nameTextBox.Text, hp, multiplayer, dmg, rpm, ttk, dps);
+                weapons.Add(tmp);
+                listBox1.Items.Add(tmp.ToStringShort());
+                Clear();
             }
+            
         }
         private void Del_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ok = false;
+            if (listBox1.SelectedIndex > -1)
+            {
+                weapons.RemoveAt(listBox1.SelectedIndex);
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+                Clear();
+                listBox2.Items.Clear();
+            }
+            ok = true;
         }
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
+            ok = false;
+            Calc_Button_Click(sender, e);
+            if (selected!=-1 && nameTextBox.Text != "" && hpTextBox.Text != "" && multiplayerTextBox.Text!="" && damageTextBox.Text != "" && rpmTextBox.Text != "" && ttkTextBox.Text != "" && dpsTextBox.Text != "")
+            {
+                Weapon tmp = new Weapon(nameTextBox.Text, hp, multiplayer, dmg, rpm, ttk, dps);
+                weapons[selected] = tmp;
+                listBox1.Items[selected] = tmp.ToStringShort();
+                Clear();
+                listBox2.Items.Clear();
+            }
 
+            selected = -1;
+            ok = true;
+        }
+
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ok && listBox1.Items.Count>0)
+            {
+                selected = listBox1.SelectedIndex;
+
+                if (listBox2.Items.Count > 0)
+                    listBox2.Items.RemoveAt(0);
+                listBox2.Items.Add(weapons[listBox1.SelectedIndex].ToString());
+
+
+                hp = weapons[listBox1.SelectedIndex].Hp;
+                multiplayer = weapons[listBox1.SelectedIndex].Multiplayer;
+                dmg = weapons[listBox1.SelectedIndex].Dmg;
+                rpm = weapons[listBox1.SelectedIndex].Rpm;
+                ttk = weapons[listBox1.SelectedIndex].Ttk;
+                dps = weapons[listBox1.SelectedIndex].Dps;
+
+                nameTextBox.Text = weapons[listBox1.SelectedIndex].Name;
+                hpTextBox.Text = hp.ToString();
+                multiplayerTextBox.Text = multiplayer.ToString();
+                damageTextBox.Text = dmg.ToString();
+                rpmTextBox.Text = rpm.ToString();
+                ttkTextBox.Text = ttk.ToString();
+                dpsTextBox.Text = dps.ToString();
+            }
+            
+        }
+
+        private void devOptionsCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            
+            math_roundingLabel.IsEnabled = true;
+            math_roundingLabel.Visibility = Visibility.Visible;
+
+            math_roundingTextBox.IsEnabled = true;
+            math_roundingTextBox.Visibility = Visibility.Visible;
+
+            math_roundingButton.IsEnabled = true;
+            math_roundingButton.Visibility = Visibility.Visible;
+        }
+
+        private void devOptionsCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            math_roundingLabel.IsEnabled = false;
+            math_roundingLabel.Visibility = Visibility.Hidden;
+
+            math_roundingTextBox.IsEnabled = false;
+            math_roundingTextBox.Visibility = Visibility.Hidden;
+
+            math_roundingButton.IsEnabled = false;
+            math_roundingButton.Visibility = Visibility.Hidden;
+        }
+
+        private void math_roundingButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(math_roundingTextBox.Text!="")
+            {
+                Int32.TryParse(math_roundingTextBox.Text, out math_rounding);
+            }
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sfd.ShowDialog() == false)
+                return;
+            FileStream fs = new FileStream(sfd.FileName, FileMode.OpenOrCreate, FileAccess.Write);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(fs, weapons);
+            fs.Close();
+            
+        }
+
+        private void loadButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ofd.ShowDialog() == false)
+                return;
+            listBox2.Items.Clear();
+            FileStream fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+            BinaryFormatter bf = new BinaryFormatter();
+            weapons = (List<Weapon>)bf.Deserialize(fs);
+            fs.Close();
+            listBox1.Items.Clear();
+            for (int i = 0; i < weapons.Count; i++)
+            {
+                listBox1.Items.Add(weapons[i].ToStringShort());
+            }
         }
     }
 }
