@@ -5,22 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DamageCalc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="600">
     <Grid>
-        <TextBox x:Name="hpTextBox" BorderThickness="1" Margin="60,10,597,379"/>
-        <TextBox x:Name="damageTextBox" BorderThickness="1" Margin="60,50,597,339"/>
-        <TextBox x:Name="rpmTextBox" BorderThickness="1" Margin="60,90,597,299"/>
-        <TextBox x:Name="rpsTextBox" BorderThickness="1" Margin="260,90,397,299"/>
-        <TextBox x:Name="ttkTextBblox" BorderThickness="1" Margin="60,200,597,189"/>
-        <TextBox x:Name="dpsTextBblox" BorderThickness="1" Margin="60,165,597,224"/>
-        
-        <Label Margin="10,10,-10,-10" FontSize="16">HP</Label>
-        <Label Margin="10,50,-10,-50" FontSize="16">DMG</Label>
-        <Label Margin="10,90,-10,-90" FontSize="16">RPM</Label>
-        <Label Margin="220,90,-220,-90" FontSize="16">RPS</Label>
-        <Label Margin="10,165,-10,-90" FontSize="16">TTK</Label>
-        <Label Margin="10,200,-10,-115" FontSize="16">DPS</Label>
 
-        <Button Margin="230,132,447,232" Click="Button_Click">Calculate</Button>
+        <ListBox Name="listBox1" Width="190" HorizontalAlignment="Right" BorderThickness="3">
+            
+        </ListBox>
+        
+        <StackPanel>
+            
+            <Label/>
+            <Grid>
+                <Label FontSize="16" HorizontalAlignment="Left">HP</Label>
+                <TextBox x:Name="hpTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0">100</TextBox>
+                <Button Name="hp100button" Width="60" HorizontalAlignment="Left" Margin="170,0,0,0" Click="hp100button_Click">100 hp</Button>
+                <Button Name="hp200button" Width="60" HorizontalAlignment="Left" Margin="240,0,0,0" Click="hp200button_Click">200 hp</Button>
+                <Button Name="hp300button" Width="60" HorizontalAlignment="Left" Margin="310,0,0,0" Click="hp300button_Click">300 hp</Button>
+            </Grid>
+
+            <Grid>
+                <Label FontSize="16" HorizontalAlignment="Left">DMG</Label>
+                <TextBox x:Name="damageTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+            </Grid>
+
+            <Grid>
+                <Label Name="RPM_label" FontSize="16" HorizontalAlignment="Left">RPM</Label>
+                <TextBox x:Name="rpmTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+                <CheckBox Name="rpsCheckBox" Height="19" Width="60" HorizontalAlignment="Left" Checked="rpsCheckBox_Checked" Unchecked="rpsCheckBox_Unchecked" Margin="170,0,0,0">RPS</CheckBox>
+            </Grid>
+            <StatusBar/>
+
+            <Label/>
+            <Button Height="40" Width="154" HorizontalAlignment="Left" Click="Button_Click" Margin="6,0,0,0">Calculate</Button>
+            <Label/>
+
+            <Grid>
+                <Label FontSize="16" HorizontalAlignment="Left">TTK</Label>
+                <TextBox x:Name="ttkTextBbox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+            </Grid>
+
+            <Grid>
+                <Label FontSize="16" HorizontalAlignment="Left">DPS</Label>
+                <TextBox x:Name="dpsTextBbox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+            </Grid>
+
+            <Label/>
+
+            <Grid>
+                <Label FontSize="16" HorizontalAlignment="Left">Name</Label>
+                <TextBox x:Name="nameTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+            </Grid>
+
+            <Label/>
+            <Grid>
+                <Button Height="40" Width="44" HorizontalAlignment="Left" Click="Add_Button_Click" Margin="6,0,0,0">Add</Button>
+                <Button Height="40" Width="44" HorizontalAlignment="Left" Click="Del_Button_Click" Margin="60,0,0,0">Del</Button>
+                <Button Height="40" Width="44" HorizontalAlignment="Left" Click="Edit_Button_Click" Margin="116,0,0,0">Edit</Button>
+            </Grid>
+
+        </StackPanel>
     </Grid>
 </Window>
