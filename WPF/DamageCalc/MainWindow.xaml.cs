@@ -71,7 +71,7 @@ namespace DamageCalc
         private void Clear()
         {
             //hpTextBox.Text = "";
-            multiplayerTextBox.Text = "1.0";
+            multiplayerTextBox.Text = "1";
             damageTextBox.Text = "";
             rpmTextBox.Text = "";
             ttkTextBox.Text = "";
@@ -284,6 +284,20 @@ namespace DamageCalc
             {
                 listBox1.Items.Add(weapons[i].ToStringShort());
             }
+        }
+
+        private void qestioButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                "HP - health points\r\n" +
+                "MULTIPLAYER - health points multiplayer\r\n" +
+                "DMG - damage\r\n" +
+                "RPM - rounds per minute\r\n" +
+                "TTK - time to kill\r\n" +
+                "RTK - rounds to kill\r\n" +
+                "DPS - damage per second\r\n" +
+                "Name - weapon name",
+                "Help", MessageBoxButton.OK, MessageBoxImage.Question);
         }
     }
 }

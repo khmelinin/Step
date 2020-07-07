@@ -15,7 +15,7 @@
         <Ellipse Height="60" Width="60" Fill="Gray" HorizontalAlignment="Right"></Ellipse>
 
 
-        <Rectangle Height="10" Width="60" Name="rectCenter" Fill="Red" Margin="340,194,390,195" RenderTransformOrigin="1,0.5">
+        <Rectangle Height="10" Width="60" Name="rectCenter" Fill="Red" Margin="336,205,396,204" RenderTransformOrigin="1,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -26,7 +26,7 @@
             </Rectangle.RenderTransform>
         </Rectangle>
 
-        <Rectangle Height="2" Width="10" Name="rectCenter1" Fill="Black" RenderTransformOrigin="6.1,0.531" Margin="340,208,442,209">
+        <Rectangle Height="2" Width="10" Name="rectCenter1" Fill="Black" RenderTransformOrigin="5.992,0.5" Margin="336,209,446,208">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

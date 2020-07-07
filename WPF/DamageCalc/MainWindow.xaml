@@ -5,12 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DamageCalc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="430" Width="600">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-
         <ListBox Name="listBox1" Width="210" HorizontalAlignment="Left" VerticalAlignment="Stretch" BorderThickness="3" SelectionChanged="listBox1_SelectionChanged" Margin="373,30,0,0"></ListBox>
         <Label HorizontalAlignment="Left" Margin="403,0,0,0" FontSize="16">LIST:</Label>
-        <ListBox Name="listBox2" Width="160" Height="190" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="3" Margin="190,90,0,0"  FontSize="14"></ListBox>
+        <ListBox Name="listBox2" Width="160" Height="240" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="3" Margin="190,90,0,0"  FontSize="14"></ListBox>
         <Label HorizontalAlignment="Left" Margin="220,60,0,0" FontSize="16">SELECTED:</Label>
 
         <StackPanel>
@@ -74,6 +73,7 @@
                 <CheckBox Name="devOptionsCheckBox" HorizontalAlignment="Left" Checked="devOptionsCheckBox_Checked" Unchecked="devOptionsCheckBox_Unchecked">Dev Options</CheckBox>
                 <Button x:Name="saveButton" HorizontalAlignment="Left" Width="60" Height="30" Margin="100,0,0,0" Click="saveButton_Click">Save</Button>
                 <Button x:Name="loadButton" HorizontalAlignment="Left" Width="60" Height="30" Margin="170,0,0,0" Click="loadButton_Click">Load</Button>
+                <Button x:Name="qestioButton" HorizontalAlignment="Left" Width="30" Height="30" Margin="240,0,0,0" Click="qestioButton_Click">?</Button>
             </Grid>
             <Label/>
 
