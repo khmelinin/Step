@@ -3,19 +3,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:DamageCalc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListBox Name="listBox1" Width="210" HorizontalAlignment="Left" VerticalAlignment="Stretch" BorderThickness="3" SelectionChanged="listBox1_SelectionChanged" Margin="373,30,0,0"></ListBox>
-        <Label HorizontalAlignment="Left" Margin="403,0,0,0" FontSize="16">LIST:</Label>
-        <ListBox Name="listBox2" Width="160" Height="240" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="3" Margin="190,90,0,0"  FontSize="14"></ListBox>
+        Title="MainWindow" Height="630" Width="1120">
+
+    
+    <StackPanel>
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <MenuItem Header="File">
+                <MenuItem Header="New" InputGestureText="f3" Click="New_MenuItem_Click" KeyDown="MenuItem_KeyDown"/>
+                <MenuItem Header="Load" InputGestureText="f4" Click="loadButton_Click" KeyDown="MenuItem_KeyDown"/>
+                <MenuItem Header="Save" InputGestureText="f5" Click="Save_MenuItem_Click" KeyDown="MenuItem_KeyDown"/>
+                <MenuItem Header="Save as" InputGestureText="f6" Click="SaveFull_Click" KeyDown="MenuItem_KeyDown"/>
+            </MenuItem>
+            <MenuItem Header="Background color" MaxHeight="100">
+                <MenuItem Header="Red" Background="Red" Click="Color_MenuItem_Click"/>
+                <MenuItem Header="Green" Background="Green" Click="Color_MenuItem_Click"/>
+                <MenuItem Header="Blue" Background="Blue" Click="Color_MenuItem_Click"/>
+                <MenuItem Name="standartColorMenuItem" Header="Standart" Click="Color_MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Mode" IsEnabled="false" ToolTip="Developing...">
+                
+            </MenuItem>
+            <MenuItem Header="Help" Click="InfoButton_Click" ToolTip="info (f1)"></MenuItem>
+        </Menu>
+        <Grid>
+            <ListBox Name="listBox1" Width="300" HorizontalAlignment="Left" VerticalAlignment="Stretch" BorderThickness="3" SelectionChanged="listBox1_SelectionChanged" Margin="383,30,0,0"></ListBox>
+        <Label HorizontalAlignment="Left" Margin="413,0,0,0" FontSize="16">LIST:</Label>
+        <ListBox Name="listBox2" Width="180" Height="240" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="3" Margin="190,90,0,0"  FontSize="14"></ListBox>
         <Label HorizontalAlignment="Left" Margin="220,60,0,0" FontSize="16">SELECTED:</Label>
 
         <StackPanel>
-            
             <Label/>
             <Grid>
+                
                 <Label FontSize="16" HorizontalAlignment="Left">HP</Label>
                 <TextBox x:Name="hpTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16">100</TextBox>
 
@@ -32,6 +54,12 @@
                 <Label Name="RPM_label" FontSize="16" HorizontalAlignment="Left">RPM</Label>
                 <TextBox x:Name="rpmTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16"/>
                 <CheckBox Name="rpsCheckBox" Height="19" Width="60" HorizontalAlignment="Left" Checked="rpsCheckBox_Checked" Unchecked="rpsCheckBox_Unchecked" Margin="170,0,0,10">RPS</CheckBox>
+            </Grid>
+
+            <Grid>
+                <Label Name="DST_label" FontSize="16" HorizontalAlignment="Left">DST</Label>
+                <TextBox x:Name="dstTextBox" BorderThickness="1" Width="100" HorizontalAlignment="Left" Margin="60,0,0,0" FontSize="16"/>
+                
             </Grid>
             <StatusBar/>
 
@@ -71,9 +99,9 @@
 
             <Grid>
                 <CheckBox Name="devOptionsCheckBox" HorizontalAlignment="Left" Checked="devOptionsCheckBox_Checked" Unchecked="devOptionsCheckBox_Unchecked">Dev Options</CheckBox>
-                <Button x:Name="saveButton" HorizontalAlignment="Left" Width="60" Height="30" Margin="100,0,0,0" Click="saveButton_Click">Save</Button>
+                <Button x:Name="saveButton" HorizontalAlignment="Left" Width="60" Height="30" Margin="100,0,0,0" Click="SaveFull_Click">Save</Button>
                 <Button x:Name="loadButton" HorizontalAlignment="Left" Width="60" Height="30" Margin="170,0,0,0" Click="loadButton_Click">Load</Button>
-                <Button x:Name="qestioButton" HorizontalAlignment="Left" Width="30" Height="30" Margin="240,0,0,0" Click="qestioButton_Click">?</Button>
+                <Button x:Name="infoButton" HorizontalAlignment="Left" Width="30" Height="30" Margin="240,0,0,0" Click="InfoButton_Click" Background="White" BorderBrush="Black" BorderThickness="3">?</Button>
             </Grid>
             <Label/>
 
@@ -84,5 +112,6 @@
             </Grid>
 
         </StackPanel>
-    </Grid>
+        </Grid>
+    </StackPanel>
 </Window>
