@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -21,14 +22,17 @@ namespace tmp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer dt;
         public MainWindow()
         {
             InitializeComponent();
+            dt = new DispatcherTimer();
         }
         private void buttonCenter_Click(object sender, RoutedEventArgs e)
         {
             rectCenterRotate.Angle += 20;
             rectCenterRotate1.Angle += 20;
+            
         }
         private void buttonLeft_Click(object sender, RoutedEventArgs e)
         {
