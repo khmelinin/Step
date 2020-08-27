@@ -22,8 +22,6 @@ namespace One
             return elements;
         }
 
-
-
         public static void MyFillRowMethod(Object theItem, out SqlChars results)
         {
             results = new SqlChars(theItem.ToString());
@@ -44,5 +42,36 @@ namespace One
 
             return new SqlInt32(m);
         }
+
+        [SqlFunction(
+           DataAccess = DataAccessKind.None,
+           FillRowMethodName = "FillRowKeyValuePair", 
+            IsDeterministic = true,
+            TableDefinition = "(symbol nvarchar(1), count int)")]
+        public static IEnumerable LetterCount(string s)
+        {
+            Dictionary<char, int> d = new Dictionary<char, int>();
+            foreach(var c in s)
+            {
+                if(d.ContainsKey(c))
+                {
+                    d[c]++;
+                }
+                else
+                {
+                    d[c] = 1;
+                }
+            }
+
+            return d;
+        }
+
+        public static void FillRowKeyValuePair(object item, out SqlChars symbol, out SqlInt32 count)
+        {
+            KeyValuePair<char, int> p = (KeyValuePair<char, int>)item;
+            symbol = new SqlChars(new char[] { p.Key });
+            count = p.Value;
+        }
+
     }
 }

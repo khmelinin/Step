@@ -38,3 +38,16 @@ as external name SQL.[One.Class1].CalculateDeposit
 go
 
 select dbo.CalcDeposit(1000, 18, 1000, 4000000)
+
+create function letterCount(@s nvarchar(max))
+returns table (symbol nvarchar(1), [count] int)
+as external name SQL.[One.Class1].LetterCount
+go
+
+select * from dbo.letterCount(N'[SqlFunction( DataAccess = DataAccessKind.None,
+           FillRowMethodName = "MyFillRowMethod"
+           , IsDeterministic = true) ]')
+
+create aggregate customSum(@x float)
+returns float
+external name SQL.[One.Class2]
