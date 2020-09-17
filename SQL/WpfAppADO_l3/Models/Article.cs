@@ -39,5 +39,9 @@ namespace WpfAppADO_l3.Models
                 row.SetField("articleTitle", value);
             }
         }
+        internal void Delete()
+        {
+            row.Delete();
+        }
     }
 }

@@ -9,8 +9,8 @@
     <DockPanel LastChildFill="True">
         <ToolBar DockPanel.Dock="Top" >
             <Button Click="CreateConnection_Click">Create Connection</Button>
-            <Button Click="LoadData_Click_1">Load Data</Button>
-            <Button>Update Data</Button>
+            <Button Click="LoadData_Click">Load Data</Button>
+            <Button Click="UpdateData_Click">Update Data</Button>
         </ToolBar>
         <TabControl>
             <TabItem Header="Articles">
@@ -19,10 +19,10 @@
                         <RowDefinition />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <DataGrid Grid.Row="0" ItemsSource="{Binding Articles}"></DataGrid>
+                    <DataGrid Grid.Row="0" x:Name="gridArticles" ItemsSource="{Binding Articles}"></DataGrid>
                     <StackPanel Grid.Row="1" Orientation="Horizontal">       
                         <Button>New</Button>
-                        <Button>Delete</Button>
+                        <Button Click="DeleteArticle_Click">Delete</Button>
                     </StackPanel>
 
                 </Grid>

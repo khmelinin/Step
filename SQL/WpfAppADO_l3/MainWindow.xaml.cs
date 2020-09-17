@@ -43,7 +43,7 @@ namespace WpfAppADO_l3
             }
         }
 
-        private void LoadData_Click_1(object sender, RoutedEventArgs e)
+        private void LoadData_Click(object sender, RoutedEventArgs e)
         {
             warehouse.LoadData();
             Articles = warehouse.Articles;
@@ -52,6 +52,20 @@ namespace WpfAppADO_l3
             {
                 handler.Invoke(this, new PropertyChangedEventArgs("Articles"));
             }
+        }
+        private void UpdateData_Click(object sender, RoutedEventArgs e)
+        {
+            warehouse.UpdateData();
+        }
+        private void DeleteArticle_Click(object sender, RoutedEventArgs e)
+        {
+            Article a = gridArticles.SelectedItem as Article;
+            if (a == null) 
+            {
+                return;
+            }
+
+            Articles.Remove(a);
         }
     }
 }

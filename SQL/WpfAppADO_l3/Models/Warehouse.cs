@@ -44,11 +44,26 @@ namespace WpfAppADO_l3.Models
             documentsAdapter.Fill(warehouse.Tables["Documents"]);
         }
 
+        public void UpdateData()
+        {
+            articlesAdapter.Update(warehouse.Tables["Articles"]);
+        }
+
         public ObservableCollection<Article> Articles
         {
             get
             {
                 var result = new ObservableCollection<Article>();
+                result.CollectionChanged += (s, e) =>
+                {
+                    if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
+                    {
+                        foreach (Article item in e.OldItems)
+                        {
+                            item.Delete();
+                        }
+                    }
+                };
                 foreach (DataRowView item in warehouse.Tables["Articles"].DefaultView)
                 {
                     result.Add(new Article(item.Row));
@@ -167,6 +182,11 @@ namespace WpfAppADO_l3.Models
             articlesAdapter = new SqlDataAdapter(
                 "select articleId, articleTitle from Articles",
                 sqlConnection);
+
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(articlesAdapter);
+            articlesAdapter.DeleteCommand = commandBuilder.GetDeleteCommand(true);
+            articlesAdapter.InsertCommand = commandBuilder.GetInsertCommand(true);
+            articlesAdapter.UpdateCommand = commandBuilder.GetUpdateCommand(true);
 
             customerAdapter = new SqlDataAdapter(
                 "select customerId, customerTitle from Customers",
