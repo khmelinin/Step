@@ -1,0 +1,91 @@
+﻿<Window x:Class="WpfAppADO_l2.ConnectDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppADO_l2"
+        mc:Ignorable="d"
+        Title="ConnectDialog" Width="472" Height="186">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Server Name" />
+        <TextBox Grid.Row="0"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="2" 
+                 x:Name="txtServerName"/>
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Authentication" />
+        <RadioButton
+            Grid.Row="1"
+            Grid.Column="1"
+            x:Name="rbWindows"
+            Content="Windows" 
+            IsChecked="True"
+            />
+        <RadioButton
+            Grid.Row="1"
+            Grid.Column="2"
+            x:Name="rbSqlServer"
+            Content="SQL Server" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            x:Name="lblLogin"
+            Text="Login" />
+        <TextBox Grid.Row="2"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="2" 
+                 x:Name="txtLogin"
+                 IsEnabled="{Binding ElementName=rbSqlServer, Path=IsChecked}"/>
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            x:Name="lblPassword"
+            Text="Password" />
+        <PasswordBox Grid.Row="3"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="2" 
+                 x:Name="txtPassword"
+                 IsEnabled="{Binding ElementName=rbSqlServer, Path=IsChecked}"/>
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Initial Catalog" />
+        <TextBox Grid.Row="4"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="2" 
+                 x:Name="txtInitialCatalog"/>
+        <StackPanel
+            Grid.Row="6"
+            Grid.ColumnSpan="3"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            <Button
+                Margin="5"
+                Content="Connect"
+                Click="Connect_Click"/>
+            <Button
+                Margin="5"
+                Content="Cancel"
+                Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

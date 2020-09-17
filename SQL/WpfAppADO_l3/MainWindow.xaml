@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfAppADO_l3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppADO_l3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel LastChildFill="True">
+        <ToolBar DockPanel.Dock="Top" >
+            <Button Click="CreateConnection_Click">Create Connection</Button>
+            <Button Click="LoadData_Click_1">Load Data</Button>
+            <Button>Update Data</Button>
+        </ToolBar>
+        <TabControl>
+            <TabItem Header="Articles">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <DataGrid Grid.Row="0" ItemsSource="{Binding Articles}"></DataGrid>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">       
+                        <Button>New</Button>
+                        <Button>Delete</Button>
+                    </StackPanel>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel> 
+</Window>
