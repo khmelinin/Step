@@ -1,0 +1,49 @@
+﻿<Window x:Class="Shop_linq.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"  
+        xmlns:vm="clr-namespace:Shop_linq.ViewModels"
+        xmlns:h="clr-namespace:Shop_linq.Helpers"
+        xmlns:local="clr-namespace:Shop_linq"
+        xmlns:b="clr-namespace:Shop_linq"
+        mc:Ignorable="d"
+        b:CloseDialogBehavior.CloseDialog="{Binding CloseDialog}"
+        
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}"
+        Title="MainWindow" Height="450" Width="800">
+    <!--<i:Interaction.Triggers>
+        <i:EventTrigger EventName="Load">
+            <i:InvokeCommandAction Command="" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>-->
+    <Grid>
+        <TabControl>
+            <TabItem Header="Articles">
+                <DockPanel LastChildFill="True">
+                    <ToolBarPanel DockPanel.Dock="Bottom">
+                        <Button Command="{Binding NewArticleCommand}">New</Button>
+                        <Button Command="{Binding DeleteArticleCommand}" CommandParameter="{Binding ElementName=dataGrid,Path=SelectedItem}">Delete</Button>
+                    </ToolBarPanel>
+                    <DataGrid x:Name="dataGrid"
+                              ItemsSource="{Binding Articles}"
+                              AutoGenerateColumns="False" SelectionMode="Single">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="RowEditEnding">
+                                <h:InteractiveCommand Command="{Binding RowEndEditCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewKeyUp">
+                                <h:InteractiveCommand Command="{Binding DeleteItemCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Title" Binding="{Binding articleTitle, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Orders"></TabItem>
+        </TabControl>
+    </Grid>
+</Window>

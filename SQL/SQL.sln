@@ -13,6 +13,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppADO_l2", "WpfAppADO_l
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppADO_l3", "WpfAppADO_l3\WpfAppADO_l3.csproj", "{047C17AD-1447-488D-8318-0A733E9C57C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study_ado", "Study_ado\Study_ado.csproj", "{79ECE1F6-364D-446D-A5EC-470708039024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADotNet1", "ADotNet1\ADotNet1.csproj", "{9347C316-F1ED-4A49-AFB6-686BFDA660E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strudy_ado_2", "Strudy_ado_2\Strudy_ado_2.csproj", "{773DA153-46E0-48D9-AAD5-7F86484D7807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop_linq", "Shop_linq\Shop_linq.csproj", "{06C674E9-862D-41B4-BA5B-8768B7187C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL(EF_Code)", "SQL(EF_Code)\SQL(EF_Code).csproj", "{9EA5BB07-3B31-4B8C-BA84-06941FBB788E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +49,26 @@ Global
 		{047C17AD-1447-488D-8318-0A733E9C57C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{047C17AD-1447-488D-8318-0A733E9C57C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{047C17AD-1447-488D-8318-0A733E9C57C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79ECE1F6-364D-446D-A5EC-470708039024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79ECE1F6-364D-446D-A5EC-470708039024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79ECE1F6-364D-446D-A5EC-470708039024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79ECE1F6-364D-446D-A5EC-470708039024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9347C316-F1ED-4A49-AFB6-686BFDA660E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9347C316-F1ED-4A49-AFB6-686BFDA660E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9347C316-F1ED-4A49-AFB6-686BFDA660E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9347C316-F1ED-4A49-AFB6-686BFDA660E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{773DA153-46E0-48D9-AAD5-7F86484D7807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{773DA153-46E0-48D9-AAD5-7F86484D7807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{773DA153-46E0-48D9-AAD5-7F86484D7807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{773DA153-46E0-48D9-AAD5-7F86484D7807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C674E9-862D-41B4-BA5B-8768B7187C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C674E9-862D-41B4-BA5B-8768B7187C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C674E9-862D-41B4-BA5B-8768B7187C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C674E9-862D-41B4-BA5B-8768B7187C4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA5BB07-3B31-4B8C-BA84-06941FBB788E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA5BB07-3B31-4B8C-BA84-06941FBB788E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA5BB07-3B31-4B8C-BA84-06941FBB788E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA5BB07-3B31-4B8C-BA84-06941FBB788E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
