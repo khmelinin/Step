@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL(EF_Code)", "SQL(EF_Code
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL(EF2)", "SQL(EF2)\SQL(EF2).csproj", "{0FB22FBC-1BE2-4F91-A0AD-6AF55F90C491}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL(EF3_wpf)", "SQL(EF3_wpf)\SQL(EF3_wpf).csproj", "{71E3F526-6C2A-4BF7-AF6B-16E23A6453CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{0FB22FBC-1BE2-4F91-A0AD-6AF55F90C491}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FB22FBC-1BE2-4F91-A0AD-6AF55F90C491}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FB22FBC-1BE2-4F91-A0AD-6AF55F90C491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E3F526-6C2A-4BF7-AF6B-16E23A6453CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E3F526-6C2A-4BF7-AF6B-16E23A6453CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E3F526-6C2A-4BF7-AF6B-16E23A6453CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E3F526-6C2A-4BF7-AF6B-16E23A6453CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
