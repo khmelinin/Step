@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL(EF2)", "SQL(EF2)\SQL(EF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL(EF3_wpf)", "SQL(EF3_wpf)\SQL(EF3_wpf).csproj", "{71E3F526-6C2A-4BF7-AF6B-16E23A6453CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Games", "EF_Games\EF_Games.csproj", "{1C3E5094-21A0-44D9-B1CB-BE10BD2CB67E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop", "OnlineShop\OnlineShop.csproj", "{BF6A9BA9-62E9-4BAF-98D6-D0AFBDF7B175}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{71E3F526-6C2A-4BF7-AF6B-16E23A6453CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71E3F526-6C2A-4BF7-AF6B-16E23A6453CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71E3F526-6C2A-4BF7-AF6B-16E23A6453CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C3E5094-21A0-44D9-B1CB-BE10BD2CB67E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C3E5094-21A0-44D9-B1CB-BE10BD2CB67E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C3E5094-21A0-44D9-B1CB-BE10BD2CB67E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C3E5094-21A0-44D9-B1CB-BE10BD2CB67E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF6A9BA9-62E9-4BAF-98D6-D0AFBDF7B175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6A9BA9-62E9-4BAF-98D6-D0AFBDF7B175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6A9BA9-62E9-4BAF-98D6-D0AFBDF7B175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6A9BA9-62E9-4BAF-98D6-D0AFBDF7B175}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

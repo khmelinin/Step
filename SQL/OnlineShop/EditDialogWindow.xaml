@@ -1,0 +1,29 @@
+﻿<Window x:Class="OnlineShop.EditDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineShop"
+        mc:Ignorable="d"
+        Title="EditDialogWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <ToolBar Grid.ColumnSpan="2">
+                <Button x:Name="AddButton" Click="AddButton_Click">Edit(generate item)</Button>
+                <Button IsDefault="True" x:Name="SaveButton" Click="SaveButton_Click">Save</Button>
+            </ToolBar>
+            <Label>Item Title:</Label>
+            <TextBox x:Name="titleText"/>
+            <Label>Item Creator:</Label>
+            <TextBox x:Name="creatorText"/>
+            <Label>Item Info:</Label>
+            <TextBox x:Name="infoText"/>
+            <Label>Item CategotyId:</Label>
+            <TextBox x:Name="categoryText"/>
+            <Label>Item Characteristics:</Label>
+            <TextBox x:Name="characteristicsText"/>
+            <Button x:Name="AddCharacteristicButton" Click="AddCharacteristicButton_Click">Add Characteristic (!!! After "Add(generate item)" button)</Button>
+            <DataGrid x:Name="gridItems" Height="190"/>
+        </StackPanel>
+    </Grid>
+</Window>

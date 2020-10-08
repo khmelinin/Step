@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="EF_Games.Views.PlatformsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:EF_Games.ViewModels"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:EF_Games.Views"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=vm:PlatformsViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid x:Name="grid" 
+                  ItemsSource="{Binding Platforms}" 
+                  AutoGenerateColumns="False">
+            <behaviors:Interaction.Triggers>
+                <behaviors:EventTrigger EventName="RowEditEnding">
+                    <behaviors:InvokeCommandAction Command="{Binding EditEndingCommand}" 
+                                                   PassEventArgsToCommand="True" />
+                </behaviors:EventTrigger>
+            </behaviors:Interaction.Triggers>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" 
+                                    Binding="{Binding platformTitle, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

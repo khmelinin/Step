@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="06e775120f9541a787ebda36a0537c72" Name="Diagram1">
+        <EntityTypeShape EntityType="GamesBaseModel.Game" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesBaseModel.Genre" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesBaseModel.Platform" Width="1.5" PointX="6.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesBaseModel.Publisher" Width="1.5" PointX="0.875" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="GamesBaseModel.FK__Games__genreId__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="GamesBaseModel.FK__Games__publisher__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="GamesBaseModel.GamePlatform" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
