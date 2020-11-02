@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Processors11
@@ -36,10 +37,15 @@ namespace Processors11
         }
         static void Main(string[] args)
         {
+            CancellationTokenSource sourse = new CancellationTokenSource();
+
             Console.WriteLine("Start Main method");
             FactorialAsync(1);
             Console.WriteLine("End Main method");
             Console.ReadLine();
+
+            Thread.Sleep(30);
+            sourse.Cancel();
         }
     }
 }
