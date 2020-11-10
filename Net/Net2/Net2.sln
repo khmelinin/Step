@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerWPF", "ServerWPF\ServerWPF.csproj", "{650E9735-41ED-4B45-B944-69D0000A346C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientWpf", "ClientWpf\ClientWpf.csproj", "{9F3CF4BE-415E-4036-95DB-200AED656E4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{C694C7FA-EAB4-48AF-AB9A-6F7C5939F2F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{650E9735-41ED-4B45-B944-69D0000A346C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{650E9735-41ED-4B45-B944-69D0000A346C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{650E9735-41ED-4B45-B944-69D0000A346C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{650E9735-41ED-4B45-B944-69D0000A346C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F3CF4BE-415E-4036-95DB-200AED656E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3CF4BE-415E-4036-95DB-200AED656E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3CF4BE-415E-4036-95DB-200AED656E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3CF4BE-415E-4036-95DB-200AED656E4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C694C7FA-EAB4-48AF-AB9A-6F7C5939F2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C694C7FA-EAB4-48AF-AB9A-6F7C5939F2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C694C7FA-EAB4-48AF-AB9A-6F7C5939F2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C694C7FA-EAB4-48AF-AB9A-6F7C5939F2F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F72693B-A2C9-49BA-BA9D-5B994091250F}
+	EndGlobalSection
+EndGlobal
