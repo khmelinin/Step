@@ -1,0 +1,79 @@
+﻿<Window x:Class="FtpWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FtpWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="User"/>
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1"
+            x:Name="txtUser"
+            Text="anonymous"/>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            Text="Password"/>
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="3"
+            x:Name="txtPassword"
+            Text="coolasdf3@gmail.com"/>
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Address"/>
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="3"
+            x:Name="txtAddress"
+            Text="ftp://speedtest.tele2.net/"/>
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Orientation="Horizontal">
+            <Button
+                x:Name="btnGetList"
+                Click="btnGetList_Click">Get List</Button>
+            <Button
+                Click="BtnDownloadFile_Click">Download file</Button>
+        </StackPanel>
+        <ListView
+            x:Name="listView"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="4" 
+            ItemsSource="{Binding FileSystemInfo, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}}"
+            SelectedItem="{Binding CurrentItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}}">
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <TextBlock Text="{Binding Name}"/>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Window>
