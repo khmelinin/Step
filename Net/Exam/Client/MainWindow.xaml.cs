@@ -28,6 +28,9 @@ namespace Client
         List<string> coordinates;
         int ship_parts = 0;
         const int max_ship_parts = 20;
+        string shots = "";
+        string shots_to_me = "";
+        bool is_battle = false;
 
         TcpListener listener;
         TcpClient client;
@@ -40,7 +43,6 @@ namespace Client
         public MainWindow()
         {
             InitializeComponent();
-
             coordinates = new List<string>() { 
                 "A0", "A1", "A2", "A3", "A4", "A5" , "A6", "A7", "A8", "A9",
                 "B0", "B1", "B2", "B3", "B4", "B5" , "B6", "B7", "B8", "B9",
@@ -77,16 +79,17 @@ namespace Client
                 item.IsEnabled = false;
             }
         }
-        private void EnableField()
+
+        private void EnableField(bool enable)
         {
             foreach (var item in all_buttons)
             {
-                App.Current.Dispatcher.Invoke(() => { item.IsEnabled = true && item.Content == null; });
+                App.Current.Dispatcher.Invoke(() => { item.IsEnabled = enable && item.Content == null; });
             }
         }
 
         // ---- Menu ----
-        private void MenuReady_Click(object sender, RoutedEventArgs e)
+        private async void MenuReady_Click(object sender, RoutedEventArgs e)
         {
 
             //
@@ -101,28 +104,10 @@ namespace Client
 
             await writer.WriteAsync(p);
 
-
+            GameStart();
+            EnableField(start == 1);
             //ClearButton();
-            EnableField();
-            foreach (var item in all_buttons)
-            {
-                item.Background = Brushes.White;
-            }
-            menuReady.Background = Brushes.Red;
-            menuReady.IsEnabled = true;
 
-
-            //
-            foreach (var item in all_buttons)
-            {
-                item.Background = Brushes.White;
-            }
-            for (int i = 0; i < all_buttons.Count; i++)
-            {
-                all_buttons[i].Content = coordinates[i];
-            }
-            menuReady.Background = Brushes.White;
-            menuReady.IsEnabled = false;
         }
         private void MenuEnd_Click(object sender, RoutedEventArgs e)
         {
@@ -143,6 +128,11 @@ namespace Client
             listener.Start();
             client = await listener.AcceptTcpClientAsync();
             CreateReceiveTask();
+            //
+            EnableField(true);
+
+            NewGameReady();
+            //
         }
         private async void MenuConnect_Click(object sender, RoutedEventArgs e)
         {
@@ -161,6 +151,10 @@ namespace Client
             }
 
             //
+
+            EnableField(true);
+
+            NewGameReady();
         }
         private void MenuDisconnect_Click(object sender, RoutedEventArgs e)
         {
@@ -180,48 +174,52 @@ namespace Client
         // ---- Menu ----
 
         // ---- Buttons ---
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (ship_parts < max_ship_parts && !((sender as Button).Content as string).Contains("X"))
+            if (!is_battle)
             {
-                (sender as Button).Background = Brushes.DarkGray;
-                (sender as Button).Content += "X";
-                ship_parts += 1;
-            }
-            else if(((sender as Button).Content as string).Contains("X"))
-            {
-                MessageBox.Show("You can's stack ships!");
+                if (ship_parts < max_ship_parts && !((sender as Button).Content as string).Contains("X"))
+                {
+                    (sender as Button).Background = Brushes.DarkGray;
+                    (sender as Button).Content += "X";
+                    ship_parts += 1;
+                }
+                //else if(((sender as Button).Content as string).Contains("X"))
+                //{
+                //    MessageBox.Show("You can's stack ships!");
+                //}
+                else if (ship_parts > max_ship_parts)
+                {
+                    MessageBox.Show("To many ship parts!");
+                }
             }
             else
             {
-                MessageBox.Show("To many ship parts!");
+                var btn = sender as Button;
+                var index = buttons.IndexOf(btn);
+                (sender as Button).Background = Brushes.DarkGray;
+                var p = $"{Convert.ToInt32(PackageType.Turn)};{index}";
+
+                await writer.WriteAsync(p);
+                var gr = CheckGame();
+                p = $"{Convert.ToInt32(PackageType.Check)};{Convert.ToInt32(gr == GameResult.win ? GameResult.lose : gr)}";
+                await writer.WriteAsync(p);
+                if (gr == GameResult.win)
+                {
+                    MessageBox.Show("You win!!");
+                    return;
+                }
+                else if (gr == GameResult.end)
+                {
+                    MessageBox.Show("Game end!!");
+                }
+
+                p = $"{Convert.ToInt32(PackageType.Next)};";
+                await writer.WriteAsync(p);
+                EnableField(false);
             }
         }
 
-
-        private async void ButtonEnemy_Click(object sender, RoutedEventArgs e)
-        {
-            var btn = sender as Button;
-            var index = buttons.IndexOf(btn);
-            var p = $"{Convert.ToInt32(PackageType.Turn)};{index}";
-
-            await writer.WriteAsync(p);
-            var gr = CheckGame();
-            p = $"{Convert.ToInt32(PackageType.Check)};{Convert.ToInt32(gr == GameResult.win ? GameResult.lose : gr)}";
-            await writer.WriteAsync(p);
-            if (gr == GameResult.win)
-            {
-                MessageBox.Show("You win!!");
-                return;
-            }
-            else if (gr == GameResult.end)
-            {
-                MessageBox.Show("Game end!!");
-            }
-
-            p = $"{Convert.ToInt32(PackageType.Next)};";
-            await writer.WriteAsync(p);
-        }
         // ---- Buttons ---
 
         // ---- Net ----
@@ -233,8 +231,7 @@ namespace Client
                 return GameResult.win;
             }
 
-            var c = ship_parts;
-            return c == 0 ? GameResult.end : GameResult.none;
+            return GameResult.none;
         }
 
         private void Receved(CancellationToken token)
@@ -255,13 +252,17 @@ namespace Client
                 switch (pt)
                 {
                     case PackageType.Start:
-                        //ClearButton();
-                        EnableField();
+                        GameStart();
+                        EnableField(ss[1] == "1");
                         break;
                     case PackageType.Turn:
                         App.Current.Dispatcher.Invoke(() =>
                         {
-                            buttons[Convert.ToInt32(ss[1])].Content = "0";
+                            if ((buttons[Convert.ToInt32(ss[1])].Content as string).Contains("X"))
+                            {
+                                MessageBox.Show("You get hitted");
+                                ship_parts -= 1;
+                            }
                         });
                         break;
                     case PackageType.Check:
@@ -275,7 +276,7 @@ namespace Client
                         }
                         break;
                     case PackageType.Next:
-                        //EnableButtons(true);
+                        EnableField(true);
                         break;
                     default:
                         break;
@@ -292,6 +293,37 @@ namespace Client
             writer.AutoFlush = true;
             source = new CancellationTokenSource();
             receiveTask = Task.Run(() => { Receved(source.Token); });
+        }
+        private void NewGameReady()
+        {
+            EnableField(true);
+
+
+            foreach (var item in all_buttons)
+            {
+                item.Background = Brushes.White;
+                
+            }
+            menuReady.Background = Brushes.Red;
+            menuReady.IsEnabled = true;
+            for (int i = 0; i < all_buttons.Count; i++)
+            {
+                all_buttons[i].Content = coordinates[i];
+            }
+            is_battle = false;
+        }
+        private async void GameStart()
+        {
+            //for (int i = 0; i < all_buttons.Count; i++)
+            //{
+            //    coordinates[i] = all_buttons[i].Content as string;
+            //}
+            foreach (var item in all_buttons)
+            {
+                item.Background = Brushes.White;
+                
+            }
+            is_battle = true;
         }
     }
 }

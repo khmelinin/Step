@@ -12,8 +12,7 @@ namespace Client
         Turn,
         Check,
         Next,
-        Shot,
-        Miss
+        New
     }
 
     enum GameResult
