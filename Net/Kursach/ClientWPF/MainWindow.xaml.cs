@@ -24,11 +24,10 @@ namespace ClientWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        //static string userName;
         private IPAddress ip;
         private int port = 8888;
-        static TcpClient client;
-        static NetworkStream stream;
+        TcpClient client;
+        NetworkStream stream;
 
         List<Contact> contacts;
 
@@ -44,6 +43,7 @@ namespace ClientWPF
 
         private void menuConnect_Click(object sender, RoutedEventArgs e)
         {
+
             var dlg = new ConnectionWindow() { Title = "Connect to server" };
             var result = dlg.ShowDialog();
             if (result == null || result.Value == false)
@@ -67,124 +67,85 @@ namespace ClientWPF
             {
                 // enabling
                 txtChat.IsEnabled = true;
+                txtChat.Text = string.Empty;
                 // enabling 
 
                 ip = dlg.IPAddress;
                 port = dlg.Port;
-                client.Connect(ip.ToString(), port); //подключение клиента
-                stream = client.GetStream(); // получаем поток
+                client.Connect(ip.ToString(), port); //client connect
+                stream = client.GetStream();
 
                 //string message = userName;
                 string message = txtUsername.Text;
                 byte[] data = Encoding.Unicode.GetBytes(message);
                 stream.Write(data, 0, data.Length);
 
-                // запускаем новый поток для получения данных
                 Thread receiveThread = new Thread(new ThreadStart(ReceiveMessage));
-                receiveThread.Start(); //старт потока
-                //Console.WriteLine("Welcome, {0}", userName);
-                SendMessage();
+                receiveThread.Start();
+                //SendMessage();
             }
             catch (Exception ex)
             {
-                //Console.WriteLine(ex.Message);
                 MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                Disconnect();
             }
         }
 
-        //private void Main()
-        //{
-        //    Console.Write("Enter your name: ");
-        //    userName = Console.ReadLine();
-        //    client = new TcpClient();
-        //    try
-        //    {
-        //        client.Connect(ip, port); //подключение клиента
-        //        stream = client.GetStream(); // получаем поток
-
-        //        string message = userName;
-        //        byte[] data = Encoding.Unicode.GetBytes(message);
-        //        stream.Write(data, 0, data.Length);
-
-        //        // запускаем новый поток для получения данных
-        //        Thread receiveThread = new Thread(new ThreadStart(ReceiveMessage));
-        //        receiveThread.Start(); //старт потока
-        //        //Console.WriteLine("Welcome, {0}", userName);
-        //        SendMessage();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //Console.WriteLine(ex.Message);
-
-        //    }
-        //    finally
-        //    {
-        //        Disconnect();
-        //    }
-        //}
-        // отправка сообщений
         void SendMessage()
         {
-            //Console.WriteLine("Enter message: ");
 
             //while (true)
             //{
-            //string message = Console.ReadLine();
-            if (txtChat.IsEnabled)
-            {
-                string message = txtChat.Text;
-                byte[] data = Encoding.Unicode.GetBytes(message);
-                stream.Write(data, 0, data.Length);
-            }
+                if (txtChat.IsEnabled)
+                {
+                    string message = txtChat.Text;
+                    byte[] data = Encoding.Unicode.GetBytes(message);
+                    stream.Write(data, 0, data.Length);
+                }
             //}
         }
-        // получение сообщений
-        void ReceiveMessage()
+        
+        async void ReceiveMessage()
         {
             while (true)
             {
                 try
                 {
-                    byte[] data = new byte[64]; // буфер для получаемых данных
+                    byte[] data = new byte[64];
                     StringBuilder builder = new StringBuilder();
                     int bytes = 0;
                     do
                     {
-                        bytes = stream.Read(data, 0, data.Length);
+                        bytes = await stream.ReadAsync(data, 0, data.Length);
                         builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
                     }
                     while (stream.DataAvailable);
 
                     string message = builder.ToString();
-                    //Console.WriteLine(message);//вывод сообщения
-                    txtBlockChatWindow.Text += ("\n" + message);
+                    App.Current.Dispatcher.Invoke(() => {
+                        txtBlockChatWindow.Text += ("\n" + message);
+                    });
                 }
-                catch
+                catch(Exception ex)
                 {
-                    //Console.WriteLine("Connection interrupted!"); //соединение было прервано
-                    MessageBox.Show("Connection interrupted!");
-                    //Console.ReadLine();
+                    MessageBox.Show(ex.Message + " Connection interrupted!");
                     Disconnect();
                 }
             }
         }
 
-        static void Disconnect()
+        void Disconnect()
         {
             if (stream != null)
-                stream.Close();//отключение потока
+                stream.Close();
             if (client != null)
-                client.Close();//отключение клиента
-            Environment.Exit(0); //завершение процесса
+                client.Close();
+            Environment.Exit(0);
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             SendMessage();
+            txtChat.Text = string.Empty;
         }
 
         private void txtChat_KeyDown(object sender, KeyEventArgs e)
@@ -192,6 +153,7 @@ namespace ClientWPF
             if (e.Key == Key.Enter)
             {
                 SendMessage();
+                txtChat.Text = string.Empty;
             }
         }
 
@@ -203,6 +165,15 @@ namespace ClientWPF
             {
                 return;
             }
+            var tmp = new MenuItem() { Header = dlg.userName + " " + dlg.userId };
+
+            menuContacts.Items.Add(tmp);
+            contacts.Add(new Contact(dlg.userId, dlg.userName));
+            comboboxContacts.Items.Add(dlg.userName);
+        }
+        private void menuAddGroup_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

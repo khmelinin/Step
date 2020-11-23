@@ -31,11 +31,11 @@ namespace ClientWPF
             }
         }
 
-        public int userId
+        public string userId
         {
             get
             {
-                return Convert.ToInt32(txtId.Text);
+                return txtId.Text;
             }
         }
         private void btnCreate_Click(object sender, RoutedEventArgs e)

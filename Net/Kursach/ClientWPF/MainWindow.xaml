@@ -36,11 +36,21 @@
             <MenuItem x:Name="menuContacts" Header="Contacts" BorderBrush="Black" BorderThickness="1">
                 <MenuItem x:Name="menuAddContact" Header="Add contact" Click="menuAddContact_Click"/>
                 <Separator/>
+                <ComboBox x:Name="comboboxContacts" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </MenuItem>
+            <MenuItem x:Name="menuGroups" Header="Groups" BorderBrush="Black" BorderThickness="1">
+                <MenuItem x:Name="menuAddGroup" Header="Add group" Click="menuAddGroup_Click"/>
+                <Separator/>
+                <ScrollViewer Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <RichTextBox x:Name="txtRichGroups"/>
+                </ScrollViewer>
             </MenuItem>
         </Menu>
-        
-        <TextBlock x:Name="txtBlockChatWindow" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Gray"/>
-        
+
+        <ScrollViewer  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <TextBlock x:Name="txtBlockChatWindow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Gray"/>
+        </ScrollViewer>
+
         <TextBox x:Name="txtChat" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" KeyDown="txtChat_KeyDown"/>
         
         <Button x:Name="btnSend" Content="Send" Grid.Column="2" Grid.Row="2" BorderBrush="Black" BorderThickness="1" Click="btnSend_Click"/>
