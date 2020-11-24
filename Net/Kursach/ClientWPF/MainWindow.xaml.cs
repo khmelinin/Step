@@ -145,6 +145,7 @@ namespace ClientWPF
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             SendMessage();
+            txtBlockChatWindow.Text += ("\nMe: " + txtChat.Text);
             txtChat.Text = string.Empty;
         }
 
@@ -153,6 +154,7 @@ namespace ClientWPF
             if (e.Key == Key.Enter)
             {
                 SendMessage();
+                txtBlockChatWindow.Text += ("\nMe: " + txtChat.Text);
                 txtChat.Text = string.Empty;
             }
         }
@@ -173,7 +175,17 @@ namespace ClientWPF
         }
         private void menuAddGroup_Click(object sender, RoutedEventArgs e)
         {
+            var dlg = new AddGroupWindow() { Title = "Add group" };
+            var result = dlg.ShowDialog();
+            if (result == null || result.Value == false)
+            {
+                return;
+            }
+            var tmp = new MenuItem() { Header = dlg.groupName + " " + dlg.groupId };
 
+            menuGroups.Items.Add(tmp);
+            contacts.Add(new Contact(dlg.groupId, dlg.groupName));
+            comboboxContacts.Items.Add(dlg.groupName);
         }
     }
 }

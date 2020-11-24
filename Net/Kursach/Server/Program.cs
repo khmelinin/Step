@@ -9,21 +9,32 @@ namespace Server
 {
     class Program
     {
-        static ServerObject server;
-        static Thread listenThread;
+        static List<RoomObject> rooms;
+        static List<Thread> listenThreads;
         static void Main(string[] args)
         {
-            try
-            {
-                server = new ServerObject();
-                listenThread = new Thread(new ThreadStart(server.Listen));
-                listenThread.Start();
-            }
-            catch (Exception ex)
-            {
-                server.Disconnect();
-                Console.WriteLine(ex.Message);
-            }
+            rooms = new List<RoomObject>();
+            listenThreads = new List<Thread>();
+            //while (true)
+            //{
+                //var tmp = Console.ReadLine();
+                //var room_port = Convert.ToInt32(tmp.Split(' ')[1]);
+                //if (tmp.Contains("add_room"))
+                //{
+                    try
+                    {
+                        //rooms.Add(new RoomObject(room_port));
+                        rooms.Add(new RoomObject(8888));
+                        listenThreads.Add(new Thread(new ThreadStart(rooms[rooms.Count - 1].Listen)));
+                        listenThreads[listenThreads.Count - 1].Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        rooms[rooms.Count - 1].Disconnect();
+                        Console.WriteLine(ex.Message);
+                    }
+                //}
+            //}
         }
     }
 }

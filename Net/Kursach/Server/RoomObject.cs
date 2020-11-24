@@ -9,10 +9,16 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class ServerObject
+    public class RoomObject
     {
-        static TcpListener tcpListener;
+        private int roomId;
+        TcpListener tcpListener;
         List<ClientObject> clients = new List<ClientObject>();
+
+        public RoomObject(int port)
+        {
+            roomId = port;
+        }
 
         protected internal void AddConnection(ClientObject clientObject)
         {
@@ -31,7 +37,7 @@ namespace Server
         {
             try
             {
-                tcpListener = new TcpListener(IPAddress.Any, 8888);
+                tcpListener = new TcpListener(IPAddress.Any, roomId);
                 tcpListener.Start();
                 Console.WriteLine("Server started. Waiting for connections...");
 
