@@ -30,11 +30,17 @@ namespace ClientWPF
         NetworkStream stream;
 
         List<Contact> contacts;
+        List<Contact> blacklist;
+        List<string> blacklistId;
 
         public MainWindow()
         {
             InitializeComponent();
             contacts = new List<Contact>();
+            blacklist = new List<Contact>();
+            blacklistId = new List<string>();
+
+            LoadAll();
 
             // disabling
             txtChat.IsEnabled = false;
@@ -48,6 +54,11 @@ namespace ClientWPF
             var result = dlg.ShowDialog();
             if (result == null || result.Value == false)
             {
+                return;
+            }
+            if(txtUsername.Text.Contains('|') || txtUserId.Text.Contains('|'))
+            {
+                MessageBox.Show("You can't have '|' in your Name or Id, try again");
                 return;
             }
 
@@ -76,7 +87,7 @@ namespace ClientWPF
                 stream = client.GetStream();
 
                 //string message = userName;
-                string message = txtUsername.Text;
+                string message = txtUsername.Text + '|' + txtUserId.Text;
                 byte[] data = Encoding.Unicode.GetBytes(message);
                 stream.Write(data, 0, data.Length);
 
@@ -110,7 +121,7 @@ namespace ClientWPF
             {
                 try
                 {
-                    byte[] data = new byte[64];
+                    byte[] data = new byte[1024];
                     StringBuilder builder = new StringBuilder();
                     int bytes = 0;
                     do
@@ -121,9 +132,13 @@ namespace ClientWPF
                     while (stream.DataAvailable);
 
                     string message = builder.ToString();
-                    App.Current.Dispatcher.Invoke(() => {
-                        txtBlockChatWindow.Text += ("\n" + message);
-                    });
+                    if (!blacklistId.Contains(message.Split('|')[1]))
+                    {
+                        App.Current.Dispatcher.Invoke(() => {
+                            txtBlockChatWindow.Text += ("\n" + message.Split('|')[0] + message.Split('|')[2]);
+                        });
+                    }
+                    
                 }
                 catch(Exception ex)
                 {
@@ -167,14 +182,41 @@ namespace ClientWPF
             {
                 return;
             }
-            var tmp = new MenuItem() { Header = dlg.userName + " " + dlg.userId };
+            var tmp = new MenuItem() { Header = dlg.userName + "|" + dlg.userId };
 
             menuContacts.Items.Add(tmp);
             contacts.Add(new Contact(dlg.userId, dlg.userName));
-            comboboxContacts.Items.Add(dlg.userName);
+            //comboboxContacts.Items.Add(dlg.userName);
+            SaveContacts();
         }
+        private void menuRemoveContact_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new AddContactWindow() { Title = "Remove contact" };
+            var result = dlg.ShowDialog();
+            if (result == null || result.Value == false)
+            {
+                return;
+            }
+            //var tmp = new MenuItem() { Header = dlg.userName + " " + dlg.userId };
+
+            //menuContacts.Items.Add(tmp);
+            var tmpContact = new Contact(dlg.userId, dlg.userName);
+            if (contacts.Contains(tmpContact))
+            {
+                contacts.Remove(tmpContact);
+            }
+            var tmp = new MenuItem() { Header = dlg.userName + "|" + dlg.userId };
+            if (menuContacts.Items.Contains(tmp))
+            {
+                menuContacts.Items.Remove(tmp);
+            }
+            //comboboxContacts.Items.Add(dlg.userName);
+            SaveContacts();
+        }
+
         private void menuAddGroup_Click(object sender, RoutedEventArgs e)
         {
+            /*
             var dlg = new AddGroupWindow() { Title = "Add group" };
             var result = dlg.ShowDialog();
             if (result == null || result.Value == false)
@@ -184,8 +226,154 @@ namespace ClientWPF
             var tmp = new MenuItem() { Header = dlg.groupName + " " + dlg.groupId };
 
             menuGroups.Items.Add(tmp);
-            contacts.Add(new Contact(dlg.groupId, dlg.groupName));
-            comboboxContacts.Items.Add(dlg.groupName);
+            groups.Add(new Contact(dlg.groupId, dlg.groupName));
+            //comboboxGroups.Items.Add(dlg.groupName);
+            */
+        }
+
+        private void LoadContacts()
+        {
+            using (StreamReader sr = new StreamReader("contacts.txt"))
+            {
+                while (!sr.EndOfStream) {
+                    var tmpContact = sr.ReadLine();
+                    contacts.Add(new Contact(tmpContact.Split('|')[0], tmpContact.Split('|')[1]));
+
+                    var tmp = new MenuItem() { Header = tmpContact };
+                    menuContacts.Items.Add(tmp);
+                }
+            }
+            using (StreamReader sr = new StreamReader("blacklist.txt"))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var tmpContact = sr.ReadLine();
+                    blacklist.Add(new Contact(tmpContact.Split('|')[0], tmpContact.Split('|')[1]));
+                    blacklistId.Add(tmpContact.Split('|')[1]);
+                    var tmp = new MenuItem() { Header = tmpContact };
+                    menuBlacklist.Items.Add(tmp);
+                }
+            }
+        }
+        private void SaveContacts()
+        {
+            using (StreamWriter sw = new StreamWriter("contacts.txt"))
+            {
+                foreach (var item in contacts)
+                {
+                    sw.WriteLine(item.userName + '|' + item.Id);
+                }
+            }
+            using (StreamWriter sw = new StreamWriter("blacklist.txt"))
+            {
+                foreach (var item in blacklist)
+                {
+                    sw.WriteLine(item.userName + '|' + item.Id);
+                }
+            }
+        }
+
+        private void LoadProfile()
+        {
+            using (StreamReader sr = new StreamReader("profile.txt"))
+            {
+                txtUsername.Text = sr.ReadLine();
+                txtUserId.Text = sr.ReadLine();
+            }
+        }
+        private void SaveProfile()
+        {
+            using (StreamWriter sw = new StreamWriter("profile.txt"))
+            {
+                sw.WriteLine(txtUsername.Text);
+                sw.WriteLine(txtUserId.Text);
+            }
+        }
+
+        private void LoadAll()
+        {
+            if (!File.Exists("contacts.txt"))
+            {
+                File.Create("contacts.txt");
+
+            }
+            else if (!File.Exists("blacklist.txt"))
+            {
+                File.Create("blacklist.txt");
+            }
+            else
+            {
+                LoadContacts();
+            }
+
+           
+
+            if (File.Exists("profile.txt"))
+            {
+                LoadProfile();
+            }
+            else
+            {
+                txtUserId.Text = Guid.NewGuid().ToString();
+                SaveProfile();
+            }
+        }
+
+        private void menuProfileLoad_Click(object sender, RoutedEventArgs e)
+        {
+            LoadProfile();
+        }
+        private void menuProfileSave_Click(object sender, RoutedEventArgs e)
+        {
+            SaveProfile();
+        }
+
+        private void menuRemoveBlacklist_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new AddContactWindow() { Title = "Remove from blacklist" };
+            var result = dlg.ShowDialog();
+            if (result == null || result.Value == false)
+            {
+                return;
+            }
+            //var tmp = new MenuItem() { Header = dlg.userName + " " + dlg.userId };
+
+            //menuContacts.Items.Add(tmp);
+            var tmpContact = new Contact(dlg.userId, dlg.userName);
+            if (blacklist.Contains(tmpContact))
+            {
+                blacklist.Remove(tmpContact);
+                blacklistId.Remove(tmpContact.Id);
+            }
+
+            var tmp = new MenuItem() { Header = dlg.userName + "|" + dlg.userId };
+            if (menuBlacklist.Items.Contains(tmp))
+            {
+                menuBlacklist.Items.Remove(tmp);
+            }
+            //comboboxContacts.Items.Add(dlg.userName);
+            SaveContacts();
+        }
+        private void menuAddBlacklist_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new AddContactWindow() { Title = "Add to blacklist" };
+            var result = dlg.ShowDialog();
+            if (result == null || result.Value == false)
+            {
+                return;
+            }
+            var tmp = new MenuItem() { Header = dlg.userName + " | " + dlg.userId };
+
+            menuBlacklist.Items.Add(tmp);
+            blacklist.Add(new Contact(dlg.userId, dlg.userName));
+            blacklistId.Add(dlg.userId);
+            //comboboxBlacklist.Items.Add(dlg.userName);
+            SaveContacts();
+        }
+
+        private void menuContactCopyId(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText((object as MenuItem).Header.ToString().Split('|')[1]);
         }
     }
 }

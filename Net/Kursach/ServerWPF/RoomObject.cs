@@ -24,10 +24,12 @@ namespace ServerWPF
         TcpListener tcpListener;
         List<ClientObject> clients = new List<ClientObject>();
         List<ClientObject> blacklist = new List<ClientObject>();
+        List<string> blacklistId = new List<string>();
 
         public int RoomId { get => roomId; }
         public List<ClientObject> Clients { get => clients; }
         public List<ClientObject> Blacklist { get => blacklist; }
+        public List<string> BlacklistId { get => blacklistId; }
 
         public RoomObject(int port)
         {
@@ -85,18 +87,18 @@ namespace ServerWPF
             var a = clients.ToArray();
             foreach (var item in a)
             {
-                if (item.Id == id)
+                if (blacklistId.Contains(id))
                 {
-                    byte[] ban_data = Encoding.Unicode.GetBytes("You are banned");
+                    byte[] ban_data = Encoding.Unicode.GetBytes("You are banned, your messages aren't received");
                     await item.Stream.WriteAsync(ban_data, 0, ban_data.Length);
                     return;
                 }
                 
             }
-                byte[] data = Encoding.Unicode.GetBytes(message);
+            byte[] data = Encoding.Unicode.GetBytes(message);
             for (int i = 0; i < clients.Count; i++)
             {
-                if (clients[i].Id != id) 
+                if (clients[i].Id != id && !blacklistId.Contains(id)) 
                 {
                     await clients[i].Stream.WriteAsync(data, 0, data.Length);
                 }
@@ -131,11 +133,7 @@ namespace ServerWPF
                 if (item.Id == id && !blacklist.Contains(item))
                 {
                     blacklist.Add(item);
-                    try
-                    {
-                        item.CloseAndRemove();
-                    }
-                    catch { }
+                    blacklistId.Add(item.Id);
                 }
             }
             
@@ -149,6 +147,7 @@ namespace ServerWPF
                     try
                     {
                         blacklist.Remove(item);
+                        blacklistId.Remove(item.Id);
                     }
                     catch { }
                 }

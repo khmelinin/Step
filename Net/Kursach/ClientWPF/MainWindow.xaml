@@ -25,6 +25,11 @@
             <MenuItem Header="Menu" BorderBrush="Black" BorderThickness="1">
                 <MenuItem x:Name="menuConnect" Header="Connect" Click="menuConnect_Click"/>
                 <MenuItem Header="Disconnect"/>
+                <Separator/>
+                <MenuItem Header="Profile">
+                    <MenuItem x:Name="menuProfileLoad" Header="Load" Click="menuProfileLoad_Click"/>
+                    <MenuItem x:Name="menuProfileSave" Header="Save" Click="menuProfileSave_Click"/>
+                </MenuItem>
             </MenuItem>
             <TextBlock Text="Username:"/>
             <TextBox x:Name="txtUsername" Width="Auto" Text="_defaultName1234_"/>
@@ -35,8 +40,15 @@
         <Menu Grid.Row="1" Grid.Column="0"  BorderBrush="Black" BorderThickness="1">
             <MenuItem x:Name="menuContacts" Header="Contacts" BorderBrush="Black" BorderThickness="1">
                 <MenuItem x:Name="menuAddContact" Header="Add contact" Click="menuAddContact_Click"/>
+                <MenuItem x:Name="menuRemoveContact" Header="Remove contact" Click="menuRemoveContact_Click"/>
                 <Separator/>
-                <ComboBox x:Name="comboboxContacts" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <!--<ComboBox x:Name="comboboxContacts" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
+            </MenuItem>
+            <MenuItem x:Name="menuBlacklist" Header="Blacklist" BorderBrush="Black" BorderThickness="1">
+                <MenuItem x:Name="menuAddBlacklist" Header="Add to blacklist" Click="menuAddBlacklist_Click"/>
+                <MenuItem x:Name="menuRemoveBlacklist" Header="Remove from blacklist" Click="menuRemoveBlacklist_Click"/>
+                <Separator/>
+                <!--<ComboBox x:Name="comboboxBlacklist" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
             </MenuItem>
             <MenuItem x:Name="menuGroups" Header="Groups" BorderBrush="Black" BorderThickness="1">
                 <MenuItem x:Name="menuAddGroup" Header="Add group" Click="menuAddGroup_Click"/>

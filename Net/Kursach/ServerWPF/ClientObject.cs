@@ -19,16 +19,19 @@ namespace ServerWPF
     public class ClientObject
     {
         //protected internal string Id { get; private set; }
-        protected internal string Id { get => userId; set => userId = value; }
+        protected internal string Id { get => userId; }
         protected internal NetworkStream Stream { get; private set; }
-        
+        private List<ClientObject> blacklist = new List<ClientObject>();
+        private List<string> blacklistId = new List<string>();
 
         string userName;
-        string userId = Guid.NewGuid().ToString();
+        string userId;
         TcpClient client;
         RoomObject room;
 
         public string UserName { get => userName; }
+        protected internal List<ClientObject> Blacklist { get => blacklist; set => blacklist = value; }
+        protected internal List<string> BlacklistId { get => blacklistId; set => blacklistId = value; }
 
         public ClientObject(TcpClient tcpClient, RoomObject serverObject)
         {
@@ -45,8 +48,9 @@ namespace ServerWPF
                 Stream = client.GetStream();
 
                 string message = GetMessage();
-                userName = message;
-                message = userName + $" entered the chat";
+                userName = message.Split('|')[0];
+                userId = message.Split('|')[1];
+                message = userName + '|' + userId + '|' + $" entered the chat";
 
                 //room.BroadcastMessage(message, this.Id);
                 room.BroadcastMessage(message, userId);
@@ -57,7 +61,7 @@ namespace ServerWPF
                     try
                     {
                         message = GetMessage();
-                        message = String.Format("{0}: {1}", userName, message);
+                        message = String.Format("{0}: {1}", userName + '|' + userId + '|', message);
                         //Console.WriteLine(message);
                         //room.BroadcastMessage(message, this.Id);
                         room.BroadcastMessage(message, userId);
@@ -86,7 +90,7 @@ namespace ServerWPF
 
         private string GetMessage()
         {
-            byte[] data = new byte[64]; 
+            byte[] data = new byte[1024]; 
             StringBuilder builder = new StringBuilder();
             int bytes = 0;
             do

@@ -21,7 +21,7 @@
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="User Id"/>
         <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtId"/>
-        <Button Grid.Row="2" Grid.Column="0" x:Name="btnCreate" Click="btnCreate_Click">Add</Button>
+        <Button Grid.Row="2" Grid.Column="0" x:Name="btnCreate" Click="btnCreate_Click">Ok</Button>
         <Button Grid.Row="2" Grid.Column="1" x:Name="btnCancel" Click="btnCancel_Click">Cancel</Button>
     </Grid>
 </Window>
