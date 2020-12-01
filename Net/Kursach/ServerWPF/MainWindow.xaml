@@ -28,10 +28,8 @@
             <MenuItem Header="Help" BorderBrush="Black" BorderThickness="1">
                 <MenuItem Header="Commands" Click="menuCommands_Click"/>
             </MenuItem>
-            <TextBlock Text="Room name:"/>
-            <TextBox x:Name="txtRoomname" Width="Auto" Text="default_room_name"/>
-            <TextBlock Text="Room Id:"/>
-            <TextBox x:Name="txtRoomId" Width="Auto" Text="8888"/>
+            <TextBlock Text="Current room Id:"/>
+            <TextBox x:Name="txtRoomId" Width="Auto" Text="0000"/>
         </Menu>
 
         <Menu Grid.Row="1" Grid.Column="0"  BorderBrush="Black" BorderThickness="1">

@@ -40,22 +40,23 @@
         <Menu Grid.Row="1" Grid.Column="0"  BorderBrush="Black" BorderThickness="1">
             <MenuItem x:Name="menuContacts" Header="Contacts" BorderBrush="Black" BorderThickness="1">
                 <MenuItem x:Name="menuAddContact" Header="Add contact" Click="menuAddContact_Click"/>
-                <MenuItem x:Name="menuRemoveContact" Header="Remove contact" Click="menuRemoveContact_Click"/>
+                <!--<MenuItem x:Name="menuRemoveContact" Header="Remove contact" Click="menuRemoveContact_Click"/>-->
                 <Separator/>
                 <!--<ComboBox x:Name="comboboxContacts" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
             </MenuItem>
             <MenuItem x:Name="menuBlacklist" Header="Blacklist" BorderBrush="Black" BorderThickness="1">
                 <MenuItem x:Name="menuAddBlacklist" Header="Add to blacklist" Click="menuAddBlacklist_Click"/>
-                <MenuItem x:Name="menuRemoveBlacklist" Header="Remove from blacklist" Click="menuRemoveBlacklist_Click"/>
+                <!--<MenuItem x:Name="menuRemoveBlacklist" Header="Remove from blacklist" Click="menuRemoveBlacklist_Click"/>-->
                 <Separator/>
                 <!--<ComboBox x:Name="comboboxBlacklist" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
             </MenuItem>
             <MenuItem x:Name="menuGroups" Header="Groups" BorderBrush="Black" BorderThickness="1">
                 <MenuItem x:Name="menuAddGroup" Header="Add group" Click="menuAddGroup_Click"/>
+                <MenuItem x:Name="menuRemoveGroup" Header="Remove group" Click="menuRemoveGroup_Click"/>
                 <Separator/>
-                <ScrollViewer Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <!--<ScrollViewer Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <RichTextBox x:Name="txtRichGroups"/>
-                </ScrollViewer>
+                </ScrollViewer>-->
             </MenuItem>
         </Menu>
 

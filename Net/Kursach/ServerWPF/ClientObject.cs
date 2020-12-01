@@ -68,7 +68,7 @@ namespace ServerWPF
                     }
                     catch
                     {
-                        message = String.Format("{0}: left the chat", userName);
+                        message = String.Format("{0}: left the chat", userName + '|' + userId + '|');
                         //Console.WriteLine(message);
                         //room.BroadcastMessage(message, this.Id);
                         room.BroadcastMessage(message, userId);

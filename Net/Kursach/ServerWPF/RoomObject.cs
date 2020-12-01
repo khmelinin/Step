@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -21,15 +22,19 @@ namespace ServerWPF
     public class RoomObject
     {
         private int roomId;
+        private bool is_private = false;
         TcpListener tcpListener;
         List<ClientObject> clients = new List<ClientObject>();
         List<ClientObject> blacklist = new List<ClientObject>();
         List<string> blacklistId = new List<string>();
+        List<string> history = new List<string>();
 
         public int RoomId { get => roomId; }
         public List<ClientObject> Clients { get => clients; }
         public List<ClientObject> Blacklist { get => blacklist; }
         public List<string> BlacklistId { get => blacklistId; }
+        public List<string> History { get => history; }
+        public bool Is_private { get => is_private; set => is_private = value; }
 
         public RoomObject(int port)
         {
@@ -64,7 +69,7 @@ namespace ServerWPF
             {
                 tcpListener = new TcpListener(IPAddress.Any, roomId);
                 tcpListener.Start();
-                MessageBox.Show($"Room {roomId} started. Waiting for connections...");
+                //MessageBox.Show($"Room {roomId} started. Waiting for connections...");
 
                 while (true)
                 {
@@ -84,24 +89,39 @@ namespace ServerWPF
 
         protected internal async void BroadcastMessage(string message, string id)
         {
-            var a = clients.ToArray();
-            foreach (var item in a)
+            if (!is_private)
             {
-                if (blacklistId.Contains(id))
+                var a = clients.ToArray();
+                foreach (var item in a)
                 {
-                    byte[] ban_data = Encoding.Unicode.GetBytes("You are banned, your messages aren't received");
-                    await item.Stream.WriteAsync(ban_data, 0, ban_data.Length);
-                    return;
+                    if (blacklistId.Contains(id))
+                    {
+                        byte[] ban_data = Encoding.Unicode.GetBytes("You are banned, your messages aren't received");
+                        await item.Stream.WriteAsync(ban_data, 0, ban_data.Length);
+                        return;
+                    }
+
                 }
-                
+                byte[] data = Encoding.Unicode.GetBytes(message);
+                for (int i = 0; i < clients.Count; i++)
+                {
+                    if (clients[i].Id != id && !blacklistId.Contains(id))
+                    {
+                        await clients[i].Stream.WriteAsync(data, 0, data.Length);
+                    }
+                    if (!blacklistId.Contains(id))
+                    {
+                        history.Add(message);
+                        using (StreamWriter sw = File.AppendText($@"Rooms\room{roomId}.txt"))
+                        {
+                            sw.WriteLine(message);
+                        }
+                    }
+                }
             }
-            byte[] data = Encoding.Unicode.GetBytes(message);
-            for (int i = 0; i < clients.Count; i++)
+            else
             {
-                if (clients[i].Id != id && !blacklistId.Contains(id)) 
-                {
-                    await clients[i].Stream.WriteAsync(data, 0, data.Length);
-                }
+
             }
         }
 
