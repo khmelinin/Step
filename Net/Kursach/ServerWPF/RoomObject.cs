@@ -22,7 +22,6 @@ namespace ServerWPF
     public class RoomObject
     {
         private int roomId;
-        private bool is_private = false;
         TcpListener tcpListener;
         List<ClientObject> clients = new List<ClientObject>();
         List<ClientObject> blacklist = new List<ClientObject>();
@@ -34,7 +33,6 @@ namespace ServerWPF
         public List<ClientObject> Blacklist { get => blacklist; }
         public List<string> BlacklistId { get => blacklistId; }
         public List<string> History { get => history; }
-        public bool Is_private { get => is_private; set => is_private = value; }
 
         public RoomObject(int port)
         {
@@ -89,39 +87,43 @@ namespace ServerWPF
 
         protected internal async void BroadcastMessage(string message, string id)
         {
-            if (!is_private)
+            bool finish = false;
+            var a = clients.ToArray();
+            foreach (var item in a)
             {
-                var a = clients.ToArray();
-                foreach (var item in a)
+                if (blacklistId.Contains(id))
                 {
-                    if (blacklistId.Contains(id))
-                    {
-                        byte[] ban_data = Encoding.Unicode.GetBytes("You are banned, your messages aren't received");
-                        await item.Stream.WriteAsync(ban_data, 0, ban_data.Length);
-                        return;
-                    }
+                    byte[] ban_data = Encoding.Unicode.GetBytes("You are banned, your messages aren't received");
+                    await item.Stream.WriteAsync(ban_data, 0, ban_data.Length);
+                    return;
+                }
+                if (message.Contains('|'+item.Id))
+                {
+                    byte[] private_data = Encoding.Unicode.GetBytes(message);
+                    await item.Stream.WriteAsync(private_data, 0, private_data.Length);
+                    finish = true;
+                }
 
-                }
-                byte[] data = Encoding.Unicode.GetBytes(message);
-                for (int i = 0; i < clients.Count; i++)
-                {
-                    if (clients[i].Id != id && !blacklistId.Contains(id))
-                    {
-                        await clients[i].Stream.WriteAsync(data, 0, data.Length);
-                    }
-                    if (!blacklistId.Contains(id))
-                    {
-                        history.Add(message);
-                        using (StreamWriter sw = File.AppendText($@"Rooms\room{roomId}.txt"))
-                        {
-                            sw.WriteLine(message);
-                        }
-                    }
-                }
             }
-            else
+            if (finish)
             {
-
+                return;
+            }
+            byte[] data = Encoding.Unicode.GetBytes(message);
+            for (int i = 0; i < clients.Count; i++)
+            {
+                if (clients[i].Id != id && !blacklistId.Contains(id))
+                {
+                    await clients[i].Stream.WriteAsync(data, 0, data.Length);
+                }
+                if (!blacklistId.Contains(id))
+                {
+                    history.Add(message);
+                    using (StreamWriter sw = File.AppendText($@"Rooms\room{roomId}.txt"))
+                    {
+                        sw.WriteLine(message);
+                    }
+                }
             }
         }
 

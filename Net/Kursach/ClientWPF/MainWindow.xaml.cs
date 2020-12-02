@@ -24,7 +24,7 @@ namespace ClientWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IPAddress ip;
+        private IPAddress ip = IPAddress.Parse("127.0.0.1");
         private int port = 8888;
         TcpClient client;
         NetworkStream stream;
@@ -40,6 +40,7 @@ namespace ClientWPF
             contacts = new List<Contact>();
             blacklist = new List<Contact>();
             blacklistId = new List<string>();
+            groups = new List<Contact>();
 
             LoadAll();
 
@@ -161,7 +162,7 @@ namespace ClientWPF
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             SendMessage();
-            txtBlockChatWindow.Text += ("\nMe: " + txtChat.Text);
+            //txtBlockChatWindow.Text += ("\nMe: " + txtChat.Text);
             txtChat.Text = string.Empty;
         }
 
@@ -170,7 +171,7 @@ namespace ClientWPF
             if (e.Key == Key.Enter)
             {
                 SendMessage();
-                txtBlockChatWindow.Text += ("\nMe: " + txtChat.Text);
+                //txtBlockChatWindow.Text += ("\nMe: " + txtChat.Text);
                 txtChat.Text = string.Empty;
             }
         }
@@ -231,6 +232,7 @@ namespace ClientWPF
             menuGroups.Items.Add(tmp);
             groups.Add(new Contact(dlg.groupId, dlg.groupName));
             //comboboxGroups.Items.Add(dlg.groupName);
+            SaveGroups();
             
         }
 
@@ -245,7 +247,10 @@ namespace ClientWPF
 
             try
             {
-                Disconnect();
+                if (stream != null)
+                    stream.Close();
+                if (client != null)
+                    client.Close();
             }
             catch
             {
@@ -340,7 +345,7 @@ namespace ClientWPF
             }
         }
 
-
+        
         private void SaveContacts()
         {
             using (StreamWriter sw = new StreamWriter("contacts.txt"))
@@ -353,6 +358,32 @@ namespace ClientWPF
             using (StreamWriter sw = new StreamWriter("blacklist.txt"))
             {
                 foreach (var item in blacklist)
+                {
+                    sw.WriteLine(item.userName + '|' + item.Id);
+                }
+            }
+        }
+
+        private void LoadGroups()
+        {
+            using (StreamReader sr = new StreamReader("groups.txt"))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var tmpContact = sr.ReadLine();
+                    groups.Add(new Contact(tmpContact.Split('|')[0], tmpContact.Split('|')[1]));
+
+                    var tmp = new MenuItem() { Header = tmpContact };
+                    tmp.Click += menuEnterRoom_Click;
+                    menuGroups.Items.Add(tmp);
+                }
+            }
+        }
+        private void SaveGroups()
+        {
+            using (StreamWriter sw = new StreamWriter("groups.txt"))
+            {
+                foreach (var item in groups)
                 {
                     sw.WriteLine(item.userName + '|' + item.Id);
                 }
@@ -402,6 +433,15 @@ namespace ClientWPF
             {
                 txtUserId.Text = Guid.NewGuid().ToString();
                 SaveProfile();
+            }
+
+            if (!File.Exists("groups.txt"))
+            {
+                File.Create("groups.txt");
+            }
+            else
+            {
+                LoadGroups();
             }
         }
 
