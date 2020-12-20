@@ -1,0 +1,28 @@
+.card_game_red{
+    background-color: lightgray;
+    color: red;
+}
+
+.card_game_black{
+    background-color: lightgray;
+    color: black;
+    }
+h1{
+    text-align: center;
+    }
+h2{
+    color: rgb(79, 211, 255);
+    }
+    
+h3{
+    text-align: center;
+}
+.textarea_code{
+    height: 330px;
+    width: 430px;
+}
+.tags1{
+    background-color: rgb(235, 235, 235);
+    font-style: normal;
+    color: lightskyblue;
+}
