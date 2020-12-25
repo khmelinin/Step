@@ -1,0 +1,12 @@
+.black{
+    width: 20px;
+    height: 20px;
+    background-color: darkgray;
+    text-align: center;
+}
+.white{
+    width: 20px;
+    height: 20px;
+    background-color: lightgray;
+    text-align: center;
+}

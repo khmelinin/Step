@@ -1,0 +1,44 @@
+.div1{
+    width: 60%;
+    margin: auto;
+    padding: 48px;
+    background-color: lightpink;
+}
+.liBackground{
+    color: white;
+    background-color: violet;
+    padding: 0px;
+    margin: 0px 10px 10px 10px;
+    border-color: darkviolet;
+    border: solid lightpink;
+}
+.spanContent{
+    background-color: darkmagenta;
+}
+
+.redCross{
+    color: red;
+}
+.liGrey{
+    background-color: lightgray;
+    font-style: inherit;
+}
+.liDark{
+    background-color: rgba(0, 126, 189, 1.0);
+}
+.liLight{
+    background-color: rgba(0, 162, 243, 1.0);
+}
+img{
+    width: 10px;
+    height: 10px;
+}
+
+.dfnGrey{
+    font-style: normal;
+    color: gray;
+}
+.dfnBlue{
+    font-style: normal;
+    color: blue;
+}
